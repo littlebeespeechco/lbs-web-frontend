@@ -850,6 +850,10 @@ form:not(.search):has(#terms-checkbox input:checked) input[type=submit] {
   cursor: pointer;
 }
 
+.w-richtext a:hover {
+  text-decoration: underline;
+}
+
 a {
   color: var(--_colors---half-way-orange);
 }
