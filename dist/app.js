@@ -1093,7 +1093,6 @@
   var Button = class {
     constructor(element) {
       this.element = element;
-      console.log("button");
       if (document.fonts && document.fonts.ready) {
         document.fonts.ready.then(() => {
           this.elements();
@@ -1162,22 +1161,17 @@
         if (logosLoaded === logosToLoad) {
           this.sizing();
           this.update();
-          console.log("execute update");
         }
       };
       this.logos.forEach((logo) => {
         if (logo.complete) {
           this.loaded = true;
           logosLoaded++;
-          console.log("logos loaded", logosLoaded, logosToLoad);
-          console.log(logosLoaded === logosToLoad);
           checkIfAllLoaded();
         } else {
           logo.addEventListener("load", () => {
             this.loaded = true;
             logosLoaded++;
-            console.log("logos loaded", logosLoaded, logosToLoad);
-            console.log(logosLoaded === logosToLoad);
             checkIfAllLoaded();
           });
         }
@@ -1236,7 +1230,6 @@
       this.bgWrapper = document.createElement("div");
       this.bgWrapper.classList.add("bg-wrapper");
       this.bg.classList.add("bg");
-      console.log(this.element.querySelector(".trial-bg"));
       this.element.appendChild(this.bgWrapper);
       this.bgWrapper.appendChild(this.bg);
     }
@@ -1864,7 +1857,6 @@
     }
     elements() {
       this.text = this.element.querySelector(".anim-diction");
-      console.log(this.text);
       this.color1 = getComputedStyle(this.text).getPropertyValue("--color1");
       this.color2 = getComputedStyle(this.text).getPropertyValue("--color2");
     }
@@ -2059,7 +2051,6 @@
       this.currentTarget = newIndex;
     }
     showMegamenu(show) {
-      console.log("showing");
       gsap.set(this.megamenu, {
         autoAlpha: show ? 0 : 1,
         y: show ? 0 : -30
@@ -2285,7 +2276,6 @@
           item.originalNumber = item.numeral.textContent;
         });
       });
-      console.log(this.togglerLinks);
     }
     bind() {
       this.togglerLinks.forEach((item, index) => {
@@ -2395,7 +2385,6 @@
     }
     sizing() {
       let newFontSize = 18 / 16;
-      console.log(this.element);
       this.ticking = true;
       const resizeObserver = new ResizeObserver(() => {
         this.fitText();
@@ -2455,7 +2444,6 @@
         this.indicators.innerHTML = "";
         for (let i2 = 0; i2 < this.totalPages; i2++) {
           const indicator = document.createElement("div");
-          console.log("happens");
           indicator.classList.add("testimonials-bullet");
           this.indicators.appendChild(indicator);
         }
@@ -2499,7 +2487,6 @@
     }
     update(newPage) {
       let page = Math.min(this.testimonials.length - this.itemsPerPage, newPage * this.itemsPerPage);
-      console.log(page);
       this.indicatorsBullets[newPage].classList.add("active", newPage > this.currentPage ? "from-left" : "from-right");
       if (this.currentPage !== null) {
         this.indicatorsBullets[this.currentPage].classList.remove("active", "from-left", "from-right");
@@ -2522,20 +2509,30 @@
     }
     elements() {
       this.items = this.element.querySelectorAll(".faq-item");
+      this.answer = this.element.querySelector(".faq-item-a");
     }
     bind() {
       this.items.forEach((item) => {
         item.open = false;
         item.addEventListener("click", () => {
           this.toggle(item);
-          console.log("clicked", item);
         });
       });
     }
     toggle(item) {
       if (!item.open) {
+        gsap.to(this.answer, {
+          height: "auto",
+          duration: 1,
+          ease: "circ.out"
+        });
         item.classList.add("active");
       } else {
+        gsap.to(this.answer, {
+          height: 0,
+          duration: 1,
+          ease: "circ.out"
+        });
         item.classList.remove("active");
       }
       item.open = !item.open;
@@ -3201,7 +3198,6 @@
       this.element = element;
       this.elements();
       this.init();
-      console.log("annotations");
     }
     elements() {
     }
@@ -5987,14 +5983,11 @@
         touchMultiplier: 2,
         infinite: false
       });
-      console.log("mm?");
       function raf(time) {
         if (window.innerWidth < 992 && lenis.isStopped) {
           lenis.stop();
-          console.log("stop lenis");
         } else if (window.innerWidth >= 992 && lenis.isStarted) {
           lenis.start();
-          console.log("start lenis");
         }
         lenis.raf(time);
         requestAnimationFrame(raf);
@@ -6088,7 +6081,6 @@
       });
       const searchResultsElements = document.querySelectorAll("[search-results]");
       searchResultsElements.forEach((element) => {
-        console.log("one");
         new SearchResults(element);
       });
     });

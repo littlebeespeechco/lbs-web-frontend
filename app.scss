@@ -51,20 +51,11 @@ form:not(.search) {
     }
 }
 
-.w-richtext a:hover {
-    text-decoration: underline;
-}
-
 a {
     color: $half-way-orange;
 
-    &:not(.w-button, .button, button) {
-        --color: currentcolor;
-        filter: brightness(1);
-        transition: color 1s cubic-bezier(0.060, 0.770, 0.000, 1.615);
-        &:hover {
-            color: color-mix(in srgb, var(--color) 65%, white);
-        }
+    &:not(.w-button, .button, button, .header-menu-link, .no-decoration):hover {
+        text-decoration: underline;
     }
 
     &.categories-link {
@@ -351,19 +342,7 @@ section {
             }
         }
 
-        &-a {
-            // interpolate keywords
-            interpolate-size: allow-keywords;
-            transition: height 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000), padding 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000);
-            
-        }
-
         &.active {
-            .faq-item-a {
-                height: auto;
-                padding-bottom: ptr(20);
-            }
-
             &:before {
                 transform: rotate(-180deg);
             }
