@@ -124,6 +124,7 @@ section {
     }
 
     &.scalable {
+        transition: scale 1s cubic-bezier(0.060, 0.770, 0.000, 1.615);
         &:hover {
             scale: 1.05;
         }
