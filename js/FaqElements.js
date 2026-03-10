@@ -24,15 +24,17 @@ export class FaqElements {
     }
 
     toggle(item) {
+        const answer = item.querySelector(".faq-item-a");
+
         if (!item.open) {
-            gsap.to(item.answer, {
+            gsap.to(answer, {
                 height: "auto",
                 duration: 1,
                 ease: "circ.out",
             })
             item.classList.add("active");
         } else {
-            gsap.to(item.answer, {
+            gsap.to(answer, {
                 height: 0,
                 duration: 1,
                 ease: "circ.out",
