@@ -54,8 +54,15 @@ form:not(.search) {
 a {
     color: #FF6200;
 
-    &:not(.w-button, .button, button, .header-menu-link, .no-decoration, .pagination-button):hover {
+    &:not(.w-button, .button, button, .header-menu-link, .no-decoration, .posts-search-post,.pagination-button):hover {
         text-decoration: underline;
+    }
+    
+    &.posts-search-post {
+        &:hover {
+            color: #FF6200;
+            text-decoration: none;
+        }
     }
 
     &.categories-link {

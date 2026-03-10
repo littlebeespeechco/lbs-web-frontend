@@ -857,8 +857,12 @@ form:not(.search):has(#terms-checkbox input:checked) input[type=submit] {
 a {
   color: #FF6200;
 }
-a:not(.w-button, .button, button, .header-menu-link, .no-decoration, .pagination-button):hover {
+a:not(.w-button, .button, button, .header-menu-link, .no-decoration, .posts-search-post, .pagination-button):hover {
   text-decoration: underline;
+}
+a.posts-search-post:hover {
+  color: #FF6200;
+  text-decoration: none;
 }
 a.categories-link {
   position: relative;
