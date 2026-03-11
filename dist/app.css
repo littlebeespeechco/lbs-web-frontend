@@ -1510,6 +1510,9 @@ section > img {
 *.text-8D8D8D {
   color: #8D8D8D;
 }
+*.text-FF7E00 {
+  color: #FF7E00;
+}
 
 @media (max-width: 767px) {
   .text-sm-10 {
