@@ -260,11 +260,6 @@
   z-index: -1;
 }
 
-.logos-collection img {
-  max-width: 13.9375rem;
-  max-height: 4.0625rem;
-}
-
 [search-results] .post-search-term {
   color: var(--_colors---orange);
 }
@@ -783,6 +778,7 @@ form:not(.search) .w-select {
   padding: 0.625rem 0.625rem;
   line-height: 1;
   height: auto;
+  min-height: 2.875rem;
   color: var(--_colors---text-2);
   margin-bottom: 0;
 }

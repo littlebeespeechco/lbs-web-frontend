@@ -87,6 +87,7 @@ textarea.w-input {
     padding: ptr(10) ptr(10);
     line-height: 1;
     height: auto;
+    min-height: ptr(46);
     color: $text-2;
     margin-bottom: 0;
 
