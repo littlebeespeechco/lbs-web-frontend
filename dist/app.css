@@ -675,6 +675,14 @@ html:not(.wf-design-mode) .team-member-image .team-member-picture {
 html:not(.wf-design-mode) .team-member-image .team-member-illustration {
   transform: perspective(40rem) rotateY(0deg) scale(1);
 }
+html:not(.wf-design-mode) [data-animation=memberships] .slot {
+  display: grid !important;
+}
+html:not(.wf-design-mode) [data-animation=memberships] .pricing-heading {
+  grid-area: 1/1;
+  opacity: 0;
+  visibility: hidden;
+}
 html:not(.wf-design-mode) .memberships {
   display: grid;
   justify-content: center;

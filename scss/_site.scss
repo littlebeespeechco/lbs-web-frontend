@@ -79,6 +79,18 @@ body {
     }
 }
 
+[data-animation="memberships"] {
+    .slot {
+        display: grid!important;
+    }
+
+    .pricing-heading {
+        grid-area: 1/1;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
 .memberships {
     display: grid;
     justify-content: center;

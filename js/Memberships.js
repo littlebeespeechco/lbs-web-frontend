@@ -7,6 +7,8 @@ export class Memberships {
         this.elements();
         this.bind();
         if (window.location.hash) {
+            console.log("works?");
+            
             const tabName = window.location.hash.substring(1);
             const index = this.togglerLinks.findIndex(link => link.textContent.toLowerCase() === tabName);
             if (index !== -1) {
@@ -28,6 +30,7 @@ export class Memberships {
 
     elements() {
         this.togglerLinks = Array.from(this.element.querySelectorAll(".memberships-toggler div:not(.memberships-indicator)"));
+        this.headings = this.element.querySelectorAll(".pricing-heading");
         this.tabs = this.element.querySelectorAll(".memberships-tab");
         this.indicator = this.element.querySelector(".memberships-indicator");
         this.tabs.forEach(tab => {
@@ -50,6 +53,7 @@ export class Memberships {
 
     showTab(index) {
         const currentTab = this.tabs[index];
+        const currentHeading = this.headings[index];
         const left = index > this.currentTab ? true : false;
         const bgcolors = ["#FFDF10", "#72BEE0"];
         const textcolors = ["#404040", "#FFFFFF", "#A9A9A9"];
@@ -61,6 +65,12 @@ export class Memberships {
 
         if (this.currentTab !== null) {
             const previousTab = this.tabs[this.currentTab];
+            const previousHeading = this.headings[this.currentTab];
+            gsap.to(previousHeading, {
+                autoAlpha: 0,
+                duration: 0.5,
+                overwrite: true
+            });
             gsap.to(previousTab.items, {
                 autoAlpha: 0,
                 duration: 0.5,
@@ -77,6 +87,12 @@ export class Memberships {
 
         
         const tl = gsap.timeline();
+        tl.to(currentHeading, {
+            autoAlpha: 1,
+            duration: 0.5,
+            delay: 0.5,
+            overwrite: true
+        }, 0);
         tl.to(this.indicator, {
             xPercent: -50,
             duration: 0.5,
