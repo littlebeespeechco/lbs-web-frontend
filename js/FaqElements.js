@@ -29,14 +29,14 @@ export class FaqElements {
         if (!item.open) {
             gsap.to(answer, {
                 height: "auto",
-                duration: 1,
+                duration: 0.5,
                 ease: "circ.out",
             })
             item.classList.add("active");
         } else {
             gsap.to(answer, {
                 height: 0,
-                duration: 1,
+                duration: 0.5,
                 ease: "circ.out",
             })
             item.classList.remove("active");
