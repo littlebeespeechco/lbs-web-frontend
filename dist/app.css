@@ -1010,14 +1010,6 @@ section > img {
   background-repeat: no-repeat;
   background-position: center;
 }
-.testimonial-text {
-  height: -webkit-fill-available;
-}
-@media (max-width: 991px) {
-  .testimonial-text {
-    height: auto;
-  }
-}
 
 .testimonials[data-wf--testimonials--variant=purple] .testimonials-bullet {
   background-color: #76599d;

@@ -236,13 +236,6 @@ section {
         background-repeat: no-repeat;
         background-position: center;
     }
-
-    &-text {
-        height: -webkit-fill-available;
-        @include breakpoint(medium) {
-            height: auto;
-        }
-    }
 }
 
 .testimonials {    
