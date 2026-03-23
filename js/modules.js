@@ -24,6 +24,8 @@ import { SplitText } from "gsap/SplitText";
 
 if (typeof document !== "undefined") {
     document.addEventListener("DOMContentLoaded", () => {
+        console.log("v0.9");
+        
         gsap.registerPlugin(ScrollTrigger, SplitText);
         const g = {}
         window.g = g;
@@ -180,7 +182,12 @@ if (typeof document !== "undefined") {
 
 function getFontSize() {
     const breakpoint = window.innerWidth < 768 ? "small" : window.innerWidth < 992 ? "medium" : "desktop";
-    let fontSize = breakpoint === "small" ?  Math.max(9, document.body.clientWidth / 767 * 16) : breakpoint === "medium" ? Math.max(14, document.body.clientWidth / 991 * 16) : Math.max(14, Math.min(document.body.clientWidth / 1290 * 16, 16));
+    let fontSize = 
+        breakpoint === "small" ?  Math.min(16, document.body.clientWidth / 402 * 16) : 
+        breakpoint === "medium" ? Math.max(14, document.body.clientWidth / 991 * 16) : 
+        Math.max(14, Math.min(document.body.clientWidth / 1290 * 16, 16))
+    ;
+    
     document.documentElement.style.setProperty('--fontSize', fontSize + 'px');
 }
 
