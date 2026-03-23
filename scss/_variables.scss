@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 $background-1: var(--_colors---background-1);
 $background-2: var(--_colors---background-2);
 $background-dark-1: var(--_colors---background-dark-1);
@@ -86,6 +88,16 @@ $heading-s-22: var(--_sizes---heading-s-22);
 
 @function ptr($px-value) {
     @return #{$px-value / 16}rem;
+}
+
+// Small breakpoint: keep body-scale text (≤16) as-is; scale larger sizes down with a power curve
+// through 16→16, 20→17, 60→40 (f(x) = 16 + ((x−16)/4)^p, p = ln(24)/ln(11)).
+@function text-small-fluid-size($px) {
+    @if $px <= 16 {
+        @return $px;
+    }
+    $p: math.div(math.log(24), math.log(11));
+    @return 16 + math.pow(math.div($px - 16, 4), $p);
 }
 
 // Responsive sizing mixin - applies desktop value and small breakpoint scaling

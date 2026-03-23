@@ -76,11 +76,19 @@
     }
 
     .text-#{$i} { 
-        font-size: ptr($i); 
+        font-size: ptr($i);
+
+        @include breakpoint(small) {
+            font-size: ptr(text-small-fluid-size($i));
+        }
     }
     
     .lh-#{$i} { 
         line-height: ptr($i); 
+
+        @include breakpoint(small) {
+            line-height: ptr(text-small-fluid-size($i));
+        }
     }
 }
 

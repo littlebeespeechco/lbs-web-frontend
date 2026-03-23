@@ -1594,9 +1594,19 @@ section > img {
 .text-10 {
   font-size: 0.625rem;
 }
+@media (max-width: 767px) {
+  .text-10 {
+    font-size: 0.625rem;
+  }
+}
 
 .lh-10 {
   line-height: 0.625rem;
+}
+@media (max-width: 767px) {
+  .lh-10 {
+    line-height: 0.625rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1614,9 +1624,19 @@ section > img {
 .text-11 {
   font-size: 0.6875rem;
 }
+@media (max-width: 767px) {
+  .text-11 {
+    font-size: 0.6875rem;
+  }
+}
 
 .lh-11 {
   line-height: 0.6875rem;
+}
+@media (max-width: 767px) {
+  .lh-11 {
+    line-height: 0.6875rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1634,9 +1654,19 @@ section > img {
 .text-12 {
   font-size: 0.75rem;
 }
+@media (max-width: 767px) {
+  .text-12 {
+    font-size: 0.75rem;
+  }
+}
 
 .lh-12 {
   line-height: 0.75rem;
+}
+@media (max-width: 767px) {
+  .lh-12 {
+    line-height: 0.75rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1654,9 +1684,19 @@ section > img {
 .text-13 {
   font-size: 0.8125rem;
 }
+@media (max-width: 767px) {
+  .text-13 {
+    font-size: 0.8125rem;
+  }
+}
 
 .lh-13 {
   line-height: 0.8125rem;
+}
+@media (max-width: 767px) {
+  .lh-13 {
+    line-height: 0.8125rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1674,9 +1714,19 @@ section > img {
 .text-14 {
   font-size: 0.875rem;
 }
+@media (max-width: 767px) {
+  .text-14 {
+    font-size: 0.875rem;
+  }
+}
 
 .lh-14 {
   line-height: 0.875rem;
+}
+@media (max-width: 767px) {
+  .lh-14 {
+    line-height: 0.875rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1694,9 +1744,19 @@ section > img {
 .text-15 {
   font-size: 0.9375rem;
 }
+@media (max-width: 767px) {
+  .text-15 {
+    font-size: 0.9375rem;
+  }
+}
 
 .lh-15 {
   line-height: 0.9375rem;
+}
+@media (max-width: 767px) {
+  .lh-15 {
+    line-height: 0.9375rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1714,9 +1774,19 @@ section > img {
 .text-16 {
   font-size: 1rem;
 }
+@media (max-width: 767px) {
+  .text-16 {
+    font-size: 1rem;
+  }
+}
 
 .lh-16 {
   line-height: 1rem;
+}
+@media (max-width: 767px) {
+  .lh-16 {
+    line-height: 1rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1734,9 +1804,19 @@ section > img {
 .text-17 {
   font-size: 1.0625rem;
 }
+@media (max-width: 767px) {
+  .text-17 {
+    font-size: 1.0099526555rem;
+  }
+}
 
 .lh-17 {
   line-height: 1.0625rem;
+}
+@media (max-width: 767px) {
+  .lh-17 {
+    line-height: 1.0099526555rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1754,9 +1834,19 @@ section > img {
 .text-18 {
   font-size: 1.125rem;
 }
+@media (max-width: 767px) {
+  .text-18 {
+    font-size: 1.0249407492rem;
+  }
+}
 
 .lh-18 {
   line-height: 1.125rem;
+}
+@media (max-width: 767px) {
+  .lh-18 {
+    line-height: 1.0249407492rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1774,9 +1864,19 @@ section > img {
 .text-19 {
   font-size: 1.1875rem;
 }
+@media (max-width: 767px) {
+  .text-19 {
+    font-size: 1.0426866712rem;
+  }
+}
 
 .lh-19 {
   line-height: 1.1875rem;
+}
+@media (max-width: 767px) {
+  .lh-19 {
+    line-height: 1.0426866712rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1794,9 +1894,19 @@ section > img {
 .text-20 {
   font-size: 1.25rem;
 }
+@media (max-width: 767px) {
+  .text-20 {
+    font-size: 1.0625rem;
+  }
+}
 
 .lh-20 {
   line-height: 1.25rem;
+}
+@media (max-width: 767px) {
+  .lh-20 {
+    line-height: 1.0625rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1814,9 +1924,19 @@ section > img {
 .text-21 {
   font-size: 1.3125rem;
 }
+@media (max-width: 767px) {
+  .text-21 {
+    font-size: 1.0840078437rem;
+  }
+}
 
 .lh-21 {
   line-height: 1.3125rem;
+}
+@media (max-width: 767px) {
+  .lh-21 {
+    line-height: 1.0840078437rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1834,9 +1954,19 @@ section > img {
 .text-22 {
   font-size: 1.375rem;
 }
+@media (max-width: 767px) {
+  .text-22 {
+    font-size: 1.1069702011rem;
+  }
+}
 
 .lh-22 {
   line-height: 1.375rem;
+}
+@media (max-width: 767px) {
+  .lh-22 {
+    line-height: 1.1069702011rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1854,9 +1984,19 @@ section > img {
 .text-23 {
   font-size: 1.4375rem;
 }
+@media (max-width: 767px) {
+  .text-23 {
+    font-size: 1.1312172201rem;
+  }
+}
 
 .lh-23 {
   line-height: 1.4375rem;
+}
+@media (max-width: 767px) {
+  .lh-23 {
+    line-height: 1.1312172201rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1874,9 +2014,19 @@ section > img {
 .text-24 {
   font-size: 1.5rem;
 }
+@media (max-width: 767px) {
+  .text-24 {
+    font-size: 1.1566211975rem;
+  }
+}
 
 .lh-24 {
   line-height: 1.5rem;
+}
+@media (max-width: 767px) {
+  .lh-24 {
+    line-height: 1.1566211975rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1894,9 +2044,19 @@ section > img {
 .text-25 {
   font-size: 1.5625rem;
 }
+@media (max-width: 767px) {
+  .text-25 {
+    font-size: 1.1830819826rem;
+  }
+}
 
 .lh-25 {
   line-height: 1.5625rem;
+}
+@media (max-width: 767px) {
+  .lh-25 {
+    line-height: 1.1830819826rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1914,9 +2074,19 @@ section > img {
 .text-26 {
   font-size: 1.625rem;
 }
+@media (max-width: 767px) {
+  .text-26 {
+    font-size: 1.2105185454rem;
+  }
+}
 
 .lh-26 {
   line-height: 1.625rem;
+}
+@media (max-width: 767px) {
+  .lh-26 {
+    line-height: 1.2105185454rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1934,9 +2104,19 @@ section > img {
 .text-27 {
   font-size: 1.6875rem;
 }
+@media (max-width: 767px) {
+  .text-27 {
+    font-size: 1.2388637319rem;
+  }
+}
 
 .lh-27 {
   line-height: 1.6875rem;
+}
+@media (max-width: 767px) {
+  .lh-27 {
+    line-height: 1.2388637319rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1954,9 +2134,19 @@ section > img {
 .text-28 {
   font-size: 1.75rem;
 }
+@media (max-width: 767px) {
+  .text-28 {
+    font-size: 1.2680608158rem;
+  }
+}
 
 .lh-28 {
   line-height: 1.75rem;
+}
+@media (max-width: 767px) {
+  .lh-28 {
+    line-height: 1.2680608158rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1974,9 +2164,19 @@ section > img {
 .text-29 {
   font-size: 1.8125rem;
 }
+@media (max-width: 767px) {
+  .text-29 {
+    font-size: 1.2980611281rem;
+  }
+}
 
 .lh-29 {
   line-height: 1.8125rem;
+}
+@media (max-width: 767px) {
+  .lh-29 {
+    line-height: 1.2980611281rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1994,9 +2194,19 @@ section > img {
 .text-30 {
   font-size: 1.875rem;
 }
+@media (max-width: 767px) {
+  .text-30 {
+    font-size: 1.3288223703rem;
+  }
+}
 
 .lh-30 {
   line-height: 1.875rem;
+}
+@media (max-width: 767px) {
+  .lh-30 {
+    line-height: 1.3288223703rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2014,9 +2224,19 @@ section > img {
 .text-31 {
   font-size: 1.9375rem;
 }
+@media (max-width: 767px) {
+  .text-31 {
+    font-size: 1.3603073781rem;
+  }
+}
 
 .lh-31 {
   line-height: 1.9375rem;
+}
+@media (max-width: 767px) {
+  .lh-31 {
+    line-height: 1.3603073781rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2034,9 +2254,19 @@ section > img {
 .text-32 {
   font-size: 2rem;
 }
+@media (max-width: 767px) {
+  .text-32 {
+    font-size: 1.3924831921rem;
+  }
+}
 
 .lh-32 {
   line-height: 2rem;
+}
+@media (max-width: 767px) {
+  .lh-32 {
+    line-height: 1.3924831921rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2054,9 +2284,19 @@ section > img {
 .text-33 {
   font-size: 2.0625rem;
 }
+@media (max-width: 767px) {
+  .text-33 {
+    font-size: 1.4253203461rem;
+  }
+}
 
 .lh-33 {
   line-height: 2.0625rem;
+}
+@media (max-width: 767px) {
+  .lh-33 {
+    line-height: 1.4253203461rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2074,9 +2314,19 @@ section > img {
 .text-34 {
   font-size: 2.125rem;
 }
+@media (max-width: 767px) {
+  .text-34 {
+    font-size: 1.4587923098rem;
+  }
+}
 
 .lh-34 {
   line-height: 2.125rem;
+}
+@media (max-width: 767px) {
+  .lh-34 {
+    line-height: 1.4587923098rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2094,9 +2344,19 @@ section > img {
 .text-35 {
   font-size: 2.1875rem;
 }
+@media (max-width: 767px) {
+  .text-35 {
+    font-size: 1.4928750484rem;
+  }
+}
 
 .lh-35 {
   line-height: 2.1875rem;
+}
+@media (max-width: 767px) {
+  .lh-35 {
+    line-height: 1.4928750484rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2114,9 +2374,19 @@ section > img {
 .text-36 {
   font-size: 2.25rem;
 }
+@media (max-width: 767px) {
+  .text-36 {
+    font-size: 1.5275466669rem;
+  }
+}
 
 .lh-36 {
   line-height: 2.25rem;
+}
+@media (max-width: 767px) {
+  .lh-36 {
+    line-height: 1.5275466669rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2134,9 +2404,19 @@ section > img {
 .text-37 {
   font-size: 2.3125rem;
 }
+@media (max-width: 767px) {
+  .text-37 {
+    font-size: 1.562787121rem;
+  }
+}
 
 .lh-37 {
   line-height: 2.3125rem;
+}
+@media (max-width: 767px) {
+  .lh-37 {
+    line-height: 1.562787121rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2154,9 +2434,19 @@ section > img {
 .text-38 {
   font-size: 2.375rem;
 }
+@media (max-width: 767px) {
+  .text-38 {
+    font-size: 1.5985779798rem;
+  }
+}
 
 .lh-38 {
   line-height: 2.375rem;
+}
+@media (max-width: 767px) {
+  .lh-38 {
+    line-height: 1.5985779798rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2174,9 +2464,19 @@ section > img {
 .text-39 {
   font-size: 2.4375rem;
 }
+@media (max-width: 767px) {
+  .text-39 {
+    font-size: 1.634902227rem;
+  }
+}
 
 .lh-39 {
   line-height: 2.4375rem;
+}
+@media (max-width: 767px) {
+  .lh-39 {
+    line-height: 1.634902227rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2194,9 +2494,19 @@ section > img {
 .text-40 {
   font-size: 2.5rem;
 }
+@media (max-width: 767px) {
+  .text-40 {
+    font-size: 1.6717440956rem;
+  }
+}
 
 .lh-40 {
   line-height: 2.5rem;
+}
+@media (max-width: 767px) {
+  .lh-40 {
+    line-height: 1.6717440956rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2214,9 +2524,19 @@ section > img {
 .text-41 {
   font-size: 2.5625rem;
 }
+@media (max-width: 767px) {
+  .text-41 {
+    font-size: 1.7090889273rem;
+  }
+}
 
 .lh-41 {
   line-height: 2.5625rem;
+}
+@media (max-width: 767px) {
+  .lh-41 {
+    line-height: 1.7090889273rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2234,9 +2554,19 @@ section > img {
 .text-42 {
   font-size: 2.625rem;
 }
+@media (max-width: 767px) {
+  .text-42 {
+    font-size: 1.746923053rem;
+  }
+}
 
 .lh-42 {
   line-height: 2.625rem;
+}
+@media (max-width: 767px) {
+  .lh-42 {
+    line-height: 1.746923053rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2254,9 +2584,19 @@ section > img {
 .text-43 {
   font-size: 2.6875rem;
 }
+@media (max-width: 767px) {
+  .text-43 {
+    font-size: 1.7852336901rem;
+  }
+}
 
 .lh-43 {
   line-height: 2.6875rem;
+}
+@media (max-width: 767px) {
+  .lh-43 {
+    line-height: 1.7852336901rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2274,9 +2614,19 @@ section > img {
 .text-44 {
   font-size: 2.75rem;
 }
+@media (max-width: 767px) {
+  .text-44 {
+    font-size: 1.8240088545rem;
+  }
+}
 
 .lh-44 {
   line-height: 2.75rem;
+}
+@media (max-width: 767px) {
+  .lh-44 {
+    line-height: 1.8240088545rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2294,9 +2644,19 @@ section > img {
 .text-45 {
   font-size: 2.8125rem;
 }
+@media (max-width: 767px) {
+  .text-45 {
+    font-size: 1.8632372833rem;
+  }
+}
 
 .lh-45 {
   line-height: 2.8125rem;
+}
+@media (max-width: 767px) {
+  .lh-45 {
+    line-height: 1.8632372833rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2314,9 +2674,19 @@ section > img {
 .text-46 {
   font-size: 2.875rem;
 }
+@media (max-width: 767px) {
+  .text-46 {
+    font-size: 1.9029083684rem;
+  }
+}
 
 .lh-46 {
   line-height: 2.875rem;
+}
+@media (max-width: 767px) {
+  .lh-46 {
+    line-height: 1.9029083684rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2334,9 +2704,19 @@ section > img {
 .text-47 {
   font-size: 2.9375rem;
 }
+@media (max-width: 767px) {
+  .text-47 {
+    font-size: 1.9430120971rem;
+  }
+}
 
 .lh-47 {
   line-height: 2.9375rem;
+}
+@media (max-width: 767px) {
+  .lh-47 {
+    line-height: 1.9430120971rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2354,9 +2734,19 @@ section > img {
 .text-48 {
   font-size: 3rem;
 }
+@media (max-width: 767px) {
+  .text-48 {
+    font-size: 1.9835390009rem;
+  }
+}
 
 .lh-48 {
   line-height: 3rem;
+}
+@media (max-width: 767px) {
+  .lh-48 {
+    line-height: 1.9835390009rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2374,9 +2764,19 @@ section > img {
 .text-49 {
   font-size: 3.0625rem;
 }
+@media (max-width: 767px) {
+  .text-49 {
+    font-size: 2.0244801096rem;
+  }
+}
 
 .lh-49 {
   line-height: 3.0625rem;
+}
+@media (max-width: 767px) {
+  .lh-49 {
+    line-height: 2.0244801096rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2394,9 +2794,19 @@ section > img {
 .text-50 {
   font-size: 3.125rem;
 }
+@media (max-width: 767px) {
+  .text-50 {
+    font-size: 2.0658269108rem;
+  }
+}
 
 .lh-50 {
   line-height: 3.125rem;
+}
+@media (max-width: 767px) {
+  .lh-50 {
+    line-height: 2.0658269108rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2414,9 +2824,19 @@ section > img {
 .text-51 {
   font-size: 3.1875rem;
 }
+@media (max-width: 767px) {
+  .text-51 {
+    font-size: 2.1075713135rem;
+  }
+}
 
 .lh-51 {
   line-height: 3.1875rem;
+}
+@media (max-width: 767px) {
+  .lh-51 {
+    line-height: 2.1075713135rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2434,9 +2854,19 @@ section > img {
 .text-52 {
   font-size: 3.25rem;
 }
+@media (max-width: 767px) {
+  .text-52 {
+    font-size: 2.1497056156rem;
+  }
+}
 
 .lh-52 {
   line-height: 3.25rem;
+}
+@media (max-width: 767px) {
+  .lh-52 {
+    line-height: 2.1497056156rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2454,9 +2884,19 @@ section > img {
 .text-53 {
   font-size: 3.3125rem;
 }
+@media (max-width: 767px) {
+  .text-53 {
+    font-size: 2.1922224754rem;
+  }
+}
 
 .lh-53 {
   line-height: 3.3125rem;
+}
+@media (max-width: 767px) {
+  .lh-53 {
+    line-height: 2.1922224754rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2474,9 +2914,19 @@ section > img {
 .text-54 {
   font-size: 3.375rem;
 }
+@media (max-width: 767px) {
+  .text-54 {
+    font-size: 2.2351148849rem;
+  }
+}
 
 .lh-54 {
   line-height: 3.375rem;
+}
+@media (max-width: 767px) {
+  .lh-54 {
+    line-height: 2.2351148849rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2494,9 +2944,19 @@ section > img {
 .text-55 {
   font-size: 3.4375rem;
 }
+@media (max-width: 767px) {
+  .text-55 {
+    font-size: 2.2783761465rem;
+  }
+}
 
 .lh-55 {
   line-height: 3.4375rem;
+}
+@media (max-width: 767px) {
+  .lh-55 {
+    line-height: 2.2783761465rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2514,9 +2974,19 @@ section > img {
 .text-56 {
   font-size: 3.5rem;
 }
+@media (max-width: 767px) {
+  .text-56 {
+    font-size: 2.3219998513rem;
+  }
+}
 
 .lh-56 {
   line-height: 3.5rem;
+}
+@media (max-width: 767px) {
+  .lh-56 {
+    line-height: 2.3219998513rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2534,9 +3004,19 @@ section > img {
 .text-57 {
   font-size: 3.5625rem;
 }
+@media (max-width: 767px) {
+  .text-57 {
+    font-size: 2.3659798601rem;
+  }
+}
 
 .lh-57 {
   line-height: 3.5625rem;
+}
+@media (max-width: 767px) {
+  .lh-57 {
+    line-height: 2.3659798601rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2554,9 +3034,19 @@ section > img {
 .text-58 {
   font-size: 3.625rem;
 }
+@media (max-width: 767px) {
+  .text-58 {
+    font-size: 2.4103102854rem;
+  }
+}
 
 .lh-58 {
   line-height: 3.625rem;
+}
+@media (max-width: 767px) {
+  .lh-58 {
+    line-height: 2.4103102854rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2574,9 +3064,19 @@ section > img {
 .text-59 {
   font-size: 3.6875rem;
 }
+@media (max-width: 767px) {
+  .text-59 {
+    font-size: 2.4549854756rem;
+  }
+}
 
 .lh-59 {
   line-height: 3.6875rem;
+}
+@media (max-width: 767px) {
+  .lh-59 {
+    line-height: 2.4549854756rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2594,9 +3094,19 @@ section > img {
 .text-60 {
   font-size: 3.75rem;
 }
+@media (max-width: 767px) {
+  .text-60 {
+    font-size: 2.5rem;
+  }
+}
 
 .lh-60 {
   line-height: 3.75rem;
+}
+@media (max-width: 767px) {
+  .lh-60 {
+    line-height: 2.5rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2614,9 +3124,19 @@ section > img {
 .text-61 {
   font-size: 3.8125rem;
 }
+@media (max-width: 767px) {
+  .text-61 {
+    font-size: 2.5453486353rem;
+  }
+}
 
 .lh-61 {
   line-height: 3.8125rem;
+}
+@media (max-width: 767px) {
+  .lh-61 {
+    line-height: 2.5453486353rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2634,9 +3154,19 @@ section > img {
 .text-62 {
   font-size: 3.875rem;
 }
+@media (max-width: 767px) {
+  .text-62 {
+    font-size: 2.5910263536rem;
+  }
+}
 
 .lh-62 {
   line-height: 3.875rem;
+}
+@media (max-width: 767px) {
+  .lh-62 {
+    line-height: 2.5910263536rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2654,9 +3184,19 @@ section > img {
 .text-63 {
   font-size: 3.9375rem;
 }
+@media (max-width: 767px) {
+  .text-63 {
+    font-size: 2.6370283104rem;
+  }
+}
 
 .lh-63 {
   line-height: 3.9375rem;
+}
+@media (max-width: 767px) {
+  .lh-63 {
+    line-height: 2.6370283104rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2674,9 +3214,19 @@ section > img {
 .text-64 {
   font-size: 4rem;
 }
+@media (max-width: 767px) {
+  .text-64 {
+    font-size: 2.6833498349rem;
+  }
+}
 
 .lh-64 {
   line-height: 4rem;
+}
+@media (max-width: 767px) {
+  .lh-64 {
+    line-height: 2.6833498349rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2694,9 +3244,19 @@ section > img {
 .text-65 {
   font-size: 4.0625rem;
 }
+@media (max-width: 767px) {
+  .text-65 {
+    font-size: 2.7299864193rem;
+  }
+}
 
 .lh-65 {
   line-height: 4.0625rem;
+}
+@media (max-width: 767px) {
+  .lh-65 {
+    line-height: 2.7299864193rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2714,9 +3274,19 @@ section > img {
 .text-66 {
   font-size: 4.125rem;
 }
+@media (max-width: 767px) {
+  .text-66 {
+    font-size: 2.776933711rem;
+  }
+}
 
 .lh-66 {
   line-height: 4.125rem;
+}
+@media (max-width: 767px) {
+  .lh-66 {
+    line-height: 2.776933711rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2734,9 +3304,19 @@ section > img {
 .text-67 {
   font-size: 4.1875rem;
 }
+@media (max-width: 767px) {
+  .text-67 {
+    font-size: 2.8241875032rem;
+  }
+}
 
 .lh-67 {
   line-height: 4.1875rem;
+}
+@media (max-width: 767px) {
+  .lh-67 {
+    line-height: 2.8241875032rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2754,9 +3334,19 @@ section > img {
 .text-68 {
   font-size: 4.25rem;
 }
+@media (max-width: 767px) {
+  .text-68 {
+    font-size: 2.871743728rem;
+  }
+}
 
 .lh-68 {
   line-height: 4.25rem;
+}
+@media (max-width: 767px) {
+  .lh-68 {
+    line-height: 2.871743728rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2774,9 +3364,19 @@ section > img {
 .text-69 {
   font-size: 4.3125rem;
 }
+@media (max-width: 767px) {
+  .text-69 {
+    font-size: 2.9195984488rem;
+  }
+}
 
 .lh-69 {
   line-height: 4.3125rem;
+}
+@media (max-width: 767px) {
+  .lh-69 {
+    line-height: 2.9195984488rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2794,9 +3394,19 @@ section > img {
 .text-70 {
   font-size: 4.375rem;
 }
+@media (max-width: 767px) {
+  .text-70 {
+    font-size: 2.9677478538rem;
+  }
+}
 
 .lh-70 {
   line-height: 4.375rem;
+}
+@media (max-width: 767px) {
+  .lh-70 {
+    line-height: 2.9677478538rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2814,9 +3424,19 @@ section > img {
 .text-71 {
   font-size: 4.4375rem;
 }
+@media (max-width: 767px) {
+  .text-71 {
+    font-size: 3.0161882499rem;
+  }
+}
 
 .lh-71 {
   line-height: 4.4375rem;
+}
+@media (max-width: 767px) {
+  .lh-71 {
+    line-height: 3.0161882499rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2834,9 +3454,19 @@ section > img {
 .text-72 {
   font-size: 4.5rem;
 }
+@media (max-width: 767px) {
+  .text-72 {
+    font-size: 3.0649160567rem;
+  }
+}
 
 .lh-72 {
   line-height: 4.5rem;
+}
+@media (max-width: 767px) {
+  .lh-72 {
+    line-height: 3.0649160567rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2854,9 +3484,19 @@ section > img {
 .text-73 {
   font-size: 4.5625rem;
 }
+@media (max-width: 767px) {
+  .text-73 {
+    font-size: 3.1139278012rem;
+  }
+}
 
 .lh-73 {
   line-height: 4.5625rem;
+}
+@media (max-width: 767px) {
+  .lh-73 {
+    line-height: 3.1139278012rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2874,9 +3514,19 @@ section > img {
 .text-74 {
   font-size: 4.625rem;
 }
+@media (max-width: 767px) {
+  .text-74 {
+    font-size: 3.1632201128rem;
+  }
+}
 
 .lh-74 {
   line-height: 4.625rem;
+}
+@media (max-width: 767px) {
+  .lh-74 {
+    line-height: 3.1632201128rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2894,9 +3544,19 @@ section > img {
 .text-75 {
   font-size: 4.6875rem;
 }
+@media (max-width: 767px) {
+  .text-75 {
+    font-size: 3.2127897184rem;
+  }
+}
 
 .lh-75 {
   line-height: 4.6875rem;
+}
+@media (max-width: 767px) {
+  .lh-75 {
+    line-height: 3.2127897184rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2914,9 +3574,19 @@ section > img {
 .text-76 {
   font-size: 4.75rem;
 }
+@media (max-width: 767px) {
+  .text-76 {
+    font-size: 3.2626334383rem;
+  }
+}
 
 .lh-76 {
   line-height: 4.75rem;
+}
+@media (max-width: 767px) {
+  .lh-76 {
+    line-height: 3.2626334383rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2934,9 +3604,19 @@ section > img {
 .text-77 {
   font-size: 4.8125rem;
 }
+@media (max-width: 767px) {
+  .text-77 {
+    font-size: 3.3127481816rem;
+  }
+}
 
 .lh-77 {
   line-height: 4.8125rem;
+}
+@media (max-width: 767px) {
+  .lh-77 {
+    line-height: 3.3127481816rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2954,9 +3634,19 @@ section > img {
 .text-78 {
   font-size: 4.875rem;
 }
+@media (max-width: 767px) {
+  .text-78 {
+    font-size: 3.3631309425rem;
+  }
+}
 
 .lh-78 {
   line-height: 4.875rem;
+}
+@media (max-width: 767px) {
+  .lh-78 {
+    line-height: 3.3631309425rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2974,9 +3664,19 @@ section > img {
 .text-79 {
   font-size: 4.9375rem;
 }
+@media (max-width: 767px) {
+  .text-79 {
+    font-size: 3.4137787967rem;
+  }
+}
 
 .lh-79 {
   line-height: 4.9375rem;
+}
+@media (max-width: 767px) {
+  .lh-79 {
+    line-height: 3.4137787967rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2994,9 +3694,19 @@ section > img {
 .text-80 {
   font-size: 5rem;
 }
+@media (max-width: 767px) {
+  .text-80 {
+    font-size: 3.4646888978rem;
+  }
+}
 
 .lh-80 {
   line-height: 5rem;
+}
+@media (max-width: 767px) {
+  .lh-80 {
+    line-height: 3.4646888978rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -3014,9 +3724,19 @@ section > img {
 .text-81 {
   font-size: 5.0625rem;
 }
+@media (max-width: 767px) {
+  .text-81 {
+    font-size: 3.5158584741rem;
+  }
+}
 
 .lh-81 {
   line-height: 5.0625rem;
+}
+@media (max-width: 767px) {
+  .lh-81 {
+    line-height: 3.5158584741rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -3034,9 +3754,19 @@ section > img {
 .text-82 {
   font-size: 5.125rem;
 }
+@media (max-width: 767px) {
+  .text-82 {
+    font-size: 3.5672848255rem;
+  }
+}
 
 .lh-82 {
   line-height: 5.125rem;
+}
+@media (max-width: 767px) {
+  .lh-82 {
+    line-height: 3.5672848255rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -3054,9 +3784,19 @@ section > img {
 .text-83 {
   font-size: 5.1875rem;
 }
+@media (max-width: 767px) {
+  .text-83 {
+    font-size: 3.6189653206rem;
+  }
+}
 
 .lh-83 {
   line-height: 5.1875rem;
+}
+@media (max-width: 767px) {
+  .lh-83 {
+    line-height: 3.6189653206rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -3074,9 +3814,19 @@ section > img {
 .text-84 {
   font-size: 5.25rem;
 }
+@media (max-width: 767px) {
+  .text-84 {
+    font-size: 3.6708973938rem;
+  }
+}
 
 .lh-84 {
   line-height: 5.25rem;
+}
+@media (max-width: 767px) {
+  .lh-84 {
+    line-height: 3.6708973938rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -3094,9 +3844,19 @@ section > img {
 .text-85 {
   font-size: 5.3125rem;
 }
+@media (max-width: 767px) {
+  .text-85 {
+    font-size: 3.723078543rem;
+  }
+}
 
 .lh-85 {
   line-height: 5.3125rem;
+}
+@media (max-width: 767px) {
+  .lh-85 {
+    line-height: 3.723078543rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -3114,9 +3874,19 @@ section > img {
 .text-86 {
   font-size: 5.375rem;
 }
+@media (max-width: 767px) {
+  .text-86 {
+    font-size: 3.775506327rem;
+  }
+}
 
 .lh-86 {
   line-height: 5.375rem;
+}
+@media (max-width: 767px) {
+  .lh-86 {
+    line-height: 3.775506327rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -3134,9 +3904,19 @@ section > img {
 .text-87 {
   font-size: 5.4375rem;
 }
+@media (max-width: 767px) {
+  .text-87 {
+    font-size: 3.828178363rem;
+  }
+}
 
 .lh-87 {
   line-height: 5.4375rem;
+}
+@media (max-width: 767px) {
+  .lh-87 {
+    line-height: 3.828178363rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -3154,9 +3934,19 @@ section > img {
 .text-88 {
   font-size: 5.5rem;
 }
+@media (max-width: 767px) {
+  .text-88 {
+    font-size: 3.8810923247rem;
+  }
+}
 
 .lh-88 {
   line-height: 5.5rem;
+}
+@media (max-width: 767px) {
+  .lh-88 {
+    line-height: 3.8810923247rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -3174,9 +3964,19 @@ section > img {
 .text-89 {
   font-size: 5.5625rem;
 }
+@media (max-width: 767px) {
+  .text-89 {
+    font-size: 3.9342459399rem;
+  }
+}
 
 .lh-89 {
   line-height: 5.5625rem;
+}
+@media (max-width: 767px) {
+  .lh-89 {
+    line-height: 3.9342459399rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -3194,9 +3994,19 @@ section > img {
 .text-90 {
   font-size: 5.625rem;
 }
+@media (max-width: 767px) {
+  .text-90 {
+    font-size: 3.9876369887rem;
+  }
+}
 
 .lh-90 {
   line-height: 5.625rem;
+}
+@media (max-width: 767px) {
+  .lh-90 {
+    line-height: 3.9876369887rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -3214,9 +4024,19 @@ section > img {
 .text-91 {
   font-size: 5.6875rem;
 }
+@media (max-width: 767px) {
+  .text-91 {
+    font-size: 4.0412633015rem;
+  }
+}
 
 .lh-91 {
   line-height: 5.6875rem;
+}
+@media (max-width: 767px) {
+  .lh-91 {
+    line-height: 4.0412633015rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -3234,9 +4054,19 @@ section > img {
 .text-92 {
   font-size: 5.75rem;
 }
+@media (max-width: 767px) {
+  .text-92 {
+    font-size: 4.0951227573rem;
+  }
+}
 
 .lh-92 {
   line-height: 5.75rem;
+}
+@media (max-width: 767px) {
+  .lh-92 {
+    line-height: 4.0951227573rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -3254,9 +4084,19 @@ section > img {
 .text-93 {
   font-size: 5.8125rem;
 }
+@media (max-width: 767px) {
+  .text-93 {
+    font-size: 4.1492132821rem;
+  }
+}
 
 .lh-93 {
   line-height: 5.8125rem;
+}
+@media (max-width: 767px) {
+  .lh-93 {
+    line-height: 4.1492132821rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -3274,9 +4114,19 @@ section > img {
 .text-94 {
   font-size: 5.875rem;
 }
+@media (max-width: 767px) {
+  .text-94 {
+    font-size: 4.2035328468rem;
+  }
+}
 
 .lh-94 {
   line-height: 5.875rem;
+}
+@media (max-width: 767px) {
+  .lh-94 {
+    line-height: 4.2035328468rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -3294,9 +4144,19 @@ section > img {
 .text-95 {
   font-size: 5.9375rem;
 }
+@media (max-width: 767px) {
+  .text-95 {
+    font-size: 4.2580794661rem;
+  }
+}
 
 .lh-95 {
   line-height: 5.9375rem;
+}
+@media (max-width: 767px) {
+  .lh-95 {
+    line-height: 4.2580794661rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -3314,9 +4174,19 @@ section > img {
 .text-96 {
   font-size: 6rem;
 }
+@media (max-width: 767px) {
+  .text-96 {
+    font-size: 4.312851197rem;
+  }
+}
 
 .lh-96 {
   line-height: 6rem;
+}
+@media (max-width: 767px) {
+  .lh-96 {
+    line-height: 4.312851197rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -3334,9 +4204,19 @@ section > img {
 .text-97 {
   font-size: 6.0625rem;
 }
+@media (max-width: 767px) {
+  .text-97 {
+    font-size: 4.367846137rem;
+  }
+}
 
 .lh-97 {
   line-height: 6.0625rem;
+}
+@media (max-width: 767px) {
+  .lh-97 {
+    line-height: 4.367846137rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -3354,9 +4234,19 @@ section > img {
 .text-98 {
   font-size: 6.125rem;
 }
+@media (max-width: 767px) {
+  .text-98 {
+    font-size: 4.4230624233rem;
+  }
+}
 
 .lh-98 {
   line-height: 6.125rem;
+}
+@media (max-width: 767px) {
+  .lh-98 {
+    line-height: 4.4230624233rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -3374,9 +4264,19 @@ section > img {
 .text-99 {
   font-size: 6.1875rem;
 }
+@media (max-width: 767px) {
+  .text-99 {
+    font-size: 4.478498231rem;
+  }
+}
 
 .lh-99 {
   line-height: 6.1875rem;
+}
+@media (max-width: 767px) {
+  .lh-99 {
+    line-height: 4.478498231rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -3394,9 +4294,19 @@ section > img {
 .text-100 {
   font-size: 6.25rem;
 }
+@media (max-width: 767px) {
+  .text-100 {
+    font-size: 4.5341517722rem;
+  }
+}
 
 .lh-100 {
   line-height: 6.25rem;
+}
+@media (max-width: 767px) {
+  .lh-100 {
+    line-height: 4.5341517722rem;
+  }
 }
 
 .bg-1 {
