@@ -12,7 +12,7 @@ import { Parallax } from "./Parallax.js";
 import { Memberships } from "./Memberships.js";
 import { SearchResults } from "./SearchResults.js";
 import { ShrinkText } from "./ShrinkText.js";
-import { Testimonials } from "./Testimonials.js";
+import { TestimonialsNext } from "./TestimonialsNext.js";
 import { FaqElements } from "./FaqElements.js";
 import { Stagger } from "./Stagger.js";
 import { HeadingWave } from "./HeadingWave.js";
@@ -99,7 +99,7 @@ if (typeof document !== "undefined") {
 
         const testimonialElements = document.querySelectorAll("[testimonial]");
         testimonialElements.forEach(element => {
-            new Testimonials(element);
+            new TestimonialsNext(element);
         });
 
         const faqElements = document.querySelectorAll("[faq]");

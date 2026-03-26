@@ -367,6 +367,17 @@
     }
 }
 
+section:has(.mobile-fullw) {
+    @include breakpoint(medium) {
+        width: 100%;
+        padding: 0;
+
+        .slot {
+            border-radius: 0;
+        }
+    }
+}
+
 .sm-auto {
     width: auto;
 }

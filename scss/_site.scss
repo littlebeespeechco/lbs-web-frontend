@@ -123,3 +123,37 @@ body {
     mix-blend-mode: unset;
     -webkit-text-fill-color: unset;
 }
+
+.testimonials {
+    &:after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 1px;
+        background-color: cyan;
+        left: 2.8125rem;
+    }
+
+    .testimonials-controls {
+        @include breakpoint('medium') {
+            display: none;
+        }
+    }
+}
+
+.testimonials-wrapper {
+    overflow: visible;
+    cursor: grab;
+    &:active {
+        cursor: grabbing;
+    }
+
+    > * {
+        scroll-snap-align: center;
+        webkit-user-drag: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+}

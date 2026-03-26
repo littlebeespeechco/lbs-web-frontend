@@ -7,8 +7,6 @@ export class Memberships {
         this.elements();
         this.bind();
         if (window.location.hash) {
-            console.log("works?");
-            
             const tabName = window.location.hash.substring(1);
             const index = this.togglerLinks.findIndex(link => link.textContent.toLowerCase() === tabName);
             if (index !== -1) {

@@ -38,8 +38,23 @@
     &-title {
         @include editor-notice;
     }
+
     &-wrapper {
-        flex-wrap: wrap;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        scroll-snap-align: center;
+        scrollbar-width: thin;
+        scrollbar-color: white transparent;
+
+        > * {
+            scroll-snap-align: center;
+            webkit-user-drag: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
     }
 }
 

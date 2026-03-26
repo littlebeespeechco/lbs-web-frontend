@@ -2249,7 +2249,6 @@
       this.elements();
       this.bind();
       if (window.location.hash) {
-        console.log("works?");
         const tabName = window.location.hash.substring(1);
         const index = this.togglerLinks.findIndex((link) => link.textContent.toLowerCase() === tabName);
         if (index !== -1) {
@@ -2428,87 +2427,133 @@
     }
   };
 
-  // js/Testimonials.js
-  var Testimonials = class {
+  // js/TestimonialsNext.js
+  var TestimonialsNext = class {
     constructor(element) {
       this.element = element;
-      this.wrapper = this.element.querySelector(".testimonials-wrapper");
+      this.currentPage = null;
+      this.previousBreakpoint = null;
       this.elements();
-      this.sizing();
       this.bind();
+      this.sizing();
     }
     elements() {
-      this.currentBreakpoint = null;
-      this.currentPage = null;
-      this.testimonials = this.element.querySelectorAll(".testimonial");
+      this.wrapper = this.element.querySelector(".testimonials-wrapper");
+      this.items = this.wrapper.querySelectorAll(".testimonial");
+      this.bullets = this.element.querySelector(".testimonials-bullets");
       this.next = this.element.querySelector(".testimonials-controls-next");
       this.prev = this.element.querySelector(".testimonials-controls-prev");
-      this.indicators = this.element.querySelector(".testimonials-bullets");
-      this.indicatorsBullets = this.indicators.querySelectorAll(".testimonials-bullet");
     }
     sizing() {
-      this.breakpoint = window.innerWidth < 768 ? "mobile" : window.innerWidth < 992 ? "tablet" : "desktop";
-      this.itemsPerPage = this.breakpoint === "mobile" ? 1 : this.breakpoint === "tablet" ? 2 : 3;
-      this.totalPages = Math.ceil(this.testimonials.length / this.itemsPerPage);
-      this.testimonialWidth = this.testimonials[0].getBoundingClientRect().width;
-      this.testimonialGap = parseInt(getComputedStyle(this.wrapper).columnGap);
-      const changePagesCount = () => {
-        this.indicators.innerHTML = "";
+      this.viewPortBreakpoint = window.innerWidth < 768 ? "mobile" : window.innerWidth < 992 ? "tablet" : "desktop";
+      if (this.viewPortBreakpoint !== this.previousBreakpoint) {
+        this.itemsPerPage = this.viewPortBreakpoint === "mobile" ? 1 : this.viewPortBreakpoint === "tablet" ? 2 : 3;
+        this.totalPages = Math.ceil(this.items.length / this.itemsPerPage);
+        this.bullets.innerHTML = "";
         for (let i2 = 0; i2 < this.totalPages; i2++) {
-          const indicator = document.createElement("div");
-          indicator.classList.add("testimonials-bullet");
-          this.indicators.appendChild(indicator);
+          const bullet = document.createElement("div");
+          bullet.classList.add("testimonials-bullet");
+          this.bullets.appendChild(bullet);
         }
-        this.indicatorsBullets = this.indicators.querySelectorAll(".testimonials-bullet");
+        this.lastPageItemsQuantity = this.items.length % this.itemsPerPage;
+        this.indicatorsBullets = this.bullets.querySelectorAll(".testimonials-bullet");
         this.indicatorsBullets[0].classList.add("active", "from-left");
-        this.indicatorsBullets.forEach((bullet, index) => {
-          bullet.addEventListener("click", (e2) => {
-            this.update(index);
-          });
-        });
-      };
-      if (this.breakpoint !== this.currentBreakpoint) {
-        this.currentBreakpoint = this.breakpoint;
-        changePagesCount();
-        this.update(0);
       }
-    }
-    create() {
-      const testimonialOriginal = this.element.querySelector(".testimonial");
-      for (let i2 = 0; i2 < 8; i2++) {
-        const testimonial = testimonialOriginal.cloneNode(true);
-        this.wrapper.appendChild(testimonial);
+      this.wrapperPadding = parseFloat(getComputedStyle(this.wrapper).paddingLeft) + parseFloat(getComputedStyle(this.wrapper).paddingRight);
+      this.itemsGap = parseFloat(getComputedStyle(this.wrapper).columnGap);
+      this.viewportWidth = this.element.offsetWidth - this.wrapperPadding;
+      this.itemsWidth = Math.ceil(this.viewPortBreakpoint === "mobile" ? this.viewportWidth * 0.8 : (this.viewportWidth - this.itemsGap * (this.itemsPerPage - 1)) / this.itemsPerPage);
+      this.pos.stored = -this.currentPage * (this.itemsWidth + this.itemsGap) * this.itemsPerPage + (this.currentPage == this.totalPages - 1 ? (this.itemsPerPage - this.lastPageItemsQuantity) * (this.itemsWidth + this.itemsGap) : 0);
+      gsap.set(this.items, {
+        width: this.itemsWidth
+      });
+      if (this.viewPortBreakpoint !== this.previousBreakpoint) {
+        this.currentPage = null;
+        this.changePage(0);
+        this.previousBreakpoint = this.viewPortBreakpoint;
       }
     }
     bind() {
+      this.pos = {
+        new: 0,
+        old: 0,
+        stored: 0,
+        delta: 0,
+        eased: 0,
+        dragging: false
+      };
+      this.mousedownEvents = (e2) => {
+        this.pos.dragging = true;
+        this.pos.delta = 0;
+        this.pos.eased = this.pos.stored;
+        this.pos.old = e2.touches ? e2.touches[0].clientX : e2.clientX;
+      };
+      this.mousemoveEvents = (e2) => {
+        if (!this.pos.dragging) return;
+        this.pos.new = e2.touches ? e2.touches[0].clientX : e2.clientX;
+        this.pos.delta = this.pos.new - this.pos.old;
+      };
+      this.mouseupEvents = () => {
+        this.pos.dragging = false;
+        if (this.pos.delta < -200 && this.currentPage < this.totalPages - 1) {
+          this.changePage(this.currentPage + 1);
+        } else if (this.pos.delta > 200 && this.currentPage > 0) {
+          this.changePage(this.currentPage - 1);
+        } else {
+          this.pos.stored = -this.currentPage * (this.itemsWidth + this.itemsGap) * this.itemsPerPage + (this.currentPage == this.totalPages - 1 ? (this.itemsPerPage - this.lastPageItemsQuantity) * (this.itemsWidth + this.itemsGap) : 0);
+        }
+        this.pos.delta = 0;
+      };
       this.next.addEventListener("click", () => {
         if (this.currentPage === this.totalPages - 1) {
           return;
         }
-        this.update(Math.min(this.totalPages - 1, this.currentPage + 1));
+        this.changePage(this.currentPage + 1);
       });
       this.prev.addEventListener("click", () => {
         if (this.currentPage === 0) {
           return;
         }
-        this.update(Math.max(0, this.currentPage - 1));
+        this.changePage(this.currentPage - 1);
       });
+      window.addEventListener("mousedown", this.mousedownEvents);
+      window.addEventListener("mousemove", this.mousemoveEvents);
+      window.addEventListener("mouseup", this.mouseupEvents);
+      window.addEventListener("touchstart", this.mousedownEvents);
+      window.addEventListener("touchmove", this.mousemoveEvents);
+      window.addEventListener("touchend", this.mouseupEvents);
+      this.ticker = () => {
+        this.pos.eased += (this.pos.stored + this.pos.delta - this.pos.eased) * 0.05;
+        gsap.to(this.wrapper, {
+          x: this.pos.eased,
+          duration: 0.5,
+          ease: "power2.out"
+        });
+      };
       window.addEventListener("resize", () => {
         this.sizing();
       });
+      gsap.ticker.add(this.ticker);
     }
-    update(newPage) {
-      let page = Math.min(this.testimonials.length - this.itemsPerPage, newPage * this.itemsPerPage);
-      this.indicatorsBullets[newPage].classList.add("active", newPage > this.currentPage ? "from-left" : "from-right");
+    changePage(page) {
+      this.indicatorsBullets[page].classList.add("active", page > this.currentPage ? "from-left" : "from-right");
       if (this.currentPage !== null) {
         this.indicatorsBullets[this.currentPage].classList.remove("active", "from-left", "from-right");
       }
-      gsap.to(this.testimonials, {
-        x: page * (this.testimonialWidth + this.testimonialGap) * -1,
-        ease: "elastic.out(1, 0.9)",
-        duration: 2
+      this.currentPage = page;
+      this.pos.stored = -this.currentPage * (this.itemsWidth + this.itemsGap) * this.itemsPerPage + (this.currentPage == this.totalPages - 1 ? (this.itemsPerPage - this.lastPageItemsQuantity) * (this.itemsWidth + this.itemsGap) : 0);
+      gsap.to(this.wrapper, {
+        x: this.pos.stored,
+        duration: 1,
+        ease: "power2.out"
       });
-      this.currentPage = newPage;
+      this.bullets.querySelectorAll(".testimonials-bullet").forEach((bullet, index) => {
+        bullet.classList.remove("active");
+      });
+      this.bullets.querySelectorAll(".testimonials-bullet")[this.currentPage].classList.add("active");
+    }
+    toggleSnap(dragging = false) {
+      dragging ? this.wrapper.classList.add("snap") : this.wrapper.classList.remove("snap");
     }
   };
 
@@ -6037,7 +6082,7 @@
       });
       const testimonialElements = document.querySelectorAll("[testimonial]");
       testimonialElements.forEach((element) => {
-        new Testimonials(element);
+        new TestimonialsNext(element);
       });
       const faqElements = document.querySelectorAll("[faq]");
       faqElements.forEach((element) => {
