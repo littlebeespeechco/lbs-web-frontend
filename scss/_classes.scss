@@ -177,115 +177,117 @@
 }
 
 .mb {
-    &-0 { margin-bottom: 0; }
+    &-0   { margin-bottom: 0; }
     &-xxs { margin-bottom: $margin-xxs-12; }
-    &-xs { margin-bottom: $margin-xs-18; }
-    &-s { margin-bottom: $margin-s-30; }
-    &-r { margin-bottom: ptr(60); }
-    &-m { margin-bottom: $margin-m-75; }
-    &-l { margin-bottom: $margin-l-100; }
+    &-xs  { margin-bottom: $margin-xs-18;  @include breakpoint(small) { margin-bottom: $margin-xxs-12; } }
+    &-s   { margin-bottom: $margin-s-30;   @include breakpoint(small) { margin-bottom: $margin-xs-18; } }
+    &-sr  { margin-bottom: ptr(45);        @include breakpoint(small) { margin-bottom: $margin-s-30; } }
+    &-r   { margin-bottom: ptr(60);        @include breakpoint(small) { margin-bottom: $margin-s-30; } }
+    &-m   { margin-bottom: $margin-m-75;   @include breakpoint(small) { margin-bottom: ptr(60); } }
+    &-l   { margin-bottom: $margin-l-100;  @include breakpoint(small) { margin-bottom: $margin-m-75; } }
     &-remove {
         > * {
             margin-bottom: 0!important;
         }
     }
 
-    &-sm-0 { @include breakpoint(small) { margin-bottom: 0; } }
+    &-sm-0   { @include breakpoint(small) { margin-bottom: 0; } }
     &-sm-xxs { @include breakpoint(small) { margin-bottom: $margin-xxs-12; } }
-    &-sm-xs { @include breakpoint(small) { margin-bottom: $margin-xs-18; } }
-    &-sm-s { @include breakpoint(small) { margin-bottom: $margin-s-30; } }
-    &-sm-r { @include breakpoint(small) { margin-bottom: ptr(60); } }
-    &-sm-m { @include breakpoint(small) { margin-bottom: $margin-m-75; } }
-    &-sm-l { @include breakpoint(small) { margin-bottom: $margin-l-100; } }
+    &-sm-xs  { @include breakpoint(small) { margin-bottom: $margin-xs-18; } }
+    &-sm-s   { @include breakpoint(small) { margin-bottom: $margin-s-30; } }
+    &-sm-sr  { @include breakpoint(small) { margin-bottom: ptr(45); } }
+    &-sm-r   { @include breakpoint(small) { margin-bottom: ptr(60); } }
+    &-sm-m   { @include breakpoint(small) { margin-bottom: $margin-m-75; } }
+    &-sm-l   { @include breakpoint(small) { margin-bottom: $margin-l-100; } }
 }
 
 .mt {
-    &-0 { margin-top: 0; }
+    &-0   { margin-top: 0; }
     &-xxs { margin-top: $margin-xxs-12; }
-    &-xs { margin-top: $margin-xs-18; }
-    &-s { margin-top: $margin-s-30; }
-    &-r { margin-top: ptr(60); }
-    &-m { margin-top: $margin-m-75; }
-    &-l { margin-top: $margin-l-100; }
+    &-xs  { margin-top: $margin-xs-18;  @include breakpoint(small) { margin-top: $margin-xxs-12; } }
+    &-s   { margin-top: $margin-s-30;   @include breakpoint(small) { margin-top: $margin-xs-18; } }
+    &-r   { margin-top: ptr(60);        @include breakpoint(small) { margin-top: $margin-s-30; } }
+    &-m   { margin-top: $margin-m-75;   @include breakpoint(small) { margin-top: ptr(60); } }
+    &-l   { margin-top: $margin-l-100;  @include breakpoint(small) { margin-top: $margin-m-75; } }
 
-    &-sm-0 { @include breakpoint(small) { margin-top: 0; } }
+    &-sm-0   { @include breakpoint(small) { margin-top: 0; } }
     &-sm-xxs { @include breakpoint(small) { margin-top: $margin-xxs-12; } }
-    &-sm-xs { @include breakpoint(small) { margin-top: $margin-xs-18; } }
-    &-sm-s { @include breakpoint(small) { margin-top: $margin-s-30; } }
-    &-sm-r { @include breakpoint(small) { margin-top: ptr(60); } }
-    &-sm-m { @include breakpoint(small) { margin-top: $margin-m-75; } }
-    &-sm-l { @include breakpoint(small) { margin-top: $margin-l-100; } }
+    &-sm-xs  { @include breakpoint(small) { margin-top: $margin-xs-18; } }
+    &-sm-s   { @include breakpoint(small) { margin-top: $margin-s-30; } }
+    &-sm-r   { @include breakpoint(small) { margin-top: ptr(60); } }
+    &-sm-m   { @include breakpoint(small) { margin-top: $margin-m-75; } }
+    &-sm-l   { @include breakpoint(small) { margin-top: $margin-l-100; } }
 }
 
 .ml {
     &-auto { margin-left: auto; }
-    &-0 { margin-left: 0; }
+    &-0   { margin-left: 0; }
     &-xxs { margin-left: $margin-xxs-12; }
-    &-xs { margin-left: $margin-xs-18; }
-    &-s { margin-left: $margin-s-30; }
-    &-r { margin-left: ptr(60); }
-    &-m { margin-left: $margin-m-75; }
-    &-l { margin-left: $margin-l-100; }
+    &-xs  { margin-left: $margin-xs-18;  @include breakpoint(small) { margin-left: $margin-xxs-12; } }
+    &-s   { margin-left: $margin-s-30;   @include breakpoint(small) { margin-left: $margin-xs-18; } }
+    &-r   { margin-left: ptr(60);        @include breakpoint(small) { margin-left: $margin-s-30; } }
+    &-m   { margin-left: $margin-m-75;   @include breakpoint(small) { margin-left: ptr(60); } }
+    &-l   { margin-left: $margin-l-100;  @include breakpoint(small) { margin-left: $margin-m-75; } }
 
-    &-sm-0 { @include breakpoint(small) { margin-left: 0; } }
+    &-sm-0   { @include breakpoint(small) { margin-left: 0; } }
     &-sm-xxs { @include breakpoint(small) { margin-left: $margin-xxs-12; } }
-    &-sm-xs { @include breakpoint(small) { margin-left: $margin-xs-18; } }
-    &-sm-s { @include breakpoint(small) { margin-left: $margin-s-30; } }
-    &-sm-r { @include breakpoint(small) { margin-left: ptr(60); } }
-    &-sm-m { @include breakpoint(small) { margin-left: $margin-m-75; } }
-    &-sm-l { @include breakpoint(small) { margin-left: $margin-l-100; } }
+    &-sm-xs  { @include breakpoint(small) { margin-left: $margin-xs-18; } }
+    &-sm-s   { @include breakpoint(small) { margin-left: $margin-s-30; } }
+    &-sm-r   { @include breakpoint(small) { margin-left: ptr(60); } }
+    &-sm-m   { @include breakpoint(small) { margin-left: $margin-m-75; } }
+    &-sm-l   { @include breakpoint(small) { margin-left: $margin-l-100; } }
 }
 
 .mr {
     &-auto { margin-right: auto; }
-    &-0 { margin-right: 0; }
+    &-0   { margin-right: 0; }
     &-xxs { margin-right: $margin-xxs-12; }
-    &-xs { margin-right: $margin-xs-18; }
-    &-s { margin-right: $margin-s-30; }
-    &-r { margin-right: ptr(60); }
-    &-m { margin-right: $margin-m-75; }
-    &-l { margin-right: $margin-l-100; }
+    &-xs  { margin-right: $margin-xs-18;  @include breakpoint(small) { margin-right: $margin-xxs-12; } }
+    &-s   { margin-right: $margin-s-30;   @include breakpoint(small) { margin-right: $margin-xs-18; } }
+    &-r   { margin-right: ptr(60);        @include breakpoint(small) { margin-right: $margin-s-30; } }
+    &-m   { margin-right: $margin-m-75;   @include breakpoint(small) { margin-right: ptr(60); } }
+    &-l   { margin-right: $margin-l-100;  @include breakpoint(small) { margin-right: $margin-m-75; } }
 
-    &-sm-0 { @include breakpoint(small) { margin-right: 0; } }
+    &-sm-0   { @include breakpoint(small) { margin-right: 0; } }
     &-sm-xxs { @include breakpoint(small) { margin-right: $margin-xxs-12; } }
-    &-sm-xs { @include breakpoint(small) { margin-right: $margin-xs-18; } }
-    &-sm-s { @include breakpoint(small) { margin-right: $margin-s-30; } }
-    &-sm-r { @include breakpoint(small) { margin-right: ptr(60); } }
-    &-sm-m { @include breakpoint(small) { margin-right: $margin-m-75; } }
-    &-sm-l { @include breakpoint(small) { margin-right: $margin-l-100; } }
+    &-sm-xs  { @include breakpoint(small) { margin-right: $margin-xs-18; } }
+    &-sm-s   { @include breakpoint(small) { margin-right: $margin-s-30; } }
+    &-sm-r   { @include breakpoint(small) { margin-right: ptr(60); } }
+    &-sm-m   { @include breakpoint(small) { margin-right: $margin-m-75; } }
+    &-sm-l   { @include breakpoint(small) { margin-right: $margin-l-100; } }
 }
 
 .pv {
-    &-s { padding-top: $padding-s-15; padding-bottom: $padding-s-15; }
-    &-r { padding-top: ptr(35); padding-bottom: ptr(35); }
-    &-m { padding-top: $padding-m-45; padding-bottom: $padding-m-45; }
-    &-l { padding-top: $padding-l-80; padding-bottom: $padding-l-80; }
-    &-xl { padding-top: $margin-l-100; padding-bottom: $margin-l-100; }
-    &-hero { padding-top: ptr(255); padding-bottom: $margin-l-100; }
-    
-    &-sm-0 { @include breakpoint(small) { padding-top: 0; padding-bottom: 0; } }
-    &-sm-s { @include breakpoint(small) { padding-top: $padding-s-15; padding-bottom: $padding-s-15; } }
-    &-sm-r { @include breakpoint(small) { padding-top: ptr(35); padding-bottom: ptr(35); } }
-    &-sm-m { @include breakpoint(small) { padding-top: $padding-m-45; padding-bottom: $padding-m-45; } }
-    &-sm-l { @include breakpoint(small) { padding-top: $padding-l-80; padding-bottom: $padding-l-80; } }
-    &-sm-xl { @include breakpoint(small) { padding-top: $margin-l-100; padding-bottom: $margin-l-100; } }
+    &-s    { padding-top: $padding-s-15; padding-bottom: $padding-s-15; }
+    &-r    { padding-top: ptr(35);       padding-bottom: ptr(35);       @include breakpoint(small) { padding-top: $padding-s-15;  padding-bottom: $padding-s-15; } }
+    &-m    { padding-top: $padding-m-45; padding-bottom: $padding-m-45; @include breakpoint(small) { padding-top: ptr(35);        padding-bottom: ptr(35); } }
+    &-l    { padding-top: $padding-l-80; padding-bottom: $padding-l-80; @include breakpoint(small) { padding-top: $padding-m-45;  padding-bottom: $padding-m-45; } }
+    &-xl   { padding-top: $margin-l-100; padding-bottom: $margin-l-100; @include breakpoint(small) { padding-top: $padding-l-80;  padding-bottom: $padding-l-80; } }
+    &-hero { padding-top: ptr(255);      padding-bottom: $margin-l-100; @include breakpoint(small) { padding-top: $margin-l-100;  padding-bottom: $margin-l-100; } }
+
+    &-sm-0    { @include breakpoint(small) { padding-top: 0; padding-bottom: 0; } }
+    &-sm-s    { @include breakpoint(small) { padding-top: $padding-s-15; padding-bottom: $padding-s-15; } }
+    &-sm-r    { @include breakpoint(small) { padding-top: ptr(35); padding-bottom: ptr(35); } }
+    &-sm-m    { @include breakpoint(small) { padding-top: $padding-m-45; padding-bottom: $padding-m-45; } }
+    &-sm-l    { @include breakpoint(small) { padding-top: $padding-l-80; padding-bottom: $padding-l-80; } }
+    &-sm-xl   { @include breakpoint(small) { padding-top: $margin-l-100; padding-bottom: $margin-l-100; } }
     &-sm-hero { @include breakpoint(small) { padding-top: ptr(100); padding-bottom: $margin-l-100; } }
 }
 
 .ph {
-    &-xs { padding-left: ptr(12); padding-right: ptr(12); }
-    &-s { padding-left: $padding-s-15; padding-right: $padding-s-15; }
-    &-r { padding-left: ptr(35); padding-right: ptr(35); }
-    &-m { padding-left: $padding-m-45; padding-right: $padding-m-45; }
-    &-l { padding-left: $padding-l-80; padding-right: $padding-l-80; }
-    &-xl { padding-left: ptr(100); padding-right: ptr(100); }
+    &-xs { padding-left: ptr(12);      padding-right: ptr(12); }
+    &-s  { padding-left: $padding-s-15; padding-right: $padding-s-15; @include breakpoint(small) { padding-left: ptr(12);       padding-right: ptr(12); } }
+    &-r  { padding-left: ptr(35);       padding-right: ptr(35);       @include breakpoint(small) { padding-left: $padding-s-15;  padding-right: $padding-s-15; } }
+    &-m  { padding-left: $padding-m-45; padding-right: $padding-m-45; @include breakpoint(small) { padding-left: ptr(35);        padding-right: ptr(35); } }
+    &-l  { padding-left: $padding-l-80; padding-right: $padding-l-80; @include breakpoint(small) { padding-left: $padding-m-45;  padding-right: $padding-m-45; } }
+    &-xl { padding-left: ptr(100);      padding-right: ptr(100);      @include breakpoint(small) { padding-left: $padding-l-80;  padding-right: $padding-l-80; } }
 
-    &-sm-0 { @include breakpoint(small) { padding-left: 0; padding-right: 0; } }
+    &-sm-0  { @include breakpoint(small) { padding-left: 0; padding-right: 0; } }
     &-sm-xs { @include breakpoint(small) { padding-left: ptr(12); padding-right: ptr(12); } }
-    &-sm-s { @include breakpoint(small) { padding-left: $padding-s-15; padding-right: $padding-s-15; } }
-    &-sm-r { @include breakpoint(small) { padding-left: ptr(35); padding-right: ptr(35); } }
-    &-sm-m { @include breakpoint(small) { padding-left: $padding-m-45; padding-right: $padding-m-45; } }
-    &-sm-l { @include breakpoint(small) { padding-left: $padding-l-80; padding-right: $padding-l-80; } }
+    &-sm-s  { @include breakpoint(small) { padding-left: $padding-s-15; padding-right: $padding-s-15; } }
+    &-sm-r  { @include breakpoint(small) { padding-left: ptr(35); padding-right: ptr(35); } }
+    &-sm-m  { @include breakpoint(small) { padding-left: $padding-m-45; padding-right: $padding-m-45; } }
+    &-sm-l  { @include breakpoint(small) { padding-left: $padding-l-80; padding-right: $padding-l-80; } }
     &-sm-xl { @include breakpoint(small) { padding-left: ptr(100); padding-right: ptr(100); } }
 }
 
