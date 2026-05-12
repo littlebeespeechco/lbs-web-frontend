@@ -280,15 +280,17 @@
     &-r  { padding-left: ptr(35);       padding-right: ptr(35);       @include breakpoint(small) { padding-left: $padding-s-15;  padding-right: $padding-s-15; } }
     &-m  { padding-left: $padding-m-45; padding-right: $padding-m-45; @include breakpoint(small) { padding-left: ptr(35);        padding-right: ptr(35); } }
     &-l  { padding-left: $padding-l-80; padding-right: $padding-l-80; @include breakpoint(small) { padding-left: $padding-m-45;  padding-right: $padding-m-45; } }
-    &-xl { padding-left: ptr(100);      padding-right: ptr(100);      @include breakpoint(small) { padding-left: $padding-l-80;  padding-right: $padding-l-80; } }
+    &-xl  { padding-left: ptr(100);      padding-right: ptr(100);      @include breakpoint(small) { padding-left: $padding-l-80;  padding-right: $padding-l-80; } }
+    &-xxl { padding-left: ptr(114);      padding-right: ptr(114);      @include breakpoint(small) { padding-left: ptr(100);       padding-right: ptr(100); } }
 
-    &-sm-0  { @include breakpoint(small) { padding-left: 0; padding-right: 0; } }
-    &-sm-xs { @include breakpoint(small) { padding-left: ptr(12); padding-right: ptr(12); } }
-    &-sm-s  { @include breakpoint(small) { padding-left: $padding-s-15; padding-right: $padding-s-15; } }
-    &-sm-r  { @include breakpoint(small) { padding-left: ptr(35); padding-right: ptr(35); } }
-    &-sm-m  { @include breakpoint(small) { padding-left: $padding-m-45; padding-right: $padding-m-45; } }
-    &-sm-l  { @include breakpoint(small) { padding-left: $padding-l-80; padding-right: $padding-l-80; } }
-    &-sm-xl { @include breakpoint(small) { padding-left: ptr(100); padding-right: ptr(100); } }
+    &-sm-0   { @include breakpoint(small) { padding-left: 0; padding-right: 0; } }
+    &-sm-xs  { @include breakpoint(small) { padding-left: ptr(12); padding-right: ptr(12); } }
+    &-sm-s   { @include breakpoint(small) { padding-left: $padding-s-15; padding-right: $padding-s-15; } }
+    &-sm-r   { @include breakpoint(small) { padding-left: ptr(35); padding-right: ptr(35); } }
+    &-sm-m   { @include breakpoint(small) { padding-left: $padding-m-45; padding-right: $padding-m-45; } }
+    &-sm-l   { @include breakpoint(small) { padding-left: $padding-l-80; padding-right: $padding-l-80; } }
+    &-sm-xl  { @include breakpoint(small) { padding-left: ptr(100); padding-right: ptr(100); } }
+    &-sm-xxl { @include breakpoint(small) { padding-left: ptr(114); padding-right: ptr(114); } }
 }
 
 .radius {
