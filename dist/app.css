@@ -4668,7 +4668,7 @@ section > img {
   margin-bottom: 0 !important;
 }
 @media (max-width: 767px) {
-  /* built-in mobile step-downs â€” override with .mb-sm-* */
+  /* built-in mobile step-downs — override with .mb-sm-* */
   .mb-xs { margin-bottom: var(--_sizes---margin-xxs-12); }
   .mb-s  { margin-bottom: var(--_sizes---margin-xs-18); }
   .mb-sr { margin-bottom: var(--_sizes---margin-s-30); }
@@ -4739,7 +4739,7 @@ section > img {
   margin-top: var(--_sizes---margin-l-100);
 }
 @media (max-width: 767px) {
-  /* built-in mobile step-downs â€” override with .mt-sm-* */
+  /* built-in mobile step-downs — override with .mt-sm-* */
   .mt-xs { margin-top: var(--_sizes---margin-xxs-12); }
   .mt-s  { margin-top: var(--_sizes---margin-xs-18); }
   .mt-r  { margin-top: var(--_sizes---margin-s-30); }
@@ -4807,7 +4807,7 @@ section > img {
   margin-left: var(--_sizes---margin-l-100);
 }
 @media (max-width: 767px) {
-  /* built-in mobile step-downs â€” override with .ml-sm-* */
+  /* built-in mobile step-downs — override with .ml-sm-* */
   .ml-xs { margin-left: var(--_sizes---margin-xxs-12); }
   .ml-s  { margin-left: var(--_sizes---margin-xs-18); }
   .ml-r  { margin-left: var(--_sizes---margin-s-30); }
@@ -4875,7 +4875,7 @@ section > img {
   margin-right: var(--_sizes---margin-l-100);
 }
 @media (max-width: 767px) {
-  /* built-in mobile step-downs â€” override with .mr-sm-* */
+  /* built-in mobile step-downs — override with .mr-sm-* */
   .mr-xs { margin-right: var(--_sizes---margin-xxs-12); }
   .mr-s  { margin-right: var(--_sizes---margin-xs-18); }
   .mr-r  { margin-right: var(--_sizes---margin-s-30); }
@@ -4943,7 +4943,7 @@ section > img {
   padding-bottom: var(--_sizes---margin-l-100);
 }
 @media (max-width: 767px) {
-  /* built-in mobile step-downs â€” override with .pv-sm-* */
+  /* built-in mobile step-downs — override with .pv-sm-* */
   .pv-r    { padding-top: var(--_sizes---padding-s-15);  padding-bottom: var(--_sizes---padding-s-15); }
   .pv-m    { padding-top: 2.1875rem;                     padding-bottom: 2.1875rem; }
   .pv-l    { padding-top: var(--_sizes---padding-m-45);  padding-bottom: var(--_sizes---padding-m-45); }
@@ -5018,7 +5018,7 @@ section > img {
   padding-right: 6.25rem;
 }
 @media (max-width: 767px) {
-  /* built-in mobile step-downs â€” override with .ph-sm-* */
+  /* built-in mobile step-downs — override with .ph-sm-* */
   .ph-s  { padding-left: 0.75rem;                        padding-right: 0.75rem; }
   .ph-r  { padding-left: var(--_sizes---padding-s-15);   padding-right: var(--_sizes---padding-s-15); }
   .ph-m  { padding-left: 2.1875rem;                      padding-right: 2.1875rem; }
