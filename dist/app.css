@@ -1538,6 +1538,9 @@ section > img {
 *.text-gradient-orange * {
   -webkit-text-fill-color: transparent;
 }
+*.text-gradient-orange {
+  --color1: #ff6200;
+}
 *.text-gradient-purple {
   --color1: #52A6E0;
   --color2: #F379E7;
@@ -1561,6 +1564,9 @@ section > img {
 }
 *.text-gradient-yellow * {
   -webkit-text-fill-color: transparent;
+}
+*.text-gradient-yellow {
+  --color2: #ffdf10;
 }
 *.text-gradient-purple-vertical {
   --color1: #B57DC1;

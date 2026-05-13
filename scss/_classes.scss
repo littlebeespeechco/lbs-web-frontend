@@ -31,11 +31,15 @@
     &-note { color: #FFFBDE; }
 
     &-gradient {
-        &-orange { @include gradient-text($orange, #FFB700); }
-        &-purple { @include gradient-text(#52A6E0, #F379E7); }
-        &-yellow { @include gradient-text(#FFB700, $yellow); }
+        // After each mixin call, override --color1/--color2 with literal hex where
+        // the mixin would have set a CSS var() reference. GSAP's splitTextGradient
+        // reads these via getComputedStyle and cannot resolve var() references —
+        // it needs actual color values to interpolate the per-character colors.
+        &-orange          { @include gradient-text($orange, #FFB700);      --color1: #ff6200; }
+        &-purple          { @include gradient-text(#52A6E0, #F379E7); }
+        &-yellow          { @include gradient-text(#FFB700, $yellow);      --color2: #ffdf10; }
         &-purple-vertical { @include gradient-text(#B57DC1, #9A7DC1); }
-        &-gray-vertical { @include gradient-text($background-2, $background-1); }
+        &-gray-vertical   { @include gradient-text($background-2, $background-1); }
     }
 
     // Sizes
