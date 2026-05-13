@@ -399,6 +399,13 @@ section:has(.mobile-fullw) {
     width: 100%;
 }
 
+.mw-page {
+    max-width: ptr(1290);
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
 .content-top {
     .dual-layout-content {
         align-self: flex-start;
