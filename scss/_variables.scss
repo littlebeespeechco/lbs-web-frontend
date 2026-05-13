@@ -60,8 +60,13 @@ $heading-s-22: var(--_sizes---heading-s-22);
     --color2: #{$color-2};
     background: linear-gradient(to right, $color-1, $color-2);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     line-height: 1.1;
+    // When animation libraries (e.g. diction) split text into child spans,
+    // those spans don't inherit -webkit-text-fill-color. Setting it here
+    // ensures the parent's gradient background shows through.
+    * { -webkit-text-fill-color: transparent; }
 }
 
 @mixin gradient-text-splittable($color-1, $color-2) {

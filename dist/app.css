@@ -1531,40 +1531,60 @@ section > img {
   --color2: #FFB700;
   background: linear-gradient(to right, var(--_colors---orange), #FFB700);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.1;
+}
+*.text-gradient-orange * {
+  -webkit-text-fill-color: transparent;
 }
 *.text-gradient-purple {
   --color1: #52A6E0;
   --color2: #F379E7;
   background: linear-gradient(to right, #52A6E0, #F379E7);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.1;
+}
+*.text-gradient-purple * {
+  -webkit-text-fill-color: transparent;
 }
 *.text-gradient-yellow {
   --color1: #FFB700;
   --color2: var(--_colors---yellow);
   background: linear-gradient(to right, #FFB700, var(--_colors---yellow));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.1;
+}
+*.text-gradient-yellow * {
+  -webkit-text-fill-color: transparent;
 }
 *.text-gradient-purple-vertical {
   --color1: #B57DC1;
   --color2: #9A7DC1;
   background: linear-gradient(to right, #B57DC1, #9A7DC1);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.1;
+}
+*.text-gradient-purple-vertical * {
+  -webkit-text-fill-color: transparent;
 }
 *.text-gradient-gray-vertical {
   --color1: var(--_colors---background-2);
   --color2: var(--_colors---background-1);
   background: linear-gradient(to right, var(--_colors---background-2), var(--_colors---background-1));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.1;
+}
+*.text-gradient-gray-vertical * {
+  -webkit-text-fill-color: transparent;
 }
 *.text-s {
   font-size: var(--_sizes---text-s-13);
