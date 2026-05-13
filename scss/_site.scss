@@ -115,7 +115,11 @@ body {
     }
 }
 
-[data-animation="diction"] .anim-diction { // data-animation="headingWave" .heading
+// Reset visual styling on anim-diction so GSAP can apply per-character colours.
+// Exclude elements that also carry a text-gradient-* class: those rely on CSS
+// background-clip gradient text (Diction animation is currently disabled, so
+// GSAP never compensates for the reset on those elements).
+[data-animation="diction"] .anim-diction:not([class*="text-gradient"]) {
     display: inline-block;
     background: none;
     webkit-background-clip: unset;
