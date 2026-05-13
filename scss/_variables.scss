@@ -95,6 +95,24 @@ $heading-s-22: var(--_sizes---heading-s-22);
     @return #{$px-value / 16}rem;
 }
 
+// Mobile spacing collapse rule shared by named + numeric spacing utilities.
+// Source ≤12 unchanged · 13–49 → round(÷2) floor 12 · ≥50 → round(÷3) capped per axis.
+// $axis: 'margin' (cap 35) | 'ph' (cap 25) | 'pv' (cap 45 — also pt/pb).
+@function mobile-spacing($px, $axis: 'margin') {
+    @if $px <= 12 {
+        @return $px;
+    } @else if $px < 50 {
+        $val: math.round(math.div($px, 2));
+        @return if($val < 12, 12, $val);
+    } @else {
+        $val: math.round(math.div($px, 3));
+        $cap: 35;
+        @if $axis == 'ph' { $cap: 25; }
+        @else if $axis == 'pv' { $cap: 45; }
+        @return if($val > $cap, $cap, $val);
+    }
+}
+
 // Small breakpoint: keep body-scale text (≤16) as-is; scale larger sizes down with a power curve
 // through 16→16, 20→17, 60→40 (f(x) = 16 + ((x−16)/4)^p, p = ln(24)/ln(11)).
 @function text-small-fluid-size($px) {
