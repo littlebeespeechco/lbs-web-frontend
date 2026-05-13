@@ -5331,6 +5331,17 @@ section > img {
   width: 100%;
 }
 
+.section-inset {
+  padding-left: max(7.125rem, (100% - 66.375rem) / 2);
+  padding-right: max(7.125rem, (100% - 66.375rem) / 2);
+}
+@media (max-width: 767px) {
+  .section-inset {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 .content-top .dual-layout-content {
   align-self: flex-start;
   padding-top: 3.125rem;

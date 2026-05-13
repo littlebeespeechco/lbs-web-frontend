@@ -406,6 +406,20 @@ section:has(.mobile-fullw) {
     width: 100%;
 }
 
+// Full-bleed section with constrained slot content.
+// Background/images stretch to viewport edges; inner content is capped at 1290px
+// with 114px inset on each side (card edge = 1290 - 2×114 = 1062px max width).
+// Uses CSS max() so that padding is 114px below 1290px and grows to keep
+// the slot at 1062px on wider screens.
+.section-inset {
+    padding-left: max(#{ptr(114)}, calc((100% - #{ptr(1062)}) / 2));
+    padding-right: max(#{ptr(114)}, calc((100% - #{ptr(1062)}) / 2));
+    @include breakpoint(small) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
 .content-top {
     .dual-layout-content {
         align-self: flex-start;
