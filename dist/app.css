@@ -5128,6 +5128,16 @@ section > img {
     padding-bottom: 2.0625rem;
   }
 }
+.pv-xxl {
+  padding-top: 8.125rem;
+  padding-bottom: 8.125rem;
+}
+@media (max-width: 767px) {
+  .pv-xxl {
+    padding-top: 4.375rem;
+    padding-bottom: 4.375rem;
+  }
+}
 .pv-hero {
   padding-top: 15.9375rem;
   padding-bottom: var(--_sizes---margin-l-100);

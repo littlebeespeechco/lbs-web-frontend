@@ -281,6 +281,7 @@
     &-m    { padding-top: $padding-m-45; padding-bottom: $padding-m-45; @include breakpoint(small) { padding-top: ptr(22);  padding-bottom: ptr(22); } }
     &-l    { padding-top: $padding-l-80; padding-bottom: $padding-l-80; @include breakpoint(small) { padding-top: ptr(27);  padding-bottom: ptr(27); } }
     &-xl   { padding-top: $margin-l-100; padding-bottom: $margin-l-100; @include breakpoint(small) { padding-top: ptr(33);  padding-bottom: ptr(33); } }
+    &-xxl  { padding-top: ptr(130);      padding-bottom: ptr(130);      @include breakpoint(small) { padding-top: ptr(70);  padding-bottom: ptr(70); } }
     &-hero { padding-top: ptr(255);      padding-bottom: $margin-l-100; @include breakpoint(small) { padding-top: ptr(45);  padding-bottom: ptr(33); } }
 
     &-sm-0    { @include breakpoint(small) { padding-top: 0; padding-bottom: 0; } }
