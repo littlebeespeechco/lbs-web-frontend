@@ -1,4 +1,5 @@
 @use 'sass:math';
+@use 'sass:map';
 
 $background-1: var(--_colors---background-1);
 $background-2: var(--_colors---background-2);
@@ -115,12 +116,25 @@ $heading-s-22: var(--_sizes---heading-s-22);
 
 // Small breakpoint: keep body-scale text (≤16) as-is; scale larger sizes down with a power curve
 // through 16→16, 20→17, 60→40 (f(x) = 16 + ((x−16)/4)^p, p = ln(24)/ln(11)).
+// Used as the fallback when a size isn't in $text-sm-map / $lh-sm-map below.
 @function text-small-fluid-size($px) {
     @if $px <= 16 {
         @return $px;
     }
     $p: math.div(math.log(24), math.log(11));
     @return 16 + math.pow(math.div($px - 16, 4), $p);
+}
+
+// Design-spec mobile sizes from Figma audit. Sizes not listed fall through to the curve above.
+$text-sm-map: (16: 16, 18: 17, 20: 18, 46: 36, 60: 39);
+$lh-sm-map:   (23: 23, 24: 24, 25: 23, 30: 24, 32: 26, 55: 44, 68: 44);
+
+@function text-mobile-size($px) {
+    @return if(map.has-key($text-sm-map, $px), map.get($text-sm-map, $px), text-small-fluid-size($px));
+}
+
+@function lh-mobile-size($px) {
+    @return if(map.has-key($lh-sm-map, $px), map.get($lh-sm-map, $px), text-small-fluid-size($px));
 }
 
 // Responsive sizing mixin - applies desktop value and small breakpoint scaling

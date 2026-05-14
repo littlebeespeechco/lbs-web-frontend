@@ -87,19 +87,19 @@
         }
     }
 
-    .text-#{$i} { 
+    .text-#{$i} {
         font-size: ptr($i);
 
         @include breakpoint(small) {
-            font-size: ptr(text-small-fluid-size($i));
+            font-size: ptr(text-mobile-size($i));
         }
     }
-    
-    .lh-#{$i} { 
-        line-height: ptr($i); 
+
+    .lh-#{$i} {
+        line-height: ptr($i);
 
         @include breakpoint(small) {
-            line-height: ptr(text-small-fluid-size($i));
+            line-height: ptr(lh-mobile-size($i));
         }
     }
 }

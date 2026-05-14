@@ -227,13 +227,16 @@
     <!-- Text Alignment -->
     <div class="cr-s">
         <h2 class="cr-st">Text Alignment</h2>
-        <p class="cr-desc">Control text alignment using .text-center, .text-left, or .text-right classes.</p>
+        <p class="cr-desc">Control text alignment using .text-center, .text-left, or .text-right (all breakpoints). Mobile-only variants .text-sm-center, .text-sm-left, .text-sm-right apply at ≤767px with !important — pair with a desktop alignment to switch alignment per breakpoint.</p>
         <div class="cr-selector">
             <label>Select Alignment:</label>
             <select id="text-align-select" onchange="updateSample('text-align-select','text-align-preview','text-align-info','text-align-btn','text')">
                 <option value="text-center">text-center</option>
                 <option value="text-left">text-left</option>
                 <option value="text-right">text-right</option>
+                <option value="text-sm-center">text-sm-center (≤767px)</option>
+                <option value="text-sm-left">text-sm-left (≤767px)</option>
+                <option value="text-sm-right">text-sm-right (≤767px)</option>
             </select>
         </div>
         <div class="cr-preview" id="text-align-preview" style="width:100%">
