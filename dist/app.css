@@ -1645,6 +1645,14 @@ section > img {
     text-align: left !important;
   }
 }
+*.text-balance {
+  text-wrap: balance;
+}
+@media (max-width: 767px) {
+  *.text-sm-balance {
+    text-wrap: balance !important;
+  }
+}
 *.text-FF548D {
   color: #FF548D;
 }
