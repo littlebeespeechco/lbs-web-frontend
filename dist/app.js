@@ -2088,7 +2088,6 @@
       gsap.set(this.mobileClose, {
         autoAlpha: open ? 0 : 1,
         scale: open ? 0 : 1,
-        yPercent: open ? 100 : 0,
         overwrite: true,
         rotate: open ? 45 : 0
       });
@@ -2102,7 +2101,6 @@
         autoAlpha: open ? 1 : 0,
         duration: 1,
         scale: open ? 1 : 0,
-        yPercent: open ? 0 : 100,
         ease: "elastic.out(1, 0.7)",
         delay: open ? 0.6 : 0,
         rotate: open ? 0 : 45
@@ -2114,7 +2112,7 @@
       });
       gsap.to(this.mobileMenu, {
         duration: 1,
-        clipPath: open ? "inset(0% 0% 0% 0%)" : "inset(100% 0% 0% 0%)",
+        clipPath: open ? "inset(0% 0% 0% 0%)" : "inset(0% 0% 100% 0%)",
         autoAlpha: open ? 1 : 0,
         ease: "power4.inOut"
       });
