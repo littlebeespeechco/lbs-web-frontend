@@ -1630,6 +1630,21 @@ section > img {
 *.text-left {
   text-align: left;
 }
+@media (max-width: 767px) {
+  *.text-sm-center {
+    text-align: center !important;
+  }
+}
+@media (max-width: 767px) {
+  *.text-sm-right {
+    text-align: right !important;
+  }
+}
+@media (max-width: 767px) {
+  *.text-sm-left {
+    text-align: left !important;
+  }
+}
 *.text-FF548D {
   color: #FF548D;
 }
