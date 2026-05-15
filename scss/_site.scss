@@ -11,10 +11,10 @@ body {
     -moz-osx-font-smoothing: grayscale;
 
     // Inter at weight 400 visually renders heavier in browsers than Figma's
-    // internal renderer shows. Default body to 300 (Light) so inherited body
-    // text matches the design. Elements with explicit weights (buttons,
-    // headings, fw-N classes) keep their explicit values.
-    font-weight: 300;
+    // internal renderer shows. Default body weight tuned to match Figma's body
+    // rendering. 300 felt too light; 350 (synthesized between 300 and 400)
+    // splits the difference if a variable font is available.
+    font-weight: 350;
 }
 
 .enroll-roller {
