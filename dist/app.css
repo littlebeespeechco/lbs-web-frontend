@@ -747,6 +747,9 @@ html:not(.wf-design-mode) .testimonials-wrapper > * {
   -ms-user-select: none;
   user-select: none;
 }
+html:not(.wf-design-mode) .link.hover-orange:hover {
+  color: var(--_colors---orange);
+}
 
 form:not(.search) label {
   font-size: 0.75rem;

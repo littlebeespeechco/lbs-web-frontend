@@ -172,3 +172,13 @@ body {
         user-select: none;
     }
 }
+
+// Force mobile menu link hover to orange. Webflow emits a variant-specific
+// override `.link.hover-orange:hover:where(.w-variant-b5ec4833-...)` that
+// sets hover color to background-1 (white) at the tiny breakpoint, which is
+// invisible on the white menu background. This rule wins via the
+// `html:not(.wf-design-mode)` wrapper added by the _site.scss import,
+// raising specificity above the variant rule's (0,2,1).
+.link.hover-orange:hover {
+    color: var(--_colors---orange);
+}
