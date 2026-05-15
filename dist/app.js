@@ -1194,7 +1194,7 @@
         }
       });
       gsap.set(this.element, {
-        width: Math.min(document.body.offsetWidth, this.totalWidth - widestLogoWidth)
+        width: Math.min(this.element.parentElement.clientWidth, this.totalWidth - widestLogoWidth)
       });
     }
     update() {
