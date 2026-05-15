@@ -633,7 +633,7 @@ html:not(.wf-design-mode) body {
   scrollbar-gutter: stable;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-weight: 350;
+  font-weight: 375;
 }
 html:not(.wf-design-mode) .enroll-roller {
   overflow: hidden;
