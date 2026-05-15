@@ -580,7 +580,10 @@ section {
 
     @include breakpoint(medium) {
         max-width: 100%;
-        padding: 3rem 1.375rem;
+        flex-direction: column;
+        align-items: stretch;
+        gap: ptr(8);
+        padding: ptr(20) ptr(16);
     }
 
     .ml-form-embedContent {
@@ -605,9 +608,10 @@ section {
 
         @include breakpoint(medium) {
             flex-grow: 0;
-            width: auto;
+            width: 100%;
             flex-wrap: wrap;
             display: block;
+            text-align: center;
         }
     }
 
@@ -617,7 +621,7 @@ section {
             display: flex;
         }
     }
-    
+
 
     .row-form {
         display: flex;
@@ -627,8 +631,9 @@ section {
         width: 100%;
 
         @include breakpoint(medium) {
-            flex-wrap: wrap;
-            justify-content: center;
+            flex-wrap: nowrap;
+            justify-content: stretch;
+            gap: ptr(8);
         }
     }
 
@@ -649,12 +654,24 @@ section {
     .ml-input-horizontal {
         width: auto!important;
         flex-grow: 1;
+
+        @include breakpoint(medium) {
+            flex: 1 1 0;
+            min-width: 0;
+        }
     }
 
     .ml-form-horizontalRow {
         display: flex;
         gap: ptr(18);
         justify-content: flex-end;
+
+        @include breakpoint(medium) {
+            flex-wrap: nowrap;
+            gap: ptr(8);
+            width: 100%;
+            justify-content: stretch;
+        }
     }
 
     .horozintalForm {
@@ -669,12 +686,16 @@ section {
 
         @include breakpoint('medium') {
             width: 100%;
-            
+            min-width: 0;
         }
     }
 
     .horizontal-fields {
         padding: 0;
+
+        @include breakpoint(medium) {
+            min-width: 0;
+        }
     }
 
     button {
@@ -687,8 +708,17 @@ section {
         }
 
         @include breakpoint(medium) {
-            padding: 0 1.375rem!important;
+            flex: 0 0 auto;
+            padding: 0 ptr(18)!important;
         }
+    }
+
+    // When MailerLite swaps in the success body, hide the heading row so the
+    // confirmation message owns the strip on its own (avoids the heading and
+    // "Success! Check your email…" stacking together on mobile).
+    &:has(.ml-form-successBody:not([style*="display: none"])) .ml-form-embedContent,
+    &:has(.ml-form-successBody:not([style*="display:none"])) .ml-form-embedContent {
+        display: none;
     }
 }
 

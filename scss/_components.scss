@@ -6,6 +6,20 @@
     }
 }
 
+// Home page hero h1: two heading-unit spans stack on desktop via the Heading
+// "column" variant. On mobile, flatten so they flow as a single inline title
+// (gradient on the first span's text only). Apply class on the heading prop.
+// !important to win over the Heading variant rules served from Webflow CDN.
+.hero-main {
+    @include breakpoint(small) {
+        display: block !important;
+
+        .heading-unit {
+            display: inline !important;
+        }
+    }
+}
+
 // Homepage
 #benefits {
     .hero-img {
