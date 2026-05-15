@@ -4,6 +4,17 @@
 body {
     overflow-x: hidden;
     scrollbar-gutter: stable;
+
+    // Match Figma's grayscale font rendering. Without these, macOS Chrome uses
+    // subpixel anti-aliasing which renders Inter ~5-10% heavier than spec.
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    // Inter at weight 400 visually renders heavier in browsers than Figma's
+    // internal renderer shows. Default body to 300 (Light) so inherited body
+    // text matches the design. Elements with explicit weights (buttons,
+    // headings, fw-N classes) keep their explicit values.
+    font-weight: 300;
 }
 
 .enroll-roller {

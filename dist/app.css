@@ -631,6 +631,9 @@ html:not(.wf-design-mode) .wf-design-mode .spacer:before {
 html:not(.wf-design-mode) body {
   overflow-x: hidden;
   scrollbar-gutter: stable;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 300;
 }
 html:not(.wf-design-mode) .enroll-roller {
   overflow: hidden;
