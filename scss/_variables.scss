@@ -126,7 +126,7 @@ $heading-s-22: var(--_sizes---heading-s-22);
 }
 
 // Design-spec mobile sizes from Figma audit. Sizes not listed fall through to the curve above.
-$text-sm-map: (16: 16, 18: 17, 20: 18, 46: 36, 60: 39);
+$text-sm-map: (16: 16, 18: 17, 20: 18, 46: 36, 60: 36);
 $lh-sm-map:   (23: 23, 24: 24, 25: 23, 30: 24, 32: 26, 55: 44, 68: 44);
 
 @function text-mobile-size($px) {
