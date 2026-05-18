@@ -264,6 +264,30 @@
     top: 29.375rem;
   }
 }
+@media (max-width: 767px) {
+  #two-apps .heading.mb-s {
+    margin-bottom: 1.875rem !important;
+  }
+  #two-apps .heading-unit.mb-16 {
+    line-height: 2.625rem !important;
+  }
+  #two-apps .media-content.lh-34 {
+    line-height: 1.625rem !important;
+  }
+}
+
+@media (max-width: 767px) {
+  ._2a-app ._2a-app-subtitle {
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+  }
+  ._2a-app .underlined-text.text-24 {
+    font-size: 1.5rem !important;
+  }
+  ._2a-app .media-text {
+    font-size: 1.0625rem !important;
+  }
+}
 
 #research-based .dual-layout-content {
   width: max-content;

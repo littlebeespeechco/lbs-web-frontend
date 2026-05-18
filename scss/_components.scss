@@ -213,6 +213,43 @@
             top: ptr(470);
         }
     }
+
+    // Section header "Two Powerful Applications– / One Platform"
+    @include breakpoint(small) {
+        // Keep desktop mb-s gap (30px) below the heading on mobile (collapses to 15 otherwise)
+        .heading.mb-s {
+            margin-bottom: ptr(30) !important;
+        }
+        // "Two Powerful Applications–" line-height 42px on mobile at 36px text
+        .heading-unit.mb-16 {
+            line-height: ptr(42) !important;
+        }
+        // Subtext "The Little Bee Hive consists…" — line-height 26px (font already 18px via text-20 map)
+        .media-content.lh-34 {
+            line-height: ptr(26) !important;
+        }
+    }
+}
+
+// Two-apps cards (Articulation Test Center Hive / Articulation Station Hive)
+._2a-app {
+    @include breakpoint(small) {
+        // "Articulation & Phonological" subtitle — 14px / 500 weight
+        ._2a-app-subtitle {
+            font-size: ptr(14) !important;
+            font-weight: 500 !important;
+        }
+        // "Assessment" / "Treatment" labels — keep 24px (text-24 curve drops to ~18 otherwise)
+        .underlined-text.text-24 {
+            font-size: ptr(24) !important;
+        }
+        // Bullet list rows — keep desktop 17px (text-17 curve drops to ~16 otherwise);
+        // class is inconsistently applied on .media-text vs .media-img in the DOM, so target
+        // the text container regardless.
+        .media-text {
+            font-size: ptr(17) !important;
+        }
+    }
 }
 
 #research-based {
