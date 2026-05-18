@@ -232,22 +232,32 @@
 }
 
 // Two-apps cards (Articulation Test Center Hive / Articulation Station Hive)
+// User intent: every font size + weight inside the cards stays at desktop value on mobile;
+// only margins, padding, and image sizes change. Spec sets the subtitle at 14/500.
 ._2a-app {
+    // "Articulation & Phonological" subtitle — Webflow custom class with no font rules,
+    // so it inherits body weight (375). Pin 14/500 at all breakpoints.
+    ._2a-app-subtitle {
+        font-size: ptr(14);
+        font-weight: 500;
+    }
+
     @include breakpoint(small) {
-        // "Articulation & Phonological" subtitle — 14px / 500 weight
+        // Lock every text-N usage inside the cards to its desktop pixel value on mobile
+        // (default behavior in _classes.scss applies the curve/map and shrinks text-17 to
+        // ~16, text-24 to ~18, etc.). Weights aren't auto-collapsed, so no fw sweep needed.
+        @for $i from 10 through 100 {
+            .text-#{$i} { font-size: ptr($i) !important; }
+        }
+        // Re-assert subtitle on mobile in case anything else specifies a mobile size.
         ._2a-app-subtitle {
             font-size: ptr(14) !important;
             font-weight: 500 !important;
         }
-        // "Assessment" / "Treatment" labels — keep 24px (text-24 curve drops to ~18 otherwise)
-        .underlined-text.text-24 {
-            font-size: ptr(24) !important;
-        }
-        // Bullet list rows — keep desktop 17px (text-17 curve drops to ~16 otherwise);
-        // class is inconsistently applied on .media-text vs .media-img in the DOM, so target
-        // the text container regardless.
-        .media-text {
-            font-size: ptr(17) !important;
+        // h4 card heading (e.g. "Articulation Test Center Hive") — Webflow sets the size
+        // inside a tablet-down media query but not at small, so pin to desktop 26px.
+        ._2a-app-heading {
+            font-size: ptr(26) !important;
         }
     }
 }
