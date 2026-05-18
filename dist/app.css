@@ -280,6 +280,43 @@
   font-size: 0.875rem;
   font-weight: 500;
 }
+._2a-app.radius-l.spaced {
+  padding-top: 2.5rem;
+  padding-bottom: 4.375rem;
+}
+@media (max-width: 767px) {
+  ._2a-app.radius-l.spaced {
+    padding-top: 2.1875rem !important;
+    padding-bottom: 3.125rem !important;
+  }
+}
+._2a-app ._2a-app-type {
+  margin-bottom: 1.875rem;
+}
+._2a-app ._2a-app-img {
+  margin-bottom: 1.5625rem;
+}
+@media (max-width: 767px) {
+  ._2a-app ._2a-app-img {
+    margin-bottom: 1.25rem !important;
+  }
+}
+._2a-app ._2a-app-heading {
+  margin-bottom: 1.625rem;
+}
+@media (max-width: 767px) {
+  ._2a-app ._2a-app-heading {
+    margin-bottom: 1.875rem !important;
+  }
+}
+._2a-app ._2a-app-slot {
+  margin-bottom: 2.875rem;
+}
+@media (max-width: 767px) {
+  ._2a-app ._2a-app-slot {
+    margin-bottom: 2.5rem !important;
+  }
+}
 @media (max-width: 767px) {
   ._2a-app .text-10 {
     font-size: 0.625rem !important;

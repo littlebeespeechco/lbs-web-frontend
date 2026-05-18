@@ -242,6 +242,46 @@
         font-weight: 500;
     }
 
+    // Card inner padding (combo .radius-l.spaced is what Webflow set).
+    // Top: 40d/35m (was 45). Bottom (button to card edge): 70d/50m (was 72).
+    &.radius-l.spaced {
+        padding-top: ptr(40);
+        padding-bottom: ptr(70);
+        @include breakpoint(small) {
+            padding-top: ptr(35) !important;
+            padding-bottom: ptr(50) !important;
+        }
+    }
+
+    // Below the "Assessment / Treatment" block. 30 both breakpoints (was 45).
+    ._2a-app-type {
+        margin-bottom: ptr(30);
+    }
+
+    // Below the app icon image. 25d/20m (was 30).
+    ._2a-app-img {
+        margin-bottom: ptr(25);
+        @include breakpoint(small) {
+            margin-bottom: ptr(20) !important;
+        }
+    }
+
+    // Below the h4 "Articulation Test Center Hive / Articulation Station Hive". 26d/30m (was 30).
+    ._2a-app-heading {
+        margin-bottom: ptr(26);
+        @include breakpoint(small) {
+            margin-bottom: ptr(30) !important;
+        }
+    }
+
+    // Below the bullet list slot (gap to the "Learn more" button). 46d/40m (was 45).
+    ._2a-app-slot {
+        margin-bottom: ptr(46);
+        @include breakpoint(small) {
+            margin-bottom: ptr(40) !important;
+        }
+    }
+
     @include breakpoint(small) {
         // Lock every text-N usage inside the cards to its desktop pixel value on mobile
         // (default behavior in _classes.scss applies the curve/map and shrinks text-17 to
