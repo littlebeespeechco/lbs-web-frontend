@@ -540,6 +540,20 @@ section:has(.mobile-fullw) {
     .height-sm-#{$i} { @include breakpoint(small) { height: ptr($i)!important; } }
 }
 
+// Icon size one-offs. Markup uses icon-NNN / icon-sm-NNN on the image wrapper
+// alongside an mw-N max-width cap, so each rule also bumps max-width to keep
+// the cap from clipping the intended width.
+.icon-136 {
+    width: ptr(136);
+    max-width: ptr(136);
+}
+.icon-sm-168 {
+    @include breakpoint(small) {
+        width: ptr(168) !important;
+        max-width: ptr(168) !important;
+    }
+}
+
 $weights: 400, 500, 600, 700, 800, 900;
 @each $weight in $weights {
     .fw-#{$weight} {

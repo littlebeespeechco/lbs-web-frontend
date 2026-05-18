@@ -261,7 +261,7 @@
 }
 @media (max-width: 767px) {
   #two-apps .hex-wrapper {
-    top: 54.375rem;
+    top: 68.75rem;
   }
 }
 
@@ -1204,6 +1204,11 @@ section > img {
   left: 0;
   background-color: var(--_colors---background-1);
   z-index: 0;
+}
+@media (max-width: 767px) {
+  .two-apps:before {
+    height: 4rem;
+  }
 }
 
 [data-animation=diction] .anim-diction {
@@ -22974,6 +22979,18 @@ section > img {
 @media (max-width: 767px) {
   .height-sm-120 {
     height: 7.5rem !important;
+  }
+}
+
+.icon-136 {
+  width: 8.5rem;
+  max-width: 8.5rem;
+}
+
+@media (max-width: 767px) {
+  .icon-sm-168 {
+    width: 10.5rem !important;
+    max-width: 10.5rem !important;
   }
 }
 

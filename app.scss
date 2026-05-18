@@ -382,6 +382,10 @@ section {
         left: 0;
         background-color: $background-1;
         z-index: 0;
+
+        @include breakpoint(small) {
+            height: ptr(64);
+        }
     }
 }
 
