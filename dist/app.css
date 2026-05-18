@@ -115,6 +115,12 @@
 }
 
 @media (max-width: 767px) {
+  .media:has(.hero-main) > .mb-s:first-child {
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+@media (max-width: 767px) {
   .media-heading:has(.hero-main) + .media-content {
     margin-bottom: 2.125rem !important;
   }
@@ -255,7 +261,7 @@
 }
 @media (max-width: 767px) {
   #two-apps .hex-wrapper {
-    top: 58.125rem;
+    top: 54.375rem;
   }
 }
 

@@ -22,6 +22,14 @@
     }
 }
 
+// Icon wrapper directly above hero heading — mb-s collapses to 15px on mobile;
+// spec is ~24px above the heading.
+.media:has(.hero-main) > .mb-s:first-child {
+    @include breakpoint(small) {
+        margin-bottom: ptr(24) !important;
+    }
+}
+
 // Content paragraph directly below hero heading — restore a sensible mobile gap
 // above the CTA (mb-57 collapses to 19px otherwise; spec is ~34px).
 // The h1 is wrapped in .media-heading, so target .media-content via :has().
@@ -202,7 +210,7 @@
         top: 55rem;
 
         @include breakpoint(small) {
-            top: ptr(930);
+            top: ptr(870);
         }
     }
 }
