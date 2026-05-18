@@ -276,6 +276,13 @@
   }
 }
 
+@media (max-width: 767px) {
+  ._2a-apps {
+    grid-row-gap: 2.5rem !important;
+    row-gap: 2.5rem !important;
+  }
+}
+
 ._2a-app ._2a-app-subtitle {
   font-size: 0.875rem;
   font-weight: 500;

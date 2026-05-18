@@ -231,6 +231,15 @@
     }
 }
 
+// Container that stacks the two cards on mobile. Webflow sets grid-row-gap: 1.25rem
+// (20px) at ≤991px; bump to 40px on mobile.
+._2a-apps {
+    @include breakpoint(small) {
+        grid-row-gap: ptr(40) !important;
+        row-gap: ptr(40) !important;
+    }
+}
+
 // Two-apps cards (Articulation Test Center Hive / Articulation Station Hive)
 // User intent: every font size + weight inside the cards stays at desktop value on mobile;
 // only margins, padding, and image sizes change. Spec sets the subtitle at 14/500.
