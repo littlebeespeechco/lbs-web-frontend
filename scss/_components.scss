@@ -292,21 +292,21 @@
     }
 
     @include breakpoint(small) {
-        // Lock every text-N usage inside the cards to its desktop pixel value on mobile
-        // (default behavior in _classes.scss applies the curve/map and shrinks text-17 to
-        // ~16, text-24 to ~18, etc.). Weights aren't auto-collapsed, so no fw sweep needed.
+        // Lock every text-N usage inside the cards to its desktop pixel value on mobile.
+        // Using literal px (not ptr/rem) because html font-size is fluid via
+        // var(--fontSize) and would otherwise shrink rem-based sizes on narrow mobile
+        // viewports (e.g. 1.0625rem renders as ~15.8px at 375vw, not 17px).
         @for $i from 10 through 100 {
-            .text-#{$i} { font-size: ptr($i) !important; }
+            .text-#{$i} { font-size: #{$i}px !important; }
         }
-        // Re-assert subtitle on mobile in case anything else specifies a mobile size.
         ._2a-app-subtitle {
-            font-size: ptr(14) !important;
+            font-size: 14px !important;
             font-weight: 500 !important;
         }
-        // h4 card heading (e.g. "Articulation Test Center Hive") — Webflow sets the size
-        // inside a tablet-down media query but not at small, so pin to desktop 26px.
+        // h4 card heading — Webflow's tablet-down rule sets the size in a tablet-only
+        // media query, so pin to desktop 26px at small.
         ._2a-app-heading {
-            font-size: ptr(26) !important;
+            font-size: 26px !important;
         }
     }
 }
