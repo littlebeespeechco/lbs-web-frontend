@@ -13,11 +13,27 @@
 .hero-main {
     @include breakpoint(small) {
         display: block !important;
+        // Keep desktop mb-s gap (30px) below heading on mobile instead of collapsing to 15px.
+        margin-bottom: ptr(30) !important;
 
         .heading-unit {
             display: inline !important;
         }
     }
+}
+
+// Content paragraph directly below hero heading — restore a sensible mobile gap
+// above the CTA (mb-57 collapses to 19px otherwise; spec is ~34px).
+.hero-main + .media-content {
+    @include breakpoint(small) {
+        margin-bottom: ptr(34) !important;
+    }
+}
+
+// For Groups / For Parents links in the hero CTA: 600 weight, 17px.
+._2a-cta a:not(.button) {
+    font-weight: 600;
+    font-size: ptr(17);
 }
 
 // Homepage
@@ -183,6 +199,10 @@
 #two-apps {
     .hex-wrapper {
         top: 55rem;
+
+        @include breakpoint(small) {
+            top: ptr(930);
+        }
     }
 }
 

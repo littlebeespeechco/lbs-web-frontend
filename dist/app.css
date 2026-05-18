@@ -107,10 +107,22 @@
 @media (max-width: 767px) {
   .hero-main {
     display: block !important;
+    margin-bottom: 1.875rem !important;
   }
   .hero-main .heading-unit {
     display: inline !important;
   }
+}
+
+@media (max-width: 767px) {
+  .hero-main + .media-content {
+    margin-bottom: 2.125rem !important;
+  }
+}
+
+._2a-cta a:not(.button) {
+  font-weight: 600;
+  font-size: 1.0625rem;
 }
 
 #benefits .hero-img {
