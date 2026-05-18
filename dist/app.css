@@ -115,7 +115,7 @@
 }
 
 @media (max-width: 767px) {
-  .hero-main + .media-content {
+  .media-heading:has(.hero-main) + .media-content {
     margin-bottom: 2.125rem !important;
   }
 }
@@ -252,6 +252,11 @@
 
 #two-apps .hex-wrapper {
   top: 55rem;
+}
+@media (max-width: 767px) {
+  #two-apps .hex-wrapper {
+    top: 58.125rem;
+  }
 }
 
 #research-based .dual-layout-content {

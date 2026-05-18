@@ -24,7 +24,8 @@
 
 // Content paragraph directly below hero heading — restore a sensible mobile gap
 // above the CTA (mb-57 collapses to 19px otherwise; spec is ~34px).
-.hero-main + .media-content {
+// The h1 is wrapped in .media-heading, so target .media-content via :has().
+.media-heading:has(.hero-main) + .media-content {
     @include breakpoint(small) {
         margin-bottom: ptr(34) !important;
     }
