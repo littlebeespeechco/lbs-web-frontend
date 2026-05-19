@@ -377,6 +377,21 @@
         padding-left: ptr(36) !important;
         padding-right: ptr(26) !important;
     }
+
+    // "Additional questions?" pill at the bottom of the FAQ on mobile:
+    // - Top gap above the pill = 48 (faq-wrapper bottom margin)
+    // - Bottom gap below the pill = 60 (faq section padding-bottom)
+    // - Tighten inner L/R padding to 24 so the line stays single
+    .faq {
+        padding-bottom: ptr(60);
+    }
+    .faq-wrapper {
+        margin-bottom: ptr(48);
+    }
+    .faq-additional {
+        padding-left: ptr(24);
+        padding-right: ptr(24);
+    }
 }
 
 // Question → answer gap inside each FAQ item. 16d/21m (Webflow base is 19).
