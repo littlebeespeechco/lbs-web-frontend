@@ -704,6 +704,8 @@
     width: 272px;
     height: 56px;
     font-size: 18px;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
   }
 }
 
