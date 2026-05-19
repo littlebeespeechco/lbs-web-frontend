@@ -712,7 +712,7 @@
 @media (max-width: 767px) {
   .prefooter-content {
     width: 354px;
-    padding: 24px 34px 30px 34px;
+    padding: 40px 34px 30px 34px;
     row-gap: 24px;
     column-gap: 26px;
   }
