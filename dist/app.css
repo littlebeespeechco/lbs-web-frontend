@@ -701,6 +701,9 @@
   .slot:has(.free) {
     border-radius: 0;
   }
+  .free-hero-img {
+    width: 104px;
+  }
 }
 [slot=children] {
   display: contents;

@@ -436,6 +436,7 @@
 // single column at ≤991, so the same row-gap applies between every pair of
 // rows (free-hero / free-media / free-content). Bump from 19 to 36 on mobile.
 // Also drop the slot's rounded corners on mobile (still framed but flat).
+// Hive logo above the heading: 104px wide on mobile (Webflow sets 80).
 @include breakpoint(small) {
     .free {
         grid-row-gap: 36px;
@@ -443,6 +444,10 @@
 
     .slot:has(.free) {
         border-radius: 0;
+    }
+
+    .free-hero-img {
+        width: 104px;
     }
 }
 
