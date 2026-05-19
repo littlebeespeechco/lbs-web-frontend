@@ -336,6 +336,15 @@
     }
 }
 
+// "Speech therapy tools…" section — Webflow stacks .tools as a column at ≤991px
+// in DOM order (text, then image). On mobile (≤767px) show the image above the
+// text instead.
+.tools {
+    @include breakpoint(small) {
+        flex-direction: column-reverse;
+    }
+}
+
 [slot="children"] {
     display: contents;
 }

@@ -624,6 +624,12 @@
   }
 }
 
+@media (max-width: 767px) {
+  .tools {
+    flex-direction: column-reverse;
+  }
+}
+
 [slot=children] {
   display: contents;
 }
