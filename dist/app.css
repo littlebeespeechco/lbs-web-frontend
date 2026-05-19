@@ -669,6 +669,20 @@
   }
 }
 
+.free .heading {
+  font-size: 32px;
+  line-height: 43px;
+}
+.free .heading .heading-unit {
+  line-height: inherit;
+  font-size: inherit;
+}
+@media (max-width: 767px) {
+  .free .heading {
+    line-height: 39px;
+  }
+}
+
 .free-content {
   font-size: 16px;
   line-height: 26px;
@@ -683,6 +697,9 @@
 @media (max-width: 767px) {
   .free {
     grid-row-gap: 36px;
+  }
+  .slot:has(.free) {
+    border-radius: 0;
   }
 }
 [slot=children] {
