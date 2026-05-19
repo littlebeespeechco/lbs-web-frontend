@@ -630,6 +630,15 @@
   }
 }
 
+@media (max-width: 767px) {
+  section:has(.faq) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  section:has(.faq) .slot {
+    border-radius: 0;
+  }
+}
 [slot=children] {
   display: contents;
 }

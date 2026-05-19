@@ -345,6 +345,20 @@
     }
 }
 
+// FAQ section — on mobile, drop the card chrome (rounded corners + section
+// horizontal inset) so the gray background extends edge-to-edge of the viewport.
+// Vertical padding on .faq stays so the content keeps its rhythm.
+@include breakpoint(small) {
+    section:has(.faq) {
+        padding-left: 0;
+        padding-right: 0;
+
+        .slot {
+            border-radius: 0;
+        }
+    }
+}
+
 [slot="children"] {
     display: contents;
 }
