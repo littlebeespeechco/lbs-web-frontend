@@ -711,16 +711,18 @@
 
 @media (max-width: 767px) {
   .prefooter-content {
+    width: 354px;
     padding: 24px 34px 30px 34px;
     row-gap: 24px;
+    column-gap: 26px;
   }
   .horizontal-spacer {
     display: none;
   }
   .prefooter-img-1,
   .prefooter-img-2 {
-    width: 230px;
-    height: 230px;
+    width: 130px;
+    height: 130px;
   }
   .prefooter-content .button {
     width: 272px;
