@@ -402,6 +402,28 @@
     }
 }
 
+// Free Trial CTA — body copy ("Groups of 5 or more…"). 16/26 desktop,
+// 17/25 mobile (mobile slightly larger for readability). Literal px so the
+// fluid html root doesn't shrink the rendered size below 402vw.
+.free-content {
+    font-size: 16px;
+    line-height: 26px;
+
+    @include breakpoint(small) {
+        font-size: 17px;
+        line-height: 25px;
+    }
+}
+
+// Free Trial CTA grid — vertical row-gap on mobile. The grid collapses to a
+// single column at ≤991, so the same row-gap applies between every pair of
+// rows (free-hero / free-media / free-content). Bump from 19 to 36 on mobile.
+@include breakpoint(small) {
+    .free {
+        grid-row-gap: 36px;
+    }
+}
+
 
 [slot="children"] {
     display: contents;

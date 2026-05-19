@@ -669,6 +669,22 @@
   }
 }
 
+.free-content {
+  font-size: 16px;
+  line-height: 26px;
+}
+@media (max-width: 767px) {
+  .free-content {
+    font-size: 17px;
+    line-height: 25px;
+  }
+}
+
+@media (max-width: 767px) {
+  .free {
+    grid-row-gap: 36px;
+  }
+}
 [slot=children] {
   display: contents;
 }
