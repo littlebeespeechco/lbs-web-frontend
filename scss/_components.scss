@@ -293,6 +293,13 @@
         }
     }
 
+    // "Learn more" button — fixed 204×54 on all breakpoints (literal px so the
+    // fluid html root doesn't shrink it on mobile).
+    .button {
+        width: 204px;
+        height: 54px;
+    }
+
     @include breakpoint(small) {
         // Lock every text-N usage inside the cards to its desktop pixel value on mobile.
         // Using literal px (not ptr/rem) because html font-size is fluid via
