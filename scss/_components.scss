@@ -450,6 +450,44 @@
     }
 }
 
+// Prefooter card — mobile adjustments
+//   - Card insets: 34 L/R, 30 bottom (matches the disclaimer's spec offsets)
+//   - row-gap 24 between flex lines so button→disclaimer = 24
+//   - Icons 230×230, stacked because they no longer fit side-by-side
+//   - Spacer hidden so it doesn't introduce an extra flex line
+//   - Button 272×56 with 30px L/R padding so the text fits
+//   - +12px margin above button so total icons→button = row-gap(24)+12 = 36
+//   - Disclaimer text 14/20
+@include breakpoint(small) {
+    .prefooter-content {
+        padding: 24px 34px 30px 34px;
+        row-gap: 24px;
+    }
+
+    .horizontal-spacer {
+        display: none;
+    }
+
+    .prefooter-img-1,
+    .prefooter-img-2 {
+        width: 230px;
+        height: 230px;
+    }
+
+    .prefooter-content .button {
+        width: 272px;
+        height: 56px;
+        margin-top: 12px;
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+    }
+
+    .prefooter-disclaimer {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
 // Free Trial CTA — mobile-only adjustments
 //  - Bump grid-row-gap from 19 to 36 between the three stacked rows
 //  - Hive logo above the heading: 104px wide (Webflow sets 80)

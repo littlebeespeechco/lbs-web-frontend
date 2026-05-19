@@ -710,6 +710,31 @@
 }
 
 @media (max-width: 767px) {
+  .prefooter-content {
+    padding: 24px 34px 30px 34px;
+    row-gap: 24px;
+  }
+  .horizontal-spacer {
+    display: none;
+  }
+  .prefooter-img-1,
+  .prefooter-img-2 {
+    width: 230px;
+    height: 230px;
+  }
+  .prefooter-content .button {
+    width: 272px;
+    height: 56px;
+    margin-top: 12px;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+  .prefooter-disclaimer {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+@media (max-width: 767px) {
   .free {
     grid-row-gap: 36px;
   }
