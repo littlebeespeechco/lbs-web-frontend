@@ -326,6 +326,15 @@
     }
 }
 
+// Icons-layout-media feature grid — Webflow sets grid-row-gap to 57px and never
+// overrides it. Tighten to 55px desktop / 50px mobile (stacked single column).
+.icons-layout-media {
+    grid-row-gap: ptr(55);
+    @include breakpoint(small) {
+        grid-row-gap: ptr(50);
+    }
+}
+
 [slot="children"] {
     display: contents;
 }

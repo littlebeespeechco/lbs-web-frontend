@@ -615,6 +615,15 @@
   align-items: flex-start;
 }
 
+.icons-layout-media {
+  grid-row-gap: 3.4375rem;
+}
+@media (max-width: 767px) {
+  .icons-layout-media {
+    grid-row-gap: 3.125rem;
+  }
+}
+
 [slot=children] {
   display: contents;
 }
