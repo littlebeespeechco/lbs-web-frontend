@@ -182,6 +182,20 @@ section {
     }
 }
 
+// Mobile hamburger menu CTA — needs higher specificity than the universal
+// `.button { font-size: ptr(16) }` rule above so Webflow's 17px setting on
+// `.header-mobile-cta` actually takes effect.
+.button.header-mobile-cta {
+    font-size: ptr(17);
+    line-height: 1;
+}
+
+// Lighter orange for the inline link inside the mobile megamenu body text
+// ("one membership"). Global `a { color: #FF6200 }` is too dark on the dark menu bg.
+.mobile-megamenu .megamenu-text a {
+    color: var(--_colors---light-orange);
+}
+
 .bg-hex {
     background-color: #FFAC00;
     position: relative;
