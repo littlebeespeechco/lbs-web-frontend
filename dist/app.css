@@ -616,11 +616,11 @@
 }
 
 .icons-layout-media {
-  grid-row-gap: 3.4375rem;
+  grid-row-gap: 2.5625rem;
 }
 @media (max-width: 767px) {
   .icons-layout-media {
-    grid-row-gap: 3.125rem;
+    grid-row-gap: 2.25rem;
   }
 }
 
