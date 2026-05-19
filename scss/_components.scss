@@ -262,9 +262,11 @@
         }
     }
 
-    // Below the "Assessment / Treatment" block. 30 both breakpoints (was 45).
+    // Below the "Assessment / Treatment" block. 45px both breakpoints (literal px so
+    // the fluid html root doesn't shrink it on mobile). 45 = ~30 visual gap + ~12 for
+    // the absolutely-positioned .underlined-text-img that overflows below the text.
     ._2a-app-type {
-        margin-bottom: ptr(30);
+        margin-bottom: 45px;
     }
 
     // Below the app icon image. 25d/20m (was 30).
