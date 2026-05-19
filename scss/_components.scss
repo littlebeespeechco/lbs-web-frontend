@@ -488,6 +488,12 @@
         font-size: 14px;
         line-height: 20px;
     }
+
+    // Gap from the prefooter section to the footer on mobile. The section
+    // carries .mb-l, which auto-collapses to ~33px on mobile; spec is 60.
+    section:has(.prefooter) {
+        margin-bottom: 60px !important;
+    }
 }
 
 // Free Trial CTA — mobile-only adjustments

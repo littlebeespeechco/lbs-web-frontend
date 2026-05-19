@@ -735,6 +735,9 @@
     font-size: 14px;
     line-height: 20px;
   }
+  section:has(.prefooter) {
+    margin-bottom: 60px !important;
+  }
 }
 @media (max-width: 767px) {
   .free {
