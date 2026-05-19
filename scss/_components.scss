@@ -432,22 +432,41 @@
     }
 }
 
-// Free Trial CTA grid — vertical row-gap on mobile. The grid collapses to a
-// single column at ≤991, so the same row-gap applies between every pair of
-// rows (free-hero / free-media / free-content). Bump from 19 to 36 on mobile.
-// Also drop the slot's rounded corners on mobile (still framed but flat).
-// Hive logo above the heading: 104px wide on mobile (Webflow sets 80).
+// Free Trial CTA — group signup button. 260×52 desktop, 272×56 mobile.
+// 16px text desktop, 18px mobile. Literal px to bypass the fluid root.
+.free-media .button {
+    width: 260px;
+    height: 52px;
+    font-size: 16px;
+
+    @include breakpoint(small) {
+        width: 272px;
+        height: 56px;
+        font-size: 18px;
+    }
+}
+
+// Free Trial CTA — mobile-only adjustments
+//  - Bump grid-row-gap from 19 to 36 between the three stacked rows
+//  - Hive logo above the heading: 104px wide (Webflow sets 80)
+//  - App icons keep desktop 100px wide on mobile (Webflow shrinks to 80)
+//  - "Groups of 5 or more…" copy centered on mobile
 @include breakpoint(small) {
     .free {
         grid-row-gap: 36px;
     }
 
-    .slot:has(.free) {
-        border-radius: 0;
-    }
-
     .free-hero-img {
         width: 104px;
+    }
+
+    .free-media-1,
+    .free-media-3 {
+        width: 100px;
+    }
+
+    .free-content {
+        text-align: center;
     }
 }
 
