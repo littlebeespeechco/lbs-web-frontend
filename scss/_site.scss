@@ -27,6 +27,12 @@ body {
     a { font-weight: 700; }
 }
 
+// When the FAQ item is expanded, leave 24px below the last paragraph
+// (orange link) before the answer container's bottom edge.
+.faq-item.active .faq-item-a {
+    padding-bottom: 1.5rem;
+}
+
 .custom-styles {
     display: none !important;
 }

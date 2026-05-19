@@ -384,11 +384,6 @@
     }
 }
 
-// 24px gap below the answer (last paragraph / orange link) to the bottom edge of
-// the expanded answer container. Hidden by overflow when the item is collapsed.
-.faq-item-a {
-    padding-bottom: ptr(24);
-}
 
 [slot="children"] {
     display: contents;

@@ -657,10 +657,6 @@
   }
 }
 
-.faq-item-a {
-  padding-bottom: 1.5rem;
-}
-
 [slot=children] {
   display: contents;
 }
@@ -1078,6 +1074,9 @@ html:not(.wf-design-mode) .faq-item-a {
 }
 html:not(.wf-design-mode) .faq-item-a a {
   font-weight: 700;
+}
+html:not(.wf-design-mode) .faq-item.active .faq-item-a {
+  padding-bottom: 1.5rem;
 }
 html:not(.wf-design-mode) .custom-styles {
   display: none !important;
