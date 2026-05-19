@@ -347,7 +347,9 @@
 
 // FAQ section — on mobile, drop the card chrome (rounded corners + section
 // horizontal inset) so the gray background extends edge-to-edge of the viewport.
-// Vertical padding on .faq stays so the content keeps its rhythm.
+// Vertical padding on .faq stays so the content keeps its rhythm. Also zero the
+// preceding section's bottom margin so the gray panel butts up against it
+// without a visible gap (looks awkward once it's full-bleed).
 @include breakpoint(small) {
     section:has(.faq) {
         padding-left: 0;
@@ -356,6 +358,10 @@
         .slot {
             border-radius: 0;
         }
+    }
+
+    section:has(+ section:has(.faq)) {
+        margin-bottom: 0 !important;
     }
 }
 

@@ -638,6 +638,9 @@
   section:has(.faq) .slot {
     border-radius: 0;
   }
+  section:has(+ section:has(.faq)) {
+    margin-bottom: 0 !important;
+  }
 }
 [slot=children] {
   display: contents;
