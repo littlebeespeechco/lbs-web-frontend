@@ -277,8 +277,11 @@
         }
     }
 
-    // Below the h4 "Articulation Test Center Hive / Articulation Station Hive". 26d/30m (was 30).
+    // h4 "Articulation Test Center Hive / Articulation Station Hive".
+    // Font-size: 22px both breakpoints (Webflow's ≤991px media query bumps to 26px
+    // otherwise). Margin-bottom: 26d/30m (was 30).
     ._2a-app-heading {
+        font-size: 22px !important;
         margin-bottom: ptr(26);
         @include breakpoint(small) {
             margin-bottom: ptr(30) !important;
@@ -311,11 +314,6 @@
         ._2a-app-subtitle {
             font-size: 14px !important;
             font-weight: 500 !important;
-        }
-        // h4 card heading — Webflow's tablet-down rule sets the size in a tablet-only
-        // media query, so pin to desktop 26px at small.
-        ._2a-app-heading {
-            font-size: 26px !important;
         }
     }
 }
