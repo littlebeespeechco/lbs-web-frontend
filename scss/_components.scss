@@ -369,10 +369,13 @@
         padding-top: ptr(50);
     }
 
-    // Match desktop padding-top on each FAQ item so the collapsed height
-    // (one-line question) is ~70px on both breakpoints.
+    // Match desktop inner padding on each FAQ item so the collapsed height,
+    // horizontal offsets, and +/- button position are identical on both
+    // breakpoints (Webflow shrinks all three to 16px at ≤767).
     .faq-item {
         padding-top: ptr(23) !important;
+        padding-left: ptr(36) !important;
+        padding-right: ptr(26) !important;
     }
 }
 
