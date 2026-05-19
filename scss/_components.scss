@@ -363,6 +363,31 @@
     section:has(+ section:has(.faq)) {
         margin-bottom: 0 !important;
     }
+
+    // Tighten top padding above the FAQ logo on mobile (64 → 50).
+    .faq {
+        padding-top: ptr(50);
+    }
+
+    // Match desktop padding-top on each FAQ item so the collapsed height
+    // (one-line question) is ~70px on both breakpoints.
+    .faq-item {
+        padding-top: ptr(23) !important;
+    }
+}
+
+// Question → answer gap inside each FAQ item. 16d/21m (Webflow base is 19).
+.faq-item-q {
+    margin-bottom: ptr(16);
+    @include breakpoint(small) {
+        margin-bottom: ptr(21);
+    }
+}
+
+// 24px gap below the answer (last paragraph / orange link) to the bottom edge of
+// the expanded answer container. Hidden by overflow when the item is collapsed.
+.faq-item-a {
+    padding-bottom: ptr(24);
 }
 
 [slot="children"] {

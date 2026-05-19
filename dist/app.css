@@ -641,7 +641,26 @@
   section:has(+ section:has(.faq)) {
     margin-bottom: 0 !important;
   }
+  .faq {
+    padding-top: 3.125rem;
+  }
+  .faq-item {
+    padding-top: 1.4375rem !important;
+  }
 }
+.faq-item-q {
+  margin-bottom: 1rem;
+}
+@media (max-width: 767px) {
+  .faq-item-q {
+    margin-bottom: 1.3125rem;
+  }
+}
+
+.faq-item-a {
+  padding-bottom: 1.5rem;
+}
+
 [slot=children] {
   display: contents;
 }
