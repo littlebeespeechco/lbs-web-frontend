@@ -434,10 +434,11 @@
 
 // Free Trial CTA — group signup button. 260×52 desktop, 272×56 mobile.
 // 16px text desktop, 18px mobile. Literal px to bypass the fluid root.
-// Mobile L/R padding 15px so "Sign up your group today" (218px at 18/700) fits
-// at 272 width without wrapping (242px text area). Overrides full-w-sm-auto's
-// 38px !important.
-.free-media .button {
+// Selector includes .full-w-sm-auto to beat that rule's same-specificity
+// `padding: 15px 38px !important` (source order favored it otherwise). Mobile
+// L/R padding 15px so "Sign up your group today" (218px at 18/700) fits in 272
+// width without wrapping (242px text area).
+.free-media .full-w-sm-auto.button {
     width: 260px;
     height: 52px;
     font-size: 16px;

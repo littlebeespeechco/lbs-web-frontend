@@ -694,13 +694,13 @@
   }
 }
 
-.free-media .button {
+.free-media .full-w-sm-auto.button {
   width: 260px;
   height: 52px;
   font-size: 16px;
 }
 @media (max-width: 767px) {
-  .free-media .button {
+  .free-media .full-w-sm-auto.button {
     width: 272px;
     height: 56px;
     font-size: 18px;
@@ -23501,6 +23501,7 @@ body.menu-open .header {
 .icon-84 {
   width: 5.25rem;
   max-width: 5.25rem;
+  align-self: start;
 }
 
 .icon-136 {

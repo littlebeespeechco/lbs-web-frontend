@@ -546,6 +546,7 @@ section:has(.mobile-fullw) {
 .icon-84 {
     width: ptr(84);
     max-width: ptr(84);
+    align-self: start; // when used in a grid/flex row, top-align with siblings
 }
 .icon-136 {
     width: ptr(136);
