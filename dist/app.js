@@ -2026,12 +2026,12 @@
           const current = this.productsMobile.scrollHeight;
           this.productsMobile.style.height = current + "px";
           this.productsMobile.offsetHeight;
+          this.productsMobile.classList.remove("active");
           gsap.to(this.productsMobile, {
             height: 0,
             duration,
             ease,
             onComplete: () => {
-              this.productsMobile.classList.remove("active");
               this.productsMobile.style.height = "";
             }
           });

@@ -117,12 +117,16 @@ export class Megamenu {
                 const current = this.productsMobile.scrollHeight;
                 this.productsMobile.style.height = current + "px";
                 this.productsMobile.offsetHeight; // force reflow
+                // Remove .active NOW so padding/margin/opacity CSS transitions
+                // run in parallel with the height tween — otherwise close
+                // happens in two visible stages (height collapses to padding,
+                // then padding/margin animate).
+                this.productsMobile.classList.remove("active");
                 gsap.to(this.productsMobile, {
                     height: 0,
                     duration,
                     ease,
                     onComplete: () => {
-                        this.productsMobile.classList.remove("active");
                         // Clear inline height so the SCSS rule (height: 0) re-applies.
                         this.productsMobile.style.height = "";
                     }
