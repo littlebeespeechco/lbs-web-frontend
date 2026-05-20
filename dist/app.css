@@ -23553,24 +23553,26 @@ section > img {
 }
 
 .header-mobile-products-wrapper {
-  interpolate-size: allow-keywords;
-  height: 0;
-  transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 0.8s cubic-bezier(0.77, 0, 0.175, 1), padding 0.8s cubic-bezier(0.77, 0, 0.175, 1), margin-top 0.8s cubic-bezier(0.77, 0, 0.175, 1);
   padding: 0rem 1rem;
   margin-top: 0rem;
 }
 .header-mobile-products-wrapper > .mobile-megamenu {
+  min-height: 0;
   opacity: 0;
   transition: opacity 0.35s cubic-bezier(0.77, 0, 0.175, 1);
 }
 .header-mobile-products-wrapper.active {
+  grid-template-rows: 1fr;
   margin-top: 1rem;
-  height: auto;
   padding: 1rem 1rem;
 }
 .header-mobile-products-wrapper.active > .mobile-megamenu {
   opacity: 1;
-  transition: opacity 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0.4s;
+  transition: opacity 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0.3s;
 }
 
 /*# sourceMappingURL=app.css.map */

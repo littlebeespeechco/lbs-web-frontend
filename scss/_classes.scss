@@ -576,29 +576,37 @@ $weights: 400, 500, 600, 700, 800, 900;
 }
 
 .header-mobile-products-wrapper {
-    interpolate-size: allow-keywords;
-    height: 0;
-    transition: all 1s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    // Use the grid-template-rows 0fr ↔ 1fr technique instead of height 0 ↔
+    // auto because `interpolate-size: allow-keywords` isn't supported in
+    // Safari < 18.2 — without it the height snaps instantly and the
+    // remaining padding transition leaves a visible ~32px pill mid-collapse.
+    // grid-template-rows DOES animate in Safari 15+.
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: grid-template-rows 0.8s cubic-bezier(0.770, 0.000, 0.175, 1.000),
+                padding 0.8s cubic-bezier(0.770, 0.000, 0.175, 1.000),
+                margin-top 0.8s cubic-bezier(0.770, 0.000, 0.175, 1.000);
     padding: 0rem 1rem;
     margin-top: 0rem;
 
-    // Fade the inner .mobile-megamenu opacity in sync with the height
-    // expand/collapse. Closing fades quickly so the height-clip never reveals
-    // a pill-shaped strip of the inner radius. Opening delays the fade-in
-    // until the wrapper has visible height, so contents don't pop early.
+    // Inner child needs min-height: 0 so it can collapse below content size
+    // when grid-template-rows reaches 0fr. Opacity fade ensures the contents
+    // don't appear at full opacity while the wrapper is still expanding.
     > .mobile-megamenu {
+        min-height: 0;
         opacity: 0;
         transition: opacity 0.35s cubic-bezier(0.770, 0.000, 0.175, 1.000);
     }
 
     &.active {
+        grid-template-rows: 1fr;
         margin-top: 1rem;
-        height: auto;
         padding: 1rem 1rem;
 
         > .mobile-megamenu {
             opacity: 1;
-            transition: opacity 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000) 0.4s;
+            transition: opacity 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000) 0.3s;
         }
     }
 }
