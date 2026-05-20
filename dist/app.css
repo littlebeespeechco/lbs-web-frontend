@@ -1535,6 +1535,12 @@ section > img {
   color: var(--_colors---light-orange);
 }
 
+body.menu-open .header {
+  background-color: rgba(255, 255, 255, 0.96);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+}
+
 @media (max-width: 479px) {
   .mobile-megamenu .link-block-2 {
     width: auto;

@@ -2114,6 +2114,7 @@
     }
     openMobileMenu(open) {
       console.log("opening mobile menu");
+      document.body.classList.toggle("menu-open", open);
       gsap.set(this.mobileClose, {
         autoAlpha: open ? 0 : 1,
         scale: open ? 0 : 1,

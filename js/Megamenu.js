@@ -226,7 +226,11 @@ export class Megamenu {
 
     openMobileMenu(open) {
         console.log("opening mobile menu");
-        
+
+        // Toggle a body class so the sticky .header can use a more opaque bg
+        // when menu content is scrolling beneath it (SCSS rule in app.scss).
+        document.body.classList.toggle("menu-open", open);
+
         gsap.set(this.mobileClose, {
             autoAlpha: open ? 0 : 1,
             scale: open ? 0 : 1,

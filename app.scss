@@ -197,6 +197,17 @@ section {
     color: var(--_colors---light-orange);
 }
 
+// When the mobile menu is open and content scrolls beneath the sticky
+// header, the default 80% white bg + 10px blur lets too much of the
+// colourful menu content bleed through behind the logo and X button.
+// Bump both only while the menu is open — closed-state look unchanged.
+// Megamenu.js toggles `menu-open` on <body> in openMobileMenu().
+body.menu-open .header {
+    background-color: rgba(255, 255, 255, 0.96);
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+}
+
 // Webflow's auto-generated `.link-block-2 { width: 100% }` at the tiny
 // breakpoint (≤479px) would force each icon Link to its own row inside the
 // mobile megamenu. Scope the override so icon Links sit side-by-side.
