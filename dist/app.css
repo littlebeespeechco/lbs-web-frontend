@@ -1554,8 +1554,10 @@ body.menu-open::before {
   color: white;
   font-size: 16px;
   padding: 4px;
-  z-index: 9;
+  z-index: 9999;
   pointer-events: none;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 @media (max-width: 479px) {

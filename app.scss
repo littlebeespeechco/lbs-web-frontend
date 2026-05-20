@@ -227,8 +227,13 @@ body.menu-open::before {
     color: white;
     font-size: 16px;
     padding: 4px;
-    z-index: 9;
+    z-index: 9999;
     pointer-events: none;
+    // Force a composited layer so Safari paints this above the
+    // GSAP-animated drawer's compositing layer (otherwise drawer wins
+    // regardless of z-index).
+    transform: translateZ(0);
+    will-change: transform;
 }
 
 // Webflow's auto-generated `.link-block-2 { width: 100% }` at the tiny
