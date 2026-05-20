@@ -204,34 +204,35 @@ section {
 // the drawer while the menu is open and beef up the bg + blur so menu
 // content scrolling beneath the logo/X reads cleanly.
 // Megamenu.js toggles `menu-open` on <body> in openMobileMenu().
+// .header carries the logo + X. GSAP promotes the drawer to a composited
+// layer (via clip-path / opacity), which paints above non-composited
+// layers regardless of z-index. Force .header into its own composited
+// layer at a higher z than both the drawer and the white bar below so
+// logo + X stay readable on top of the bar.
 body.menu-open .header {
-    z-index: 10 !important;
+    z-index: 10000 !important;
     background-color: rgba(255, 255, 255, 0.96) !important;
     -webkit-backdrop-filter: blur(18px) !important;
     backdrop-filter: blur(18px) !important;
+    transform: translateZ(0) !important;
+    will-change: transform;
 }
 
-// Belt-and-suspenders: regardless of where the .header actually renders,
-// drop a position: fixed white bar at the top of the viewport whenever
-// the mobile menu is open. Sits below .header's z-index so the logo and
-// X stay readable above it, and above the drawer so scrolling menu
-// content is masked behind the bar.
+// Fixed white-blurry bar at the top of the viewport while the mobile
+// menu is open. Composited layer (transform: translateZ) sits between
+// the drawer (composited via GSAP) and the .header (composited above).
 body.menu-open::before {
-    content: "DEBUG BAR — should be magenta";
+    content: "";
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    height: 120px;
-    background-color: magenta;
-    color: white;
-    font-size: 16px;
-    padding: 4px;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.96);
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
     z-index: 9999;
     pointer-events: none;
-    // Force a composited layer so Safari paints this above the
-    // GSAP-animated drawer's compositing layer (otherwise drawer wins
-    // regardless of z-index).
     transform: translateZ(0);
     will-change: transform;
 }
