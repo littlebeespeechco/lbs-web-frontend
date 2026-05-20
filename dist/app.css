@@ -1535,7 +1535,7 @@ section > img {
   color: var(--_colors---light-orange);
 }
 
-@media (max-width: tinypx) {
+@media (max-width: 479px) {
   .mobile-megamenu .link-block-2 {
     width: auto;
   }
