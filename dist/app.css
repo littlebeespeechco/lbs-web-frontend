@@ -1545,6 +1545,11 @@ section > img {
   pointer-events: none;
 }
 
+body.menu-open {
+  overflow: hidden;
+  overscroll-behavior: contain;
+}
+
 body.menu-open .header {
   z-index: 10000 !important;
   transform: translateX(-50%) translateZ(0) !important;

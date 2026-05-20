@@ -218,6 +218,17 @@ section {
     pointer-events: none;
 }
 
+// Lock the page behind the mobile drawer while it's open. Without this,
+// touch-scrolling on the drawer bleeds through to body — which both moves
+// the page invisibly underneath and triggers the header collapse logic in
+// Megamenu.js update() (logo padding shrinks when Lenis scroll > 0).
+// overscroll-behavior: contain stops scroll chaining when the drawer hits
+// its own scroll boundaries.
+body.menu-open {
+    overflow: hidden;
+    overscroll-behavior: contain;
+}
+
 // .header carries the logo + X. We need them ABOVE the white bar (which
 // is composited at z:9999). Mirror the same compositing technique so the
 // .header's layer paints above the bar's layer.
