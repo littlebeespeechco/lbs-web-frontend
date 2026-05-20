@@ -2005,10 +2005,39 @@
       this.productsMobileLink.addEventListener("click", (e2) => {
         e2.preventDefault();
         e2.stopPropagation();
-        this.productsMobile.classList.toggle("active");
-        const open = this.productsMobile.classList.contains("active");
+        const isOpening = !this.productsMobile.classList.contains("active");
+        const duration = 0.6;
+        const ease = "power2.inOut";
+        if (isOpening) {
+          this.productsMobile.classList.add("active");
+          gsap.fromTo(
+            this.productsMobile,
+            { height: 0 },
+            {
+              height: this.productsMobile.scrollHeight,
+              duration,
+              ease,
+              onComplete: () => {
+                this.productsMobile.style.height = "auto";
+              }
+            }
+          );
+        } else {
+          const current = this.productsMobile.scrollHeight;
+          this.productsMobile.style.height = current + "px";
+          this.productsMobile.offsetHeight;
+          gsap.to(this.productsMobile, {
+            height: 0,
+            duration,
+            ease,
+            onComplete: () => {
+              this.productsMobile.classList.remove("active");
+              this.productsMobile.style.height = "";
+            }
+          });
+        }
         gsap.to(this.productsMobileLink.querySelector("div"), {
-          scaleY: open ? -1 : 1
+          scaleY: isOpening ? -1 : 1
         });
       });
       this.mobileToggler.addEventListener("click", () => {

@@ -89,11 +89,49 @@ export class Megamenu {
         this.productsMobileLink.addEventListener("click", (e) => {
             e.preventDefault();
             e.stopPropagation();
-            this.productsMobile.classList.toggle("active");
-            const open = this.productsMobile.classList.contains("active");
+
+            const isOpening = !this.productsMobile.classList.contains("active");
+            const duration = 0.6;
+            const ease = "power2.inOut";
+
+            if (isOpening) {
+                // Add .active so padding/margin/opacity CSS transitions start;
+                // then animate height from 0 to measured content size.
+                this.productsMobile.classList.add("active");
+                gsap.fromTo(this.productsMobile,
+                    { height: 0 },
+                    {
+                        height: this.productsMobile.scrollHeight,
+                        duration,
+                        ease,
+                        onComplete: () => {
+                            // Let height be content-driven once the open animation finishes
+                            // so subsequent reflows (orientation, image load) don't crop.
+                            this.productsMobile.style.height = "auto";
+                        }
+                    }
+                );
+            } else {
+                // Pin the current height as inline px before animating to 0,
+                // otherwise GSAP starts from `auto` which doesn't tween.
+                const current = this.productsMobile.scrollHeight;
+                this.productsMobile.style.height = current + "px";
+                this.productsMobile.offsetHeight; // force reflow
+                gsap.to(this.productsMobile, {
+                    height: 0,
+                    duration,
+                    ease,
+                    onComplete: () => {
+                        this.productsMobile.classList.remove("active");
+                        // Clear inline height so the SCSS rule (height: 0) re-applies.
+                        this.productsMobile.style.height = "";
+                    }
+                });
+            }
+
             gsap.to(this.productsMobileLink.querySelector("div"), {
-                scaleY: open ? -1 : 1 
-            })
+                scaleY: isOpening ? -1 : 1
+            });
         });
 
         this.mobileToggler.addEventListener("click", () => {
