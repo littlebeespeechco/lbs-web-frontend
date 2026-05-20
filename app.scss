@@ -211,17 +211,11 @@ section {
 // logo + X stay readable on top of the bar.
 body.menu-open .header {
     z-index: 10000 !important;
-    background-color: rgba(255, 255, 255, 0.96) !important;
+    background-color: hotpink !important; // TEMP DEBUG: should be visible if .header renders above drawer
     -webkit-backdrop-filter: blur(18px) !important;
     backdrop-filter: blur(18px) !important;
-    // Preserve the [megamenu] centering (translateX(-50%)) AND force the
-    // composited layer (translateZ(0)) so Safari paints .header above the
-    // drawer's GSAP-promoted compositing layer.
     transform: translateX(-50%) translateZ(0) !important;
     will-change: transform;
-    // Subtle bottom shadow so the header's edge is visible against the
-    // solid-white drawer bg behind it. Without this the bar visually
-    // merges with the drawer (both white) and reads as no bar at all.
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
 }
 

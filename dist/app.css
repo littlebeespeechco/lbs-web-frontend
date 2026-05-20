@@ -1537,7 +1537,7 @@ section > img {
 
 body.menu-open .header {
   z-index: 10000 !important;
-  background-color: rgba(255, 255, 255, 0.96) !important;
+  background-color: hotpink !important;
   -webkit-backdrop-filter: blur(18px) !important;
   backdrop-filter: blur(18px) !important;
   transform: translateX(-50%) translateZ(0) !important;
