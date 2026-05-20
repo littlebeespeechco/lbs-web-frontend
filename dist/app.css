@@ -1541,11 +1541,12 @@ section > img {
   left: 0;
   right: 0;
   height: 80px;
-  background-color: magenta;
-  z-index: 9999;
+  background-color: rgba(255, 255, 255, 0.96);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  z-index: 2;
   pointer-events: none;
-  transform: translateZ(0);
-  will-change: transform;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
 }
 
 body.menu-open .header {

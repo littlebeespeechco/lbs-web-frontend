@@ -2120,7 +2120,7 @@
           this.topBar = document.createElement("div");
           this.topBar.className = "menu-open-top-bar";
         }
-        document.body.appendChild(this.topBar);
+        this.element.appendChild(this.topBar);
       } else if (this.topBar && this.topBar.parentNode) {
         this.topBar.parentNode.removeChild(this.topBar);
       }
