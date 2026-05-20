@@ -196,6 +196,15 @@ section {
     color: var(--_colors---light-orange);
 }
 
+// Webflow's auto-generated `.link-block-2 { width: 100% }` at tiny would
+// force each icon Link to its own row inside the mobile megamenu. Scope
+// the override so icon Links sit side-by-side as a centered pair.
+@include breakpoint(tiny) {
+    .mobile-megamenu .link-block-2 {
+        width: auto;
+    }
+}
+
 .bg-hex {
     background-color: #FFAC00;
     position: relative;
