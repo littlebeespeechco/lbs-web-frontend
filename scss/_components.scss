@@ -434,8 +434,9 @@
 
 // Free Trial CTA — group signup button. 260×52 desktop, 272×56 mobile.
 // 16px text desktop, 18px mobile. Literal px to bypass the fluid root.
-// Mobile L/R padding bumped down to 30px (full-w-sm-auto.button hard-codes
-// 38px !important at ≤991, which makes the text overflow at 272px wide).
+// Mobile L/R padding 15px so "Sign up your group today" (218px at 18/700) fits
+// at 272 width without wrapping (242px text area). Overrides full-w-sm-auto's
+// 38px !important.
 .free-media .button {
     width: 260px;
     height: 52px;
@@ -445,8 +446,8 @@
         width: 272px;
         height: 56px;
         font-size: 18px;
-        padding-left: 30px !important;
-        padding-right: 30px !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
     }
 }
 

@@ -704,8 +704,8 @@
     width: 272px;
     height: 56px;
     font-size: 18px;
-    padding-left: 30px !important;
-    padding-right: 30px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
   }
 }
 
@@ -23498,6 +23498,11 @@ body.menu-open .header {
   }
 }
 
+.icon-84 {
+  width: 5.25rem;
+  max-width: 5.25rem;
+}
+
 .icon-136 {
   width: 8.5rem;
   max-width: 8.5rem;
@@ -23507,6 +23512,21 @@ body.menu-open .header {
   .icon-sm-168 {
     width: 10.5rem !important;
     max-width: 10.5rem !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .hide-sm {
+    display: none !important;
+  }
+}
+
+.show-sm {
+  display: none !important;
+}
+@media (max-width: 767px) {
+  .show-sm {
+    display: revert !important;
   }
 }
 
