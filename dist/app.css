@@ -1536,6 +1536,7 @@ section > img {
 }
 
 body.menu-open .header {
+  z-index: 10;
   background-color: rgba(255, 255, 255, 0.96);
   -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
