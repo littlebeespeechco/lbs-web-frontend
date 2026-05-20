@@ -582,9 +582,23 @@ $weights: 400, 500, 600, 700, 800, 900;
     padding: 0rem 1rem;
     margin-top: 0rem;
 
+    // Fade the inner .mobile-megamenu opacity in sync with the height
+    // expand/collapse. Closing fades quickly so the height-clip never reveals
+    // a pill-shaped strip of the inner radius. Opening delays the fade-in
+    // until the wrapper has visible height, so contents don't pop early.
+    > .mobile-megamenu {
+        opacity: 0;
+        transition: opacity 0.35s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    }
+
     &.active {
         margin-top: 1rem;
         height: auto;
         padding: 1rem 1rem;
+
+        > .mobile-megamenu {
+            opacity: 1;
+            transition: opacity 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000) 0.4s;
+        }
     }
 }
