@@ -1531,7 +1531,7 @@ section > img {
   line-height: 1;
 }
 
-.mobile-megamenu .megamenu-text a {
+.megamenu-text a {
   color: var(--_colors---light-orange);
 }
 

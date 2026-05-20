@@ -190,9 +190,10 @@ section {
     line-height: 1;
 }
 
-// Lighter orange for the inline link inside the mobile megamenu body text
-// ("one membership"). Global `a { color: #FF6200 }` is too dark on the dark menu bg.
-.mobile-megamenu .megamenu-text a {
+// Lighter orange for the inline link inside the megamenu body text
+// ("one membership") on both desktop and mobile. Global `a { color: #FF6200 }`
+// is too dark on the dark menu bg.
+.megamenu-text a {
     color: var(--_colors---light-orange);
 }
 
