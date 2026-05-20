@@ -229,6 +229,20 @@ body.menu-open {
     overscroll-behavior: contain;
 }
 
+// Disable the scroll-driven .header-logo padding shrink on mobile.
+// Megamenu.js update() tween animates logo padding from 2.125rem → 1rem
+// when the user scrolls past 0 (and back when scrolled to top), which on
+// mobile reads as the whole header resizing mid-scroll. Lock the logo to
+// the collapsed (1rem) padding on the small breakpoint and below so the
+// header is a consistent 80px tall on iPhone. `!important` because GSAP
+// writes inline style on the element, which beats normal CSS.
+@include breakpoint(small) {
+    .header-logo {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+}
+
 // .header carries the logo + X. We need them ABOVE the white bar (which
 // is composited at z:9999). Mirror the same compositing technique so the
 // .header's layer paints above the bar's layer.
