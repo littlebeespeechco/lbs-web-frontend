@@ -211,6 +211,25 @@ body.menu-open .header {
     backdrop-filter: blur(18px) !important;
 }
 
+// Belt-and-suspenders: regardless of where the .header actually renders,
+// drop a position: fixed white bar at the top of the viewport whenever
+// the mobile menu is open. Sits below .header's z-index so the logo and
+// X stay readable above it, and above the drawer so scrolling menu
+// content is masked behind the bar.
+body.menu-open::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.96);
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+    z-index: 9;
+    pointer-events: none;
+}
+
 // Webflow's auto-generated `.link-block-2 { width: 100% }` at the tiny
 // breakpoint (≤479px) would force each icon Link to its own row inside the
 // mobile megamenu. Scope the override so icon Links sit side-by-side.

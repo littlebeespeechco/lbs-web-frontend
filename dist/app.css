@@ -1542,6 +1542,20 @@ body.menu-open .header {
   backdrop-filter: blur(18px) !important;
 }
 
+body.menu-open::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background-color: rgba(255, 255, 255, 0.96);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  z-index: 9;
+  pointer-events: none;
+}
+
 @media (max-width: 479px) {
   .mobile-megamenu .link-block-2 {
     width: auto;
