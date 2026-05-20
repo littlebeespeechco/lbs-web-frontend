@@ -2115,6 +2115,15 @@
     openMobileMenu(open) {
       console.log("opening mobile menu");
       document.body.classList.toggle("menu-open", open);
+      if (open) {
+        if (!this.topBar) {
+          this.topBar = document.createElement("div");
+          this.topBar.className = "menu-open-top-bar";
+        }
+        document.body.appendChild(this.topBar);
+      } else if (this.topBar && this.topBar.parentNode) {
+        this.topBar.parentNode.removeChild(this.topBar);
+      }
       gsap.set(this.mobileClose, {
         autoAlpha: open ? 0 : 1,
         scale: open ? 0 : 1,

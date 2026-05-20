@@ -197,26 +197,35 @@ section {
     color: var(--_colors---light-orange);
 }
 
-// When the mobile menu is open, the .header-mobile drawer (z-index: 2)
-// covers the sticky .header (also z-index: 2) because it comes later in
-// the DOM. The X button shows because its wrapper has z-index: 3, but the
-// header's blur+bg is hidden behind the drawer. Lift the .header above
-// the drawer while the menu is open and beef up the bg + blur so menu
-// content scrolling beneath the logo/X reads cleanly.
-// Megamenu.js toggles `menu-open` on <body> in openMobileMenu().
-// .header carries the logo + X. GSAP promotes the drawer to a composited
-// layer (via clip-path / opacity), which paints above non-composited
-// layers regardless of z-index. Force .header into its own composited
-// layer at a higher z than both the drawer and the white bar below so
-// logo + X stay readable on top of the bar.
+// White-blurry bar injected into the DOM by Megamenu.js when the mobile
+// menu opens. The only thing that ever painted above the GSAP-composited
+// drawer in user testing was a composited body::before — so this bar uses
+// the same trick (transform: translateZ(0) forces its own GPU layer).
+// Inserted as a child of body AFTER .header-mobile so it comes later in
+// paint order, with explicit composited layer + extreme z-index.
+.menu-open-top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.96);
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+    z-index: 9999;
+    pointer-events: none;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+// .header carries the logo + X. We need them ABOVE the white bar (which
+// is composited at z:9999). Mirror the same compositing technique so the
+// .header's layer paints above the bar's layer.
 body.menu-open .header {
     z-index: 10000 !important;
-    background-color: hotpink !important; // TEMP DEBUG: should be visible if .header renders above drawer
-    -webkit-backdrop-filter: blur(18px) !important;
-    backdrop-filter: blur(18px) !important;
     transform: translateX(-50%) translateZ(0) !important;
     will-change: transform;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
 }
 
 // Webflow's auto-generated `.link-block-2 { width: 100% }` at the tiny

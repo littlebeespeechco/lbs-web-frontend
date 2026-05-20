@@ -231,6 +231,21 @@ export class Megamenu {
         // when menu content is scrolling beneath it (SCSS rule in app.scss).
         document.body.classList.toggle("menu-open", open);
 
+        // Inject (or remove) a fixed white-blurry bar at the top of the
+        // viewport. It's a real DOM element appended to body AFTER the
+        // .header-mobile drawer so it comes later in paint order; the
+        // composited layer (transform: translateZ in CSS) ensures it
+        // paints above the drawer's GSAP-composited layer.
+        if (open) {
+            if (!this.topBar) {
+                this.topBar = document.createElement("div");
+                this.topBar.className = "menu-open-top-bar";
+            }
+            document.body.appendChild(this.topBar);
+        } else if (this.topBar && this.topBar.parentNode) {
+            this.topBar.parentNode.removeChild(this.topBar);
+        }
+
         gsap.set(this.mobileClose, {
             autoAlpha: open ? 0 : 1,
             scale: open ? 0 : 1,
