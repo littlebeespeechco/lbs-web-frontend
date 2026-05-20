@@ -2084,9 +2084,9 @@ section > img {
   -webkit-text-fill-color: transparent;
 }
 *.text-gradient-yellow {
-  --color1: #FFB700;
+  --color1: #FF9D00;
   --color2: var(--_colors---yellow);
-  background: linear-gradient(to right, #FFB700, var(--_colors---yellow));
+  background: linear-gradient(to right, #FF9D00, var(--_colors---yellow));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
