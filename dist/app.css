@@ -1535,13 +1535,27 @@ section > img {
   color: var(--_colors---light-orange);
 }
 
-body.menu-open .header {
-  z-index: 10000 !important;
-  background-color: rgba(255, 255, 255, 0.96) !important;
-  -webkit-backdrop-filter: blur(18px) !important;
-  backdrop-filter: blur(18px) !important;
-  transform: translateX(-50%) translateZ(0) !important;
-  will-change: transform;
+.header-mobile {
+  position: relative;
+}
+
+.header-mobile::before {
+  content: "";
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  height: 80px;
+  margin-bottom: -80px;
+  margin-left: -1.375rem;
+  margin-right: -1.375rem;
+  margin-top: -5rem;
+  background-color: rgba(255, 255, 255, 0.96);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  z-index: 1;
+  pointer-events: none;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
 }
 
