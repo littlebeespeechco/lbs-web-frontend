@@ -219,23 +219,10 @@ body.menu-open .header {
     // drawer's GSAP-promoted compositing layer.
     transform: translateX(-50%) translateZ(0) !important;
     will-change: transform;
-}
-
-// Fixed white-blurry bar at the top of the viewport while the mobile
-// menu is open. Composited layer (transform: translateZ) sits between
-// the drawer (composited via GSAP) and the .header (composited above).
-body.menu-open::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 80px;
-    background-color: #e0e0e0; // TEMP: light gray to verify rendering
-    z-index: 9999;
-    pointer-events: none;
-    transform: translateZ(0);
-    will-change: transform;
+    // Subtle bottom shadow so the header's edge is visible against the
+    // solid-white drawer bg behind it. Without this the bar visually
+    // merges with the drawer (both white) and reads as no bar at all.
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
 }
 
 // Webflow's auto-generated `.link-block-2 { width: 100% }` at the tiny

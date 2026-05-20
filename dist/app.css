@@ -1542,20 +1542,7 @@ body.menu-open .header {
   backdrop-filter: blur(18px) !important;
   transform: translateX(-50%) translateZ(0) !important;
   will-change: transform;
-}
-
-body.menu-open::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 80px;
-  background-color: #e0e0e0;
-  z-index: 9999;
-  pointer-events: none;
-  transform: translateZ(0);
-  will-change: transform;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
 }
 
 @media (max-width: 479px) {
