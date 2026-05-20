@@ -205,10 +205,10 @@ section {
 // content scrolling beneath the logo/X reads cleanly.
 // Megamenu.js toggles `menu-open` on <body> in openMobileMenu().
 body.menu-open .header {
-    z-index: 10;
-    background-color: rgba(255, 255, 255, 0.96);
-    -webkit-backdrop-filter: blur(18px);
-    backdrop-filter: blur(18px);
+    z-index: 10 !important;
+    background-color: rgba(255, 255, 255, 0.96) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+    backdrop-filter: blur(18px) !important;
 }
 
 // Webflow's auto-generated `.link-block-2 { width: 100% }` at the tiny
