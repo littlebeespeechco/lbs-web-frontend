@@ -203,22 +203,19 @@ section {
 // the same trick (transform: translateZ(0) forces its own GPU layer).
 // Inserted as a child of body AFTER .header-mobile so it comes later in
 // paint order, with explicit composited layer + extreme z-index.
-// Lives INSIDE .header (appended by Megamenu.js). z-index 2.5 puts it above
-// the .header-mobile drawer (z:2) and below .header-logo (z:3) and
-// .header-toggler-wrapper (z:3). All in the same stacking context so no
-// composited-layer surprises.
+// Lives INSIDE .header (appended by Megamenu.js). z-index 2 + later DOM
+// position puts it above the .header-mobile drawer (also z:2 inside .header),
+// while .header-logo (z:3) and .header-toggler-wrapper (z:3) stay on top.
+// position: absolute + inset: 0 makes it fill .header's actual rendered
+// box, so it tracks the header's expanded/collapsed scroll state.
 .menu-open-top-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 80px;
+    position: absolute;
+    inset: 0;
     background-color: rgba(255, 255, 255, 0.96);
     -webkit-backdrop-filter: blur(18px);
     backdrop-filter: blur(18px);
     z-index: 2;
     pointer-events: none;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
 }
 
 // .header carries the logo + X. We need them ABOVE the white bar (which
