@@ -461,22 +461,45 @@
     margin-top: 30px !important;
 }
 
-// Isolation to Conversation header — mobile arrow swap.
-// On mobile, replace the wide horizontal U-swoop arrow with the smaller
-// J-shape arrow from Figma (asset 6a0f89fbd665fdfca5d9cd12), and position
-// it absolutely at the top-right of the heading container so the header
-// text below can lay out more vertically without the arrow above it.
+// Isolation to Conversation header — mobile layout overrides.
+// On mobile:
+//   - Anchor the arrow to the white card (.slot) so its position is fixed
+//     relative to the card, not dependent on the heading text around it
+//   - Swap the wide U-swoop arrow for the Figma J-shape (asset 6a0f89fb…)
+//     at 32×70, positioned 126px from card top / 30px from card right
+//   - Stack the heading words (From, isolation, to, conversation) vertically
+//     with 8px between each, all at 36px font-size
+//   - First text 50px from the top of the card
 @include breakpoint(small) {
-    .isolation.padded {
+    // Card becomes the positioning anchor + sets the top inset to 50px
+    .slot:has(.isolation.padded) {
         position: relative;
+        padding-top: 50px !important;
+    }
+    // Was position: relative in the previous pass — release so arrow
+    // anchors to .slot, not to this wrapper.
+    .isolation.padded {
+        position: static !important;
+        padding-top: 0 !important;
     }
     .isolation-heading-img {
         content: url('https://cdn.prod.website-files.com/68b756cba9c9d34da806e0a0/6a0f89fbd665fdfca5d9cd12_isolation_heading_mobile.svg') !important;
         width: 32px !important;
         height: 70px !important;
         position: absolute !important;
-        top: 0 !important;
-        right: 0 !important;
+        top: 126px !important;
+        right: 30px !important;
+    }
+    // Stack each heading word/phrase on its own line, centered, 36px font.
+    .isolation-heading-item {
+        display: block !important;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 36px !important;
+    }
+    .isolation-heading-item + .isolation-heading-item {
+        margin-top: 8px !important;
     }
 }
 

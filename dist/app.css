@@ -712,16 +712,31 @@
 }
 
 @media (max-width: 767px) {
-  .isolation.padded {
+  .slot:has(.isolation.padded) {
     position: relative;
+    padding-top: 50px !important;
+  }
+  .isolation.padded {
+    position: static !important;
+    padding-top: 0 !important;
   }
   .isolation-heading-img {
     content: url("https://cdn.prod.website-files.com/68b756cba9c9d34da806e0a0/6a0f89fbd665fdfca5d9cd12_isolation_heading_mobile.svg") !important;
     width: 32px !important;
     height: 70px !important;
     position: absolute !important;
-    top: 0 !important;
-    right: 0 !important;
+    top: 126px !important;
+    right: 30px !important;
+  }
+  .isolation-heading-item {
+    display: block !important;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 36px !important;
+  }
+  .isolation-heading-item + .isolation-heading-item {
+    margin-top: 8px !important;
   }
 }
 .free-media .full-w-sm-auto.button {
