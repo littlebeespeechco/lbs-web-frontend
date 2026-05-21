@@ -23531,7 +23531,7 @@ body.menu-open .header {
 }
 
 @media (max-width: 767px) {
-  .btn-272-56 {
+  .btn-sm-272-56 {
     width: 272px !important;
     height: 56px !important;
     margin-left: auto !important;
