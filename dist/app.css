@@ -728,15 +728,25 @@
     top: 126px !important;
     right: 30px !important;
   }
-  .isolation-heading-item {
-    display: block !important;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 36px !important;
+  .isolation-heading {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 8px !important;
   }
-  .isolation-heading-item + .isolation-heading-item {
-    margin-top: 8px !important;
+  .isolation-heading-item,
+  .isolation-heading-item-hl {
+    font-size: 36px !important;
+    line-height: 50px !important;
+    margin: 0 !important;
+  }
+  .isolation-heading-item-hl {
+    height: 50px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .isolation-content {
+    margin-top: 36px !important;
   }
 }
 .free-media .full-w-sm-auto.button {

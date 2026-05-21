@@ -490,16 +490,32 @@
         top: 126px !important;
         right: 30px !important;
     }
-    // Stack each heading word/phrase on its own line, centered, 36px font.
-    .isolation-heading-item {
-        display: block !important;
-        width: fit-content;
-        margin-left: auto;
-        margin-right: auto;
-        font-size: 36px !important;
+    // Stack the heading into a vertical flex column with 8px gap between
+    // each word/pill, all centered. Both plain words (.isolation-heading-item)
+    // and orange-pill words (.isolation-heading-item-hl) share the layout.
+    .isolation-heading {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 8px !important;
     }
-    .isolation-heading-item + .isolation-heading-item {
-        margin-top: 8px !important;
+    .isolation-heading-item,
+    .isolation-heading-item-hl {
+        font-size: 36px !important;
+        line-height: 50px !important;
+        margin: 0 !important;
+    }
+    // Pills: zero out the default vertical padding so the colored box is
+    // exactly 50px tall (matching the plain words' 50px line box).
+    // Keep the horizontal padding for the pill's left/right inset.
+    .isolation-heading-item-hl {
+        height: 50px !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    // 36px gap below "conversation" → body text "Each level…"
+    .isolation-content {
+        margin-top: 36px !important;
     }
 }
 
