@@ -461,6 +461,25 @@
     margin-top: 30px !important;
 }
 
+// Isolation to Conversation header — mobile arrow swap.
+// On mobile, replace the wide horizontal U-swoop arrow with the smaller
+// J-shape arrow from Figma (asset 6a0f89fbd665fdfca5d9cd12), and position
+// it absolutely at the top-right of the heading container so the header
+// text below can lay out more vertically without the arrow above it.
+@include breakpoint(small) {
+    .isolation.padded {
+        position: relative;
+    }
+    .isolation-heading-img {
+        content: url('https://cdn.prod.website-files.com/68b756cba9c9d34da806e0a0/6a0f89fbd665fdfca5d9cd12_isolation_heading_mobile.svg') !important;
+        width: 32px !important;
+        height: 70px !important;
+        position: absolute !important;
+        top: 0 !important;
+        right: 0 !important;
+    }
+}
+
 // Free Trial CTA — group signup button. 260×52 desktop, 272×56 mobile.
 // 16px text desktop, 18px mobile. Literal px to bypass the fluid root.
 // Selector includes .full-w-sm-auto to beat that rule's same-specificity
