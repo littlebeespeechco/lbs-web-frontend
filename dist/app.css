@@ -701,13 +701,14 @@
 .media:where(.w-variant-3b6ea196-51e1-8868-5137-4edc0212b3cc) > .icon-84,
 .media:where(.w-variant-3b6ea196-51e1-8868-5137-4edc0212b3cc) > [class~=mw-5] {
   align-self: center !important;
-  margin-bottom: 2rem !important;
 }
-@media (max-width: 767px) {
-  .media:where(.w-variant-3b6ea196-51e1-8868-5137-4edc0212b3cc) > .icon-84,
-  .media:where(.w-variant-3b6ea196-51e1-8868-5137-4edc0212b3cc) > [class~=mw-5] {
-    margin-bottom: 1rem !important;
-  }
+
+.media:where(.w-variant-3b6ea196-51e1-8868-5137-4edc0212b3cc) .media-heading .mb-32 {
+  margin-bottom: 0 !important;
+}
+
+.media:where(.w-variant-3b6ea196-51e1-8868-5137-4edc0212b3cc) > .media-content {
+  margin-top: 30px !important;
 }
 
 .free-media .full-w-sm-auto.button {

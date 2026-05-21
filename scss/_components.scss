@@ -444,14 +444,21 @@
 .media:where(.w-variant-3b6ea196-51e1-8868-5137-4edc0212b3cc) > .icon-84,
 .media:where(.w-variant-3b6ea196-51e1-8868-5137-4edc0212b3cc) > [class~="mw-5"] {
     align-self: center !important;
-    // Mirror the heading's mb-32 (2rem desktop, 1rem mobile) so both grid items
-    // share the same outer-box height. Without this, the heading's bottom margin
-    // inflates row 1's height by 32px, and the icon centered in the inflated
-    // row sits 16px below the visible text glyph center.
-    margin-bottom: 2rem !important;
-    @include breakpoint(small) {
-        margin-bottom: 1rem !important;
-    }
+}
+
+// Zero out the heading's mb-32 in this variant so it doesn't inflate the
+// media-heading flex container by 32px. This way:
+//   1) Row 1 height = visible heading glyph height (no trailing empty space)
+//   2) The icon's grid centering aligns directly with the visible text
+//   3) The visible gap to body text comes from .media-content's margin-top only
+.media:where(.w-variant-3b6ea196-51e1-8868-5137-4edc0212b3cc) .media-heading .mb-32 {
+    margin-bottom: 0 !important;
+}
+
+// Force body text gap to exactly 30px on both breakpoints (mt-s collapses on
+// mobile, but the spec is 30 on both).
+.media:where(.w-variant-3b6ea196-51e1-8868-5137-4edc0212b3cc) > .media-content {
+    margin-top: 30px !important;
 }
 
 // Free Trial CTA — group signup button. 260×52 desktop, 272×56 mobile.
