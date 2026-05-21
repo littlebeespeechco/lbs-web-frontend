@@ -562,6 +562,18 @@ section:has(.mobile-fullw) {
 .hide-sm { @include breakpoint(small) { display: none !important; } }
 .show-sm { display: none !important; @include breakpoint(small) { display: revert !important; } }
 
+// CTA button sizing for mobile — 272×56 fixed, horizontally centered in its
+// flex/grid parent. Mobile-only; desktop sizing left untouched.
+.btn-272-56 {
+    @include breakpoint(small) {
+        width: 272px !important;
+        height: 56px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        justify-content: center !important;
+    }
+}
+
 $weights: 400, 500, 600, 700, 800, 900;
 @each $weight in $weights {
     .fw-#{$weight} {
