@@ -432,6 +432,20 @@
     }
 }
 
+// ASH hero pattern (.media variant `3b6ea196...`): the bee icon and headline
+// sit in row 1 of a 2-column grid. The parent's `align-items: center` already
+// centers them mathematically (centers align — verified at y=384 desktop),
+// but the bee (84×84) is smaller than the heading box (94×… desktop), so the
+// 5–8px gap top/bottom can read as "off". These overrides make the centering
+// intent explicit so cascade changes elsewhere don't accidentally break it.
+.media:where(.w-variant-3b6ea196-51e1-8868-5137-4edc0212b3cc) {
+    align-items: center !important;
+}
+.media:where(.w-variant-3b6ea196-51e1-8868-5137-4edc0212b3cc) > .icon-84,
+.media:where(.w-variant-3b6ea196-51e1-8868-5137-4edc0212b3cc) > [class~="mw-5"] {
+    align-self: center !important;
+}
+
 // Free Trial CTA — group signup button. 260×52 desktop, 272×56 mobile.
 // 16px text desktop, 18px mobile. Literal px to bypass the fluid root.
 // Selector includes .full-w-sm-auto to beat that rule's same-specificity

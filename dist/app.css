@@ -694,6 +694,15 @@
   }
 }
 
+.media:where(.w-variant-3b6ea196-51e1-8868-5137-4edc0212b3cc) {
+  align-items: center !important;
+}
+
+.media:where(.w-variant-3b6ea196-51e1-8868-5137-4edc0212b3cc) > .icon-84,
+.media:where(.w-variant-3b6ea196-51e1-8868-5137-4edc0212b3cc) > [class~=mw-5] {
+  align-self: center !important;
+}
+
 .free-media .full-w-sm-auto.button {
   width: 260px;
   height: 52px;
