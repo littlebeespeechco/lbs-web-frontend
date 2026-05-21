@@ -498,6 +498,10 @@
         flex-direction: column !important;
         align-items: center !important;
         gap: 8px !important;
+        // Webflow's base .isolation-heading has margin-bottom: 5.125rem (82px)
+        // and no mobile override — zero it so the gap to .isolation-content
+        // comes from .isolation-content's margin-top alone (36px).
+        margin-bottom: 0 !important;
     }
     .isolation-heading-item,
     .isolation-heading-item-hl {

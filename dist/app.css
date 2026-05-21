@@ -733,6 +733,7 @@
     flex-direction: column !important;
     align-items: center !important;
     gap: 8px !important;
+    margin-bottom: 0 !important;
   }
   .isolation-heading-item,
   .isolation-heading-item-hl {
