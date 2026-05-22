@@ -687,6 +687,12 @@
     .media.text-xl.shadow-top.radius-l {
         margin-left: -14px !important;
         margin-right: -14px !important;
+        // Negative margin extends the card edge to 10px from screen, but
+        // would also pull inner content with it. Add 14px of horizontal
+        // padding to push content back to its original 24px-from-screen
+        // position. Card outer edge at 10, content edge at 24.
+        padding-left: 14px !important;
+        padding-right: 14px !important;
     }
 }
 
@@ -709,16 +715,18 @@
         align-items: flex-start !important;
     }
 
-    // Image wrapper (.mb-xs.mw-1/2/3 above the heading): set explicit 18px
-    // below it, leave intrinsic size alone per spec. Blocks without an image
-    // (like "Developed by SLPs for SLPs") simply don't have this child.
+    // Image wrapper (.mb-xs.mw-1/2/3 above the heading): set 8px below it
+    // (= spec 18 − ~10 leading above heading). Leave intrinsic size alone.
+    // Blocks without an image just don't have this child.
     .dual-layout-content .media:where(.w-variant-7e1dcf20-f4e0-d938-2cf6-99f2a459cbec) > .mb-xs {
-        margin-bottom: 18px !important;
+        margin-bottom: 8px !important;
     }
 
-    // Heading wrapper: 22px below it.
+    // Heading wrapper: 12px below (= spec 22 − ~10 leading below heading
+    // glyphs). The 30/54 line-height adds ~12px leading above + below the
+    // visible glyphs; compensating here keeps the visible spacing on-spec.
     .dual-layout-content .media:where(.w-variant-7e1dcf20-f4e0-d938-2cf6-99f2a459cbec) .media-heading {
-        margin: 0 0 22px 0 !important;
+        margin: 0 0 12px 0 !important;
         text-align: left !important;
         align-items: flex-start !important;
     }
@@ -748,11 +756,13 @@
         margin: 0 !important;
     }
 
-    // 90px gap between this whole dual-layout block and the next.
+    // 90px visible gap between this dual-layout block and the next.
+    // Margin set to 48 because the dual-layout has ~32px padding-bottom and
+    // the body text's line-height adds ~10px leading below — 48 + 32 + 10 ≈ 90.
     // Scoped via :has() so only dual-layouts containing the 7e1dcf20 media
     // variant are affected (other dual-layouts like the ASH hero are untouched).
     .dual-layout:has(.media:where(.w-variant-7e1dcf20-f4e0-d938-2cf6-99f2a459cbec)) {
-        margin-bottom: 90px !important;
+        margin-bottom: 48px !important;
     }
 }
 
