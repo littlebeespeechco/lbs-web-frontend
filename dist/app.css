@@ -754,7 +754,7 @@
     margin-top: 36px !important;
     font-size: 18px !important;
     line-height: 28px !important;
-    margin-bottom: 66px !important;
+    margin-bottom: 51px !important;
   }
   .isolation-icons {
     margin-bottom: 0 !important;
@@ -808,14 +808,14 @@
     top: 0;
     left: 0;
     right: 0;
-    bottom: 230px;
+    bottom: 248px;
     background-color: white;
     border-radius: 1.25rem;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
     z-index: -1;
   }
   .isolation-disclaimer {
-    margin: 120px 24px 40px !important;
+    margin: 118px 0 10px !important;
     width: auto !important;
     max-width: none !important;
   }

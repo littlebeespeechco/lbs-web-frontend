@@ -524,12 +524,12 @@
         padding-top: 0 !important;
         padding-bottom: 0 !important;
     }
-    // Body text "Each level…": 18px font / 28px line-height, 36px above, 66px below
+    // Body text "Each level…": 18px font / 28px line-height, 36px above, 51px below
     .isolation-content {
         margin-top: 36px !important;
         font-size: 18px !important;
         line-height: 28px !important;
-        margin-bottom: 66px !important;
+        margin-bottom: 51px !important;
     }
 
     // 80px white-card padding below icons: zero out the icons grid's default
@@ -577,25 +577,26 @@
         position: relative !important;
         padding: 50px 24px 0 !important; // 50 top, 24 sides; bottom handled below
     }
-    // White card visual; bottom: 230px reserves room for disclaimer module
-    // (40 gap + ~150 disclaimer height + 40 below). Iterate if disclaimer is taller.
+    // White card visual: bottom: 248px → "Conversation" sits ~82px from card
+    // bottom; disclaimer sits 40px below card bottom.
     .isolation.padded::before {
         content: '';
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
-        bottom: 230px;
+        bottom: 248px;
         background-color: white;
         border-radius: 1.25rem; // matches radius-xl
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
         z-index: -1;
     }
     // Disclaimer: separate card visual below the white card.
-    // margin-top 120 = 80 white-card padding below icons + 40 transparent gap.
-    // margin-bottom 40 = the gap below disclaimer before section ends.
+    //   margin-top:    118 → 40px below card bottom
+    //   margin-left/right: 0 → 24px from screen edges (inherited from .isolation.padded)
+    //   margin-bottom: 10  → total ~43px to section bottom (10 + section pv-l 33)
     .isolation-disclaimer {
-        margin: 120px 24px 40px !important;
+        margin: 118px 0 10px !important;
         width: auto !important;
         max-width: none !important;
     }
