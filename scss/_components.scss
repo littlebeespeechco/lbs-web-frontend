@@ -766,6 +766,87 @@
     }
 }
 
+// Bottom "FREE for 14 days" CTA pattern — dual-layout variant c666a2c9.
+// Used 4× site-wide:
+//   1× ASH "Try Articulation Station Hive FREE for 14 days"
+//   1× ATCH "Try Articulation Test Center Hive FREE for 14 days"
+//   2× Spanish ("Developed by SLPs for SLPs", "How target words were selected")
+// Home page has 0 dual-layouts → completely safe.
+//
+// Layout (mobile, stacked):
+//   [gray section bg] padding-top 60
+//     [white card] padding 40 (top/bottom) × 30 (left/right)
+//       image (size unchanged)
+//       40 → heading (SF Pro Rounded 800 / 25 / 33 / centered)
+//       40 → button (272×56, Inter 700 / 18 / #282828)
+//       30 → body (Inter / 12 / 17 / centered)
+//     /white card padding 40 (top/bottom)
+//   /gray section padding-bottom 60
+@include breakpoint(small) {
+    // Section: 60px padding top/bottom (override pv-l mobile 27)
+    section:has(.dual-layout:where(.w-variant-c666a2c9-0628-1cb3-c820-0cd38210940c)) {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+    }
+
+    // White card (slot): 40 top/bottom, 30 left/right (override pv-m default)
+    .slot:has(.dual-layout:where(.w-variant-c666a2c9-0628-1cb3-c820-0cd38210940c)) {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+    }
+
+    // Dual layout itself: zero its 55px desktop horizontal padding that carries
+    // over, set 40px gap between media (image) and content (heading+button+body)
+    .dual-layout:where(.w-variant-c666a2c9-0628-1cb3-c820-0cd38210940c) {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        gap: 40px !important;
+    }
+
+    // Content side: centered column on mobile
+    .dual-layout-content:where(.w-variant-c666a2c9-0628-1cb3-c820-0cd38210940c) {
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    // Heading: SF Pro Rounded 800 / 25 / 33 / centered, 40 below
+    .dual-layout-content:where(.w-variant-c666a2c9-0628-1cb3-c820-0cd38210940c) > .heading {
+        font-family: ui-rounded, -apple-system, BlinkMacSystemFont, "SF Pro Rounded", sans-serif !important;
+        font-weight: 800 !important;
+        font-size: 25px !important;
+        line-height: 33px !important;
+        color: #000 !important;
+        text-align: center !important;
+        margin: 0 0 40px 0 !important;
+    }
+
+    // Button: 272×56, Inter 700 / 18 / #282828. 30 below.
+    .dual-layout-content:where(.w-variant-c666a2c9-0628-1cb3-c820-0cd38210940c) > .button {
+        width: 272px !important;
+        height: 56px !important;
+        min-width: 272px !important;
+        margin: 0 auto 30px !important;
+        font-family: "Inter", Arial, sans-serif !important;
+        font-weight: 700 !important;
+        font-size: 18px !important;
+        color: #282828 !important;
+        justify-content: center !important;
+    }
+
+    // Bottom text: Inter / 12 / 17 / centered. font-weight intentionally NOT
+    // set so it inherits the global body 375 (visually matches Figma's 400
+    // per the feedback_inter_renders_heavier_than_figma calibration).
+    .dual-layout-content:where(.w-variant-c666a2c9-0628-1cb3-c820-0cd38210940c) > .rich-text-block {
+        font-family: "Inter", Arial, sans-serif !important;
+        font-size: 12px !important;
+        line-height: 17px !important;
+        text-align: center !important;
+        margin: 0 !important;
+    }
+}
+
 // Free Trial CTA — group signup button. 260×52 desktop, 272×56 mobile.
 // 16px text desktop, 18px mobile. Literal px to bypass the fluid root.
 // Selector includes .full-w-sm-auto to beat that rule's same-specificity
