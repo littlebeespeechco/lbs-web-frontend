@@ -810,7 +810,7 @@
     right: 0;
     bottom: 178px;
     background-color: white;
-    border-radius: 1.25rem;
+    border-radius: var(--_sizes---radius-l-40, 2.5rem);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
     z-index: -1;
   }

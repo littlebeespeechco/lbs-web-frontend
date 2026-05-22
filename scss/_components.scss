@@ -590,7 +590,11 @@
         right: 0;
         bottom: 178px;
         background-color: white;
-        border-radius: 1.25rem; // matches radius-xl
+        // Matches radius-l (used by the section above) so the corner rounding
+        // is consistent with surrounding cards. Webflow's radius-l-40 var =
+        // 2.5rem. The slot has border-radius: 0 from the breakout override,
+        // so this pseudo is what actually draws the visible card corners.
+        border-radius: var(--_sizes---radius-l-40, 2.5rem);
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
         z-index: -1;
     }
