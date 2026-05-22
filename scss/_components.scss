@@ -461,6 +461,13 @@
     margin-top: 30px !important;
 }
 
+// Step labels (1. Isolation, 2. Syllables…): SF Pro Rounded across breakpoints.
+// Desktop weight 700 / 15px (Webflow already sets size+weight, only family changes here).
+// Mobile bumps to weight 800 / 18px below.
+.isolation-icon-text {
+    font-family: ui-rounded, -apple-system, BlinkMacSystemFont, "SF Pro Rounded", sans-serif !important;
+}
+
 // Isolation to Conversation header — mobile layout overrides.
 // On mobile:
 //   - Anchor the arrow to the white card (.slot) so its position is fixed
@@ -517,9 +524,62 @@
         padding-top: 0 !important;
         padding-bottom: 0 !important;
     }
-    // 36px gap below "conversation" → body text "Each level…"
+    // Body text "Each level…": 18px font / 28px line-height, 36px above, 66px below
     .isolation-content {
         margin-top: 36px !important;
+        font-size: 18px !important;
+        line-height: 28px !important;
+        margin-bottom: 66px !important;
+    }
+
+    // 80px white-card padding below icons: zero out the icons grid's default
+    // 5.625rem bottom margin and instead let .isolation.padded's padding handle
+    // spacing within the white card.
+    .isolation-icons {
+        margin-bottom: 0 !important;
+    }
+
+    // Step label sizing on mobile (font-family inherited from base rule above)
+    .isolation-icon-text {
+        font-weight: 800 !important;
+        font-size: 18px !important;
+    }
+
+    // ── Disclaimer breakout: turn the white card into a pseudo-element on
+    // .isolation.padded so the bg-white doesn't cover the disclaimer area.
+    // Slot becomes transparent; .isolation.padded houses both the card visual
+    // (via ::before) and the disclaimer as a separate visual block below.
+    .slot:has(.isolation.padded) {
+        background-color: transparent !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+    }
+    .isolation.padded {
+        position: relative !important;
+        padding: 50px 24px 0 !important; // 50 top, 24 sides; bottom handled below
+    }
+    // White card visual; bottom: 230px reserves room for disclaimer module
+    // (40 gap + ~150 disclaimer height + 40 below). Iterate if disclaimer is taller.
+    .isolation.padded::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 230px;
+        background-color: white;
+        border-radius: 1.25rem; // matches radius-xl
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        z-index: -1;
+    }
+    // Disclaimer: separate card visual below the white card.
+    // margin-top 120 = 80 white-card padding below icons + 40 transparent gap.
+    // margin-bottom 40 = the gap below disclaimer before section ends.
+    .isolation-disclaimer {
+        margin: 120px 24px 40px !important;
+        width: auto !important;
+        max-width: none !important;
     }
 }
 

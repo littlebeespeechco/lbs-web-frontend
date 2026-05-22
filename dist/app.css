@@ -711,6 +711,10 @@
   margin-top: 30px !important;
 }
 
+.isolation-icon-text {
+  font-family: ui-rounded, -apple-system, BlinkMacSystemFont, "SF Pro Rounded", sans-serif !important;
+}
+
 @media (max-width: 767px) {
   .slot:has(.isolation.padded) {
     position: relative;
@@ -748,6 +752,43 @@
   }
   .isolation-content {
     margin-top: 36px !important;
+    font-size: 18px !important;
+    line-height: 28px !important;
+    margin-bottom: 66px !important;
+  }
+  .isolation-icons {
+    margin-bottom: 0 !important;
+  }
+  .isolation-icon-text {
+    font-weight: 800 !important;
+    font-size: 18px !important;
+  }
+  .slot:has(.isolation.padded) {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+  }
+  .isolation.padded {
+    position: relative !important;
+    padding: 50px 24px 0 !important;
+  }
+  .isolation.padded::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 230px;
+    background-color: white;
+    border-radius: 1.25rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    z-index: -1;
+  }
+  .isolation-disclaimer {
+    margin: 120px 24px 40px !important;
+    width: auto !important;
+    max-width: none !important;
   }
 }
 .free-media .full-w-sm-auto.button {
