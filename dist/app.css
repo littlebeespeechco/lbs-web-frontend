@@ -913,13 +913,12 @@
   }
   .slot:has(.dual-layout:where(.w-variant-c666a2c9-0628-1cb3-c820-0cd38210940c)) {
     padding-top: 40px !important;
-    padding-bottom: 40px !important;
+    padding-bottom: 30px !important;
     padding-left: 30px !important;
     padding-right: 30px !important;
   }
   .dual-layout:where(.w-variant-c666a2c9-0628-1cb3-c820-0cd38210940c) {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding: 0 !important;
     gap: 40px !important;
   }
   .dual-layout-content:where(.w-variant-c666a2c9-0628-1cb3-c820-0cd38210940c) {

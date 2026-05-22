@@ -789,19 +789,22 @@
         padding-bottom: 60px !important;
     }
 
-    // White card (slot): 40 top/bottom, 30 left/right (override pv-m default)
+    // White card (slot): 40 top, 30 bottom, 30 left/right.
+    // Bottom is 30 (not 40) so the 10px line-height leading below the body
+    // text's last glyph lands the visible gap on 40 per spec.
     .slot:has(.dual-layout:where(.w-variant-c666a2c9-0628-1cb3-c820-0cd38210940c)) {
         padding-top: 40px !important;
-        padding-bottom: 40px !important;
+        padding-bottom: 30px !important;
         padding-left: 30px !important;
         padding-right: 30px !important;
     }
 
-    // Dual layout itself: zero its 55px desktop horizontal padding that carries
-    // over, set 40px gap between media (image) and content (heading+button+body)
+    // Dual layout itself: zero its 55px desktop horizontal padding that
+    // carries over; ALSO zero the 40px vertical padding it contributes
+    // (otherwise stacks with the slot's padding for ~80 at the bottom).
+    // Set 40px gap between media (image) and content.
     .dual-layout:where(.w-variant-c666a2c9-0628-1cb3-c820-0cd38210940c) {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
+        padding: 0 !important;
         gap: 40px !important;
     }
 
