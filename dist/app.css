@@ -922,18 +922,11 @@
     grid-template-columns: none !important;
     grid-template-rows: none !important;
   }
-  .scenes .scenes-item {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-  .scenes .scenes-item-image {
-    display: none !important;
-  }
   .scenes .button.blocky {
     width: 180px !important;
     height: 72px !important;
     min-width: 180px !important;
+    border-radius: 18px !important;
     font-family: ui-rounded, -apple-system, BlinkMacSystemFont, "SF Pro Rounded", sans-serif !important;
     font-weight: 800 !important;
     font-size: 23px !important;

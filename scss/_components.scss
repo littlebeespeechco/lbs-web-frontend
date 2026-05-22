@@ -792,23 +792,17 @@
         grid-template-rows: none !important;
     }
 
-    // Each .scenes-item collapses to just its button (the decorative
-    // scenes-item-image is hidden on mobile so only the colored buttons show).
-    .scenes .scenes-item {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-    .scenes .scenes-item-image {
-        display: none !important;
-    }
-
-    // Buttons: 180×72, SF Pro Rounded 800 / 23 (text-23 utility already
-    // sets 23 but we re-assert here alongside the family + weight).
+    // Buttons: 180×72, 18px corner radius (matching desktop), SF Pro Rounded
+    // 800 / 23. The scenes-item is position: relative and contains both the
+    // button and an absolutely-positioned .scenes-item-description popup
+    // (white view with circular icon + title + description that appears
+    // on tap) — leave that popup untouched so it renders identically to
+    // desktop.
     .scenes .button.blocky {
         width: 180px !important;
         height: 72px !important;
         min-width: 180px !important;
+        border-radius: 18px !important;
         font-family: ui-rounded, -apple-system, BlinkMacSystemFont, "SF Pro Rounded", sans-serif !important;
         font-weight: 800 !important;
         font-size: 23px !important;
