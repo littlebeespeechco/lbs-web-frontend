@@ -766,6 +766,21 @@
     }
 }
 
+// EXCEPTION (NOT part of the template):
+// Stories section on ASH needs an extra 60px at its top. Earlier rule
+// `section:has(.media.text-xl)` zeros section pv-l so the .media.text-xl
+// itself owns the spacing — this exception bumps the section's padding-top
+// to 60 only for the Stories section, leaving padding-bottom at 0 so the
+// step-block's own padding-bottom continues to handle the bottom side.
+//
+// Requires Section ID prop on the Stories section set to "stories" in
+// Designer. If the ID changes, update the selector here.
+@include breakpoint(small) {
+    section#stories.section {
+        padding-top: 60px !important;
+    }
+}
+
 // Bottom "FREE for 14 days" CTA pattern — dual-layout variant c666a2c9.
 // Used 4× site-wide:
 //   1× ASH "Try Articulation Station Hive FREE for 14 days"

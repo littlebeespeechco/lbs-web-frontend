@@ -907,6 +907,11 @@
   }
 }
 @media (max-width: 767px) {
+  section#stories.section {
+    padding-top: 60px !important;
+  }
+}
+@media (max-width: 767px) {
   section:has(.dual-layout:where(.w-variant-c666a2c9-0628-1cb3-c820-0cd38210940c)) {
     padding-top: 60px !important;
     padding-bottom: 60px !important;
