@@ -807,6 +807,13 @@
         padding: 0 !important;
         gap: 40px !important;
     }
+    // Hide the empty .dual-layout-extra slot. It renders as a 0×0 third
+    // flex item, which makes our `gap: 40px` add another 40px between
+    // content (the last visible item) and the empty extra — visually a
+    // mystery 40px of padding below the content.
+    .dual-layout:where(.w-variant-c666a2c9-0628-1cb3-c820-0cd38210940c) > .dual-layout-extra {
+        display: none !important;
+    }
 
     // Content side: centered column on mobile
     .dual-layout-content:where(.w-variant-c666a2c9-0628-1cb3-c820-0cd38210940c) {

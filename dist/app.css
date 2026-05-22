@@ -921,6 +921,9 @@
     padding: 0 !important;
     gap: 40px !important;
   }
+  .dual-layout:where(.w-variant-c666a2c9-0628-1cb3-c820-0cd38210940c) > .dual-layout-extra {
+    display: none !important;
+  }
   .dual-layout-content:where(.w-variant-c666a2c9-0628-1cb3-c820-0cd38210940c) {
     align-items: center !important;
     text-align: center !important;
