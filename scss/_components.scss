@@ -577,15 +577,18 @@
         position: relative !important;
         padding: 50px 24px 0 !important; // 50 top, 24 sides; bottom handled below
     }
-    // White card visual: bottom: 202px → "Conversation" sits ~82px from card
-    // bottom (accounting for the new disclaimer margins below).
+    // White card visual: bottom is the SINGLE control for both
+    // Conversation→card_bottom (target 82) and card_bottom→disclaimer (target 40).
+    // Formula: bottom = target_gap + disclaimer_height + disclaimer_margin_bottom
+    //        = 40 + 122 + 16 = 178
+    // Disclaimer rendered height (~122px) backed out from previous live state.
     .isolation.padded::before {
         content: '';
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
-        bottom: 202px;
+        bottom: 178px;
         background-color: white;
         border-radius: 1.25rem; // matches radius-xl
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
