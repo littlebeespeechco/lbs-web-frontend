@@ -577,26 +577,30 @@
         position: relative !important;
         padding: 50px 24px 0 !important; // 50 top, 24 sides; bottom handled below
     }
-    // White card visual: bottom: 248px → "Conversation" sits ~82px from card
-    // bottom; disclaimer sits 40px below card bottom.
+    // White card visual: bottom: 202px → "Conversation" sits ~82px from card
+    // bottom (accounting for the new disclaimer margins below).
     .isolation.padded::before {
         content: '';
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
-        bottom: 248px;
+        bottom: 202px;
         background-color: white;
         border-radius: 1.25rem; // matches radius-xl
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
         z-index: -1;
     }
     // Disclaimer: separate card visual below the white card.
-    //   margin-top:    118 → 40px below card bottom
-    //   margin-left/right: 0 → 24px from screen edges (inherited from .isolation.padded)
-    //   margin-bottom: 10  → total ~43px to section bottom (10 + section pv-l 33)
+    //   margin-top:    122  → 40px gap from card bottom to disclaimer top
+    //   margin-left/right: -24 → extends beyond .isolation.padded's 24px
+    //     horizontal padding so the disclaimer's outer edge sits 24px from
+    //     the screen edge (section has its own 24px mobile padding that
+    //     handles the remaining inset)
+    //   margin-bottom: 16  → ~43px from disclaimer bottom to section bottom
+    //     (16 + section pv-l mobile 27)
     .isolation-disclaimer {
-        margin: 118px 0 10px !important;
+        margin: 122px -24px 16px !important;
         width: auto !important;
         max-width: none !important;
     }

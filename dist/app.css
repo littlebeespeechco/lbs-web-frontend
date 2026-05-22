@@ -808,14 +808,14 @@
     top: 0;
     left: 0;
     right: 0;
-    bottom: 248px;
+    bottom: 202px;
     background-color: white;
     border-radius: 1.25rem;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
     z-index: -1;
   }
   .isolation-disclaimer {
-    margin: 118px 0 10px !important;
+    margin: 122px -24px 16px !important;
     width: auto !important;
     max-width: none !important;
   }
