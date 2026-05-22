@@ -660,14 +660,14 @@
         margin: 0 !important;
     }
 
-    // Body text: Inter 500 / 22 / 31 / #646464, 44px below.
+    // Body text: Inter 500 / 22 / 31 / #646464, 40px below.
     .media.text-xl .media-content {
         font-family: "Inter", Arial, sans-serif !important;
         font-weight: 500 !important;
         font-size: 22px !important;
         line-height: 31px !important;
         color: #646464 !important;
-        margin: 0 0 44px 0 !important;
+        margin: 0 0 40px 0 !important;
     }
 
     // Video button: 118×42. Internals are correct per spec.
@@ -675,6 +675,84 @@
         width: 118px !important;
         height: 42px !important;
         min-width: 118px !important;
+    }
+
+    // Card-style step blocks (shadow-top + radius-l). On mobile the section
+    // has 24px horizontal padding (Webflow .section mobile rule), which leaves
+    // the card 24px from each screen edge. User wants the card 10px from each
+    // edge → extend it 14px beyond the section's content area via negative
+    // horizontal margin. Only affects the .media variant that has the card
+    // visual; the first step block ("Isolation") is `padded text-xl pv-l`
+    // without shadow-top/radius-l, so it's unchanged.
+    .media.text-xl.shadow-top.radius-l {
+        margin-left: -14px !important;
+        margin-right: -14px !important;
+    }
+}
+
+// Dual-layout content media block — the .media element inside .dual-layout-content
+// with Webflow variant 7e1dcf20-f4e0-d938-2cf6-99f2a459cbec.
+// Used 32× on ASH (Hand Cues, Picture Cues, Letter Cues, Syllable Sliders,
+// Nonsense Syllables, etc.) and the same pattern on Spanish/ATCH product pages.
+//
+// Home page audit: 0 dual-layouts; 1 standalone .media uses this variant
+// (without a .dual-layout-content wrapper) — scoping to .dual-layout-content
+// keeps that home instance untouched.
+//
+// Mobile vertical rhythm inside the block:
+//   image(size unchanged) → 18 → heading(SF Pro Rounded 800 / 30 / 54 / black)
+//   → 22 → body(Inter / 17 / 26 / #282828)
+// And 90px from one whole dual-layout block to the next.
+@include breakpoint(small) {
+    .dual-layout-content .media:where(.w-variant-7e1dcf20-f4e0-d938-2cf6-99f2a459cbec) {
+        text-align: left !important;
+        align-items: flex-start !important;
+    }
+
+    // Image wrapper (.mb-xs.mw-1/2/3 above the heading): set explicit 18px
+    // below it, leave intrinsic size alone per spec. Blocks without an image
+    // (like "Developed by SLPs for SLPs") simply don't have this child.
+    .dual-layout-content .media:where(.w-variant-7e1dcf20-f4e0-d938-2cf6-99f2a459cbec) > .mb-xs {
+        margin-bottom: 18px !important;
+    }
+
+    // Heading wrapper: 22px below it.
+    .dual-layout-content .media:where(.w-variant-7e1dcf20-f4e0-d938-2cf6-99f2a459cbec) .media-heading {
+        margin: 0 0 22px 0 !important;
+        text-align: left !important;
+        align-items: flex-start !important;
+    }
+    // Heading text: SF Pro Rounded 800 / 30 / 54 / black.
+    .dual-layout-content .media:where(.w-variant-7e1dcf20-f4e0-d938-2cf6-99f2a459cbec) .media-heading .heading,
+    .dual-layout-content .media:where(.w-variant-7e1dcf20-f4e0-d938-2cf6-99f2a459cbec) .media-heading .heading-unit {
+        font-family: ui-rounded, -apple-system, BlinkMacSystemFont, "SF Pro Rounded", sans-serif !important;
+        font-weight: 800 !important;
+        font-size: 30px !important;
+        line-height: 54px !important;
+        color: #000 !important;
+        margin: 0 !important;
+        text-align: left !important;
+    }
+
+    // Body: Inter / 17 / 26 / #282828. Left-aligned.
+    // font-weight intentionally NOT set so it inherits the global body
+    // 375 weight (synthesized via Inter Variable Font in app.scss to match
+    // Figma's lighter rendering of Inter — see memory note
+    // feedback_inter_renders_heavier_than_figma).
+    .dual-layout-content .media:where(.w-variant-7e1dcf20-f4e0-d938-2cf6-99f2a459cbec) .media-content {
+        font-family: "Inter", Arial, sans-serif !important;
+        font-size: 17px !important;
+        line-height: 26px !important;
+        color: #282828 !important;
+        text-align: left !important;
+        margin: 0 !important;
+    }
+
+    // 90px gap between this whole dual-layout block and the next.
+    // Scoped via :has() so only dual-layouts containing the 7e1dcf20 media
+    // variant are affected (other dual-layouts like the ASH hero are untouched).
+    .dual-layout:has(.media:where(.w-variant-7e1dcf20-f4e0-d938-2cf6-99f2a459cbec)) {
+        margin-bottom: 90px !important;
     }
 }
 
