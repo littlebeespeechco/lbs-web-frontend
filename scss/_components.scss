@@ -696,6 +696,24 @@
     }
 }
 
+// "Choose from 3 Interactive Scenes" intro block — .media.padded.text-xl.pv-l
+// The `pv-l` class is unique to this block vs the icon-based step blocks.
+// Section pv and body text (22/31 Inter 500 #646464) are already correct from
+// the shared `.media.text-xl` rules above. Only the heading overrides differ:
+// spec is Inter 800 / 20px / 37px / #282828 (compact, not the step-block 42px).
+// 30px gap between heading and body comes from the shared .media-heading margin.
+@include breakpoint(small) {
+    .media.padded.text-xl.pv-l .media-heading .heading,
+    .media.padded.text-xl.pv-l .media-heading .heading-unit {
+        font-family: "Inter", Arial, sans-serif !important;
+        font-weight: 800 !important;
+        font-size: 20px !important;
+        line-height: 37px !important;
+        color: #282828 !important;
+        margin: 0 !important;
+    }
+}
+
 // Dual-layout content media block — the .media element inside .dual-layout-content
 // with Webflow variant 7e1dcf20-f4e0-d938-2cf6-99f2a459cbec.
 // Used 32× on ASH (Hand Cues, Picture Cues, Letter Cues, Syllable Sliders,
