@@ -958,6 +958,7 @@
     min-height: 0 !important;
     max-height: none !important;
     overflow: visible !important;
+    padding-bottom: 360px !important;
   }
   #conversation.section > .slot {
     height: auto !important;

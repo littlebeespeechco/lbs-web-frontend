@@ -862,6 +862,10 @@
         min-height: 0 !important;
         max-height: none !important;
         overflow: visible !important;
+        // Literal user request: 300px larger gap from image bottom to
+        // section bottom on mobile. Section default padding-bottom is ~60,
+        // so 360 = 60 + 300.
+        padding-bottom: 360px !important;
     }
     #conversation.section > .slot {
         height: auto !important;
