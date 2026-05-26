@@ -734,26 +734,76 @@
 }
 
 // "From summer sunshine…" heading: the dual-layout immediately before it
-// has mb-l = 100px desktop (→ ~33px mobile collapse). Spec wants 60px on
-// mobile. Target only this dual-layout via :has(+ h2.w-variant-d4856d6d…)
-// — the heading variant is shared with one other h2 ("Each interactive
-// scene…") but that h2 has NO preceding dual-layout sibling, so the
-// selector only fires once.
+// has mb-l = 100px desktop / ~33px mobile collapse + Webflow-set
+// padding-bottom on mobile. Zero both and set a tighter margin so the
+// total visual gap is ~30px rather than the ~90px from the 60px margin +
+// ~30px internal padding that was appearing before.
 @include breakpoint(small) {
     .dual-layout.mb-l:has(+ .w-variant-d4856d6d-6a11-c79e-d12d-2cc8b14b8cd8) {
-        margin-bottom: 60px !important;
+        padding-bottom: 0 !important;
+        margin-bottom: 30px !important;
     }
 }
 
 // Grid Themes section — 5 across desktop → 2 across mobile.
-// Container: div.slot-5 (unique class, CSS grid, 30 .caption children).
-// Lives inside .faded-end > .slot. Desktop: repeat(5, 206px) / 42px gap.
-// Mobile: repeat(2, 1fr) with 20px column gap / 30px row gap.
+// Container: div.slot-5 (unique class, CSS grid, 30 .caption children inside
+// .faded-end). Desktop: repeat(5, 206px) / 42px gap / 6 rows.
+// Mobile: repeat(2, 1fr) / 20px col / 30px row → 15 rows.
+//
+// .faded-end has a Webflow-set height matching the desktop 6-row grid
+// (~1349px). On mobile the grid needs ~3× that height for 15 rows, so
+// .faded-end must be allowed to grow. mask-image creates the fade effect
+// at the bottom 256px regardless of height.
+//
+// .caption-text: Inter 500 11px lh 22px #5d5d5d (the image above it stays
+// auto-sized; only the text label below changes).
 @include breakpoint(small) {
+    .faded-end {
+        height: auto !important;
+    }
     .slot-5 {
         grid-template-columns: repeat(2, 1fr) !important;
         column-gap: 20px !important;
         row-gap: 30px !important;
+    }
+    .slot-5 .caption-text {
+        font-family: "Inter", Arial, sans-serif !important;
+        font-weight: 500 !important;
+        font-size: 11px !important;
+        line-height: 22px !important;
+        color: #5d5d5d !important;
+    }
+}
+
+// "And there's more…" section — immediately follows the Grid Themes section.
+// Selector: section.mb-s:has(.faded-end) + section (the .pv-l section after
+// the faded grid). Content: heading + rich-text body + dual-layout feature list.
+//
+// Mobile spec:
+//   36px above (section padding-top)
+//   heading: SF Pro Rounded 800 / 30 / 37 / #282828
+//   26px gap (heading margin-bottom)
+//   body (rich-text-block): Inter 500 / 22 / 31 / #646464
+//   40px to the feature dual-layout below (rich-text margin-bottom)
+@include breakpoint(small) {
+    section.mb-s:has(.faded-end) + section {
+        padding-top: 36px !important;
+    }
+    section.mb-s:has(.faded-end) + section .heading {
+        font-family: ui-rounded, -apple-system, BlinkMacSystemFont, "SF Pro Rounded", sans-serif !important;
+        font-weight: 800 !important;
+        font-size: 30px !important;
+        line-height: 37px !important;
+        color: #282828 !important;
+        margin-bottom: 26px !important;
+    }
+    section.mb-s:has(.faded-end) + section .rich-text-block {
+        font-family: "Inter", Arial, sans-serif !important;
+        font-weight: 500 !important;
+        font-size: 22px !important;
+        line-height: 31px !important;
+        color: #646464 !important;
+        margin-bottom: 40px !important;
     }
 }
 
