@@ -798,11 +798,12 @@
     //   - flex column with gap: 40 between items (overrides the 2x2 grid)
     //   - 40px above (to the image), 60px below (to section bottom)
     // Use flex with wrap (matches Webflow's default mobile behavior).
-    // Items (180 wide) naturally wrap to one-per-row on narrow viewports,
-    // and the container auto-sizes its height to match the wrapped content.
-    // Switching away from Webflow's display: grid (with its fixed
-    // grid-template-rows: auto auto) is what lets the green bg actually
-    // grow — grid was locking the container to 2 rows of height.
+    // Items (180 wide) naturally wrap to one-per-row on narrow viewports.
+    //
+    // min-height: 600px forces the green bg to extend tall enough for the
+    // 4 stacked buttons + gaps + padding (4*72 + 3*40 + 100 = 508). Setting
+    // it as a floor guarantees the bg shows even if something else is
+    // preventing the container from naturally auto-growing.
     .scenes {
         display: flex !important;
         flex-flow: wrap !important;
@@ -815,6 +816,7 @@
         padding-right: 0 !important;
         margin-top: 40px !important;
         margin-bottom: 60px !important;
+        min-height: 600px !important;
         grid-template-columns: none !important;
         grid-template-rows: none !important;
     }

@@ -930,6 +930,7 @@
     padding-right: 0 !important;
     margin-top: 40px !important;
     margin-bottom: 60px !important;
+    min-height: 600px !important;
     grid-template-columns: none !important;
     grid-template-rows: none !important;
   }
