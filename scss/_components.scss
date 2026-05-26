@@ -836,6 +836,25 @@
     }
 }
 
+// Conversation section: the gray-green section bg (bg-2) wasn't growing on
+// mobile to accommodate the taller stacked menu. The `no-overflow` class
+// (overflow: hidden) plus the absolutely-positioned .section-image inside
+// were keeping the visible bg height locked. Force the section to auto-size
+// and let overflow show so the bg extends to fit the menu below the image.
+@include breakpoint(small) {
+    #conversation.section {
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+    #conversation.section > .slot {
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+    }
+}
+
 // EXCEPTION (NOT part of the template):
 // Stories section on ASH needs an extra 60px at its top. Earlier rule
 // `section:has(.media.text-xl)` zeros section pv-l so the .media.text-xl

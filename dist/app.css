@@ -944,6 +944,19 @@
   }
 }
 @media (max-width: 767px) {
+  #conversation.section {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  #conversation.section > .slot {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+  }
+}
+@media (max-width: 767px) {
   section#stories.section {
     padding-top: 60px !important;
   }
