@@ -851,13 +851,13 @@
     }
 }
 
-// Conversation section: the gray-green section bg (bg-2) wasn't growing on
-// mobile to accommodate the taller stacked menu. The `no-overflow` class
-// (overflow: hidden) plus the absolutely-positioned .section-image inside
-// were keeping the visible bg height locked. Force the section to auto-size
-// and let overflow show so the bg extends to fit the menu below the image.
+// Conversation section: on mobile change the section bg to the same light
+// green as the .scenes menu so the area between the section-image (anchored
+// to the top, height 491) and the menu reads as continuous green instead
+// of the bg-2 light gray that looked "blue" against the ocean image above.
 @include breakpoint(small) {
     #conversation.section {
+        background-color: #E7F9C9 !important;
         height: auto !important;
         min-height: 0 !important;
         max-height: none !important;

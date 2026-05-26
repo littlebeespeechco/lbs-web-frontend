@@ -953,6 +953,7 @@
 }
 @media (max-width: 767px) {
   #conversation.section {
+    background-color: #E7F9C9 !important;
     height: auto !important;
     min-height: 0 !important;
     max-height: none !important;
