@@ -818,24 +818,31 @@
         grid-template-rows: none !important;
     }
 
-    // The .section-image is positioned absolute with `inset: 0; height: 140%`
-    // — it covers the entire section as a background. On mobile, when the
-    // stacked menu makes the section taller, the image keeps covering ALL
-    // of the section including where the menu sits, causing visual overlap.
-    // Anchor image to the TOP only and constrain its height so it occupies
-    // only the upper portion of the section, leaving room below for the
-    // menu's own bg to show.
+    // Conversation image (per user-supplied design intent, 2026-05-26):
+    //   - Pinned to the left at its natural intrinsic width
+    //   - 576px tall
+    //   - Hangs off the right edge on viewports narrower than the image's
+    //     natural width; wider viewports reveal more of the scene
+    //   - Top at y=440 from section top (440px "top area" of blue bg above
+    //     image, where the image's own alpha blends into the bg)
     //
-    // IMPORTANT: `inset: auto` must come BEFORE the longhands — it's a
-    // shorthand that resets top/right/bottom/left, so writing it after
-    // `top: 0` silently wipes out the anchor.
+    // `inset: auto` MUST come before the longhands — shorthand resets all
+    // four sides, so writing it after `top: 0` silently wipes the anchor.
+    //
+    // Disable Webflow's default `section > img` mask-image fade
+    // (linear-gradient transparent at 70%) — the bottom of this image is
+    // a hard edge into the green menu area, not a fade.
     #conversation .section-image {
         inset: auto !important;
-        top: 0 !important;
-        bottom: auto !important;
+        top: 440px !important;
         left: 0 !important;
-        right: 0 !important;
-        height: 491px !important;
+        right: auto !important;
+        bottom: auto !important;
+        height: 576px !important;
+        width: auto !important;
+        max-width: none !important;
+        mask-image: none !important;
+        -webkit-mask-image: none !important;
     }
 
     // Buttons: 180×72, 18px corner radius (matching desktop), SF Pro Rounded
@@ -855,34 +862,47 @@
     }
 }
 
-// Conversation section: on mobile change the section bg to the same light
-// green as the .scenes menu so the area between the section-image (anchored
-// to the top, height 491) and the menu reads as continuous green instead
-// of the bg-2 light gray that looked "blue" against the ocean image above.
+// Conversation section background (per design intent, 2026-05-26):
+//   - Blue (bg-2) from section top down to image bottom = 440 (top area)
+//     + 576 (image height) = 1016px. The image's alpha top blends into
+//     this blue cleanly.
+//   - Green (#E7F9C9) from y=1016 to bottom of section — the menu area.
+//
+// Implemented as a single linear-gradient with a hard color stop at 1016px
+// so the transition is exactly at the image's bottom edge.
+//
+// padding-top: 440 pushes .media (heading + body + Watch button) down to
+// align with the image's top edge. .media min-height: 576 makes the media
+// block fill the image's vertical area so .scenes naturally lands at
+// y=1016 — the gradient transition point.
 @include breakpoint(small) {
     #conversation.section {
-        background-color: #E7F9C9 !important;
+        background: linear-gradient(
+            to bottom,
+            var(--_colors---background-2) 1016px,
+            #E7F9C9 1016px
+        ) !important;
+        padding-top: 440px !important;
+        padding-bottom: 0 !important;
         height: auto !important;
         min-height: 0 !important;
         max-height: none !important;
-        overflow: visible !important;
-        // padding-bottom 0 so the only space below the menu comes from
-        // .scenes' margin-bottom (60) — total ~60 below menu per spec.
-        padding-bottom: 0 !important;
+        overflow: hidden !important;
     }
     #conversation.section > .slot {
         height: auto !important;
         min-height: 0 !important;
         max-height: none !important;
     }
-    // The .media.padded.text-xl heading block ("Conversation") sits between
-    // the section-image and .scenes menu. Diagnosed via elementFromPoint on
-    // 2026-05-26: it was rendering blue/gray, masking the green section bg
-    // in the gap between image and menu. Force it transparent so the
-    // section's green shows through continuously.
+    // Media block fills the image's vertical area so .scenes lands at the
+    // image's bottom edge (= the bg gradient's blue→green transition).
+    // Transparent bg keeps the gradient visible through any negative space.
     #conversation .media.padded.text-xl,
     #conversation .media.padded.text-xl > * {
         background-color: transparent !important;
+    }
+    #conversation .media.padded.text-xl {
+        min-height: 576px !important;
     }
 }
 
