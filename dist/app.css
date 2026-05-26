@@ -957,7 +957,7 @@
 }
 @media (max-width: 767px) {
   #conversation.section {
-    background: linear-gradient(to bottom, var(--_colors---background-2) 1016px, #D0E2B2 1016px) !important;
+    background: linear-gradient(to bottom, #E1E5F8 0, #D7F7FC 1016px, #D0E2B2 1016px) !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
     height: auto !important;

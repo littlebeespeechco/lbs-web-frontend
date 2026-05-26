@@ -862,13 +862,14 @@
 }
 
 // Conversation section background (per design intent, 2026-05-26):
-//   - bg-2 (gray) from section top down to image bottom = 440 (top area
-//     containing .media: icon + heading + body + Watch button) + 576
-//     (image height) = 1016px from section top.
-//   - #D0E2B2 (green) from y=1016 to bottom of section — the menu area.
+//   - Upper region (y=0 to y=1016): linear gradient from #E1E5F8 (top,
+//     pale lavender) to #D7F7FC (at y=1016, pale cyan) — the image's
+//     alpha top blends into this gradient cleanly.
+//   - Lower region (y=1016+): solid #D0E2B2 green for the menu area.
 //
-// Implemented as a single linear-gradient with a hard color stop at 1016px
-// so the transition is exactly at the image's bottom edge.
+// Achieved with a single multi-stop linear-gradient: gradient blue band
+// fills 0→1016, then a hard color stop turns it green at exactly the
+// image's bottom edge.
 //
 // .media min-height: 1016 makes the media block span the full top+image
 // region so .scenes (the menu) lands naturally at y=1016 where the
@@ -880,7 +881,8 @@
     #conversation.section {
         background: linear-gradient(
             to bottom,
-            var(--_colors---background-2) 1016px,
+            #E1E5F8 0,
+            #D7F7FC 1016px,
             #D0E2B2 1016px
         ) !important;
         padding-top: 0 !important;
