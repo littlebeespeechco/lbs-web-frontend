@@ -897,15 +897,10 @@
   }
 }
 @media (max-width: 767px) {
-  .dual-layout-content:has(> .w-variant-05ec27b3-de46-5eb4-52b6-0a759236e334) {
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    gap: 30px 20px !important;
-  }
-  .media.w-variant-05ec27b3-de46-5eb4-52b6-0a759236e334 {
-    width: calc(50% - 10px) !important;
-    flex-basis: calc(50% - 10px) !important;
-    max-width: calc(50% - 10px) !important;
+  .slot-5 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    column-gap: 20px !important;
+    row-gap: 30px !important;
   }
 }
 @media (max-width: 767px) {

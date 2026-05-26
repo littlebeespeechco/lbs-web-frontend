@@ -745,22 +745,15 @@
     }
 }
 
-// Grid Themes section — 3 across desktop → 2 across mobile.
-// IMPORTANT: w-variant-beae8a74 is the GENERIC dual-layout-content variant
-// used by all 16 dual-layouts on this page — cannot use it alone to target
-// the grid. The grid items are uniquely w-variant-05ec27b3-de46-5eb4-52b6-0a759236e334.
-// Target the container via :has() for gap, items directly for width.
-// flex-direction/wrap explicit in case Webflow collapses to column on mobile.
+// Grid Themes section — 5 across desktop → 2 across mobile.
+// Container: div.slot-5 (unique class, CSS grid, 30 .caption children).
+// Lives inside .faded-end > .slot. Desktop: repeat(5, 206px) / 42px gap.
+// Mobile: repeat(2, 1fr) with 20px column gap / 30px row gap.
 @include breakpoint(small) {
-    .dual-layout-content:has(> .w-variant-05ec27b3-de46-5eb4-52b6-0a759236e334) {
-        flex-direction: row !important;
-        flex-wrap: wrap !important;
-        gap: 30px 20px !important;
-    }
-    .media.w-variant-05ec27b3-de46-5eb4-52b6-0a759236e334 {
-        width: calc(50% - 10px) !important;
-        flex-basis: calc(50% - 10px) !important;
-        max-width: calc(50% - 10px) !important;
+    .slot-5 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        column-gap: 20px !important;
+        row-gap: 30px !important;
     }
 }
 
