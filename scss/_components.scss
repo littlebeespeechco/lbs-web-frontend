@@ -736,12 +736,22 @@
 // "From summer sunshine…" heading: the dual-layout immediately before it
 // has mb-l = 100px desktop / ~33px mobile collapse + Webflow-set
 // padding-bottom on mobile. Zero both and set a tighter margin so the
-// total visual gap is ~30px rather than the ~90px from the 60px margin +
-// ~30px internal padding that was appearing before.
+// total visible gap is reasonable.
+//
+// The h2 also carries a `padded` class that adds top padding in Webflow's
+// mobile CSS (cross-origin, can't read via JS — confirmed by 80px gap
+// persisting with margin-bottom: 30px on the dual-layout, implying ~50px
+// from the h2's own top padding). Zero the h2 top padding directly.
+// Selector: .dual-layout.mb-l + h2.w-variant-d4856d6d-… — unique to this
+// heading because the other d4856d6d h2 has no preceding dual-layout.
 @include breakpoint(small) {
     .dual-layout.mb-l:has(+ .w-variant-d4856d6d-6a11-c79e-d12d-2cc8b14b8cd8) {
         padding-bottom: 0 !important;
         margin-bottom: 30px !important;
+    }
+    .dual-layout.mb-l + h2.w-variant-d4856d6d-6a11-c79e-d12d-2cc8b14b8cd8 {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
     }
 }
 
@@ -763,6 +773,10 @@
     }
     .slot-5 {
         grid-template-columns: repeat(2, 1fr) !important;
+        // Webflow defines 6 explicit rows at 189.82px each. With 2-col layout
+        // we need 15 rows. Removing explicit rows lets all 15 auto-size from
+        // content, so the grid (and faded-end) grow to natural height.
+        grid-template-rows: none !important;
         column-gap: 20px !important;
         row-gap: 30px !important;
     }

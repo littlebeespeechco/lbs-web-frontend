@@ -896,6 +896,10 @@
     padding-bottom: 0 !important;
     margin-bottom: 30px !important;
   }
+  .dual-layout.mb-l + h2.w-variant-d4856d6d-6a11-c79e-d12d-2cc8b14b8cd8 {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
 }
 @media (max-width: 767px) {
   .faded-end {
@@ -903,6 +907,7 @@
   }
   .slot-5 {
     grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: none !important;
     column-gap: 20px !important;
     row-gap: 30px !important;
   }
