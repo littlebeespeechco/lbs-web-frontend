@@ -778,11 +778,10 @@
 }
 
 // Scenes component (Conversation section on ASH — likely reused on other
-// product pages too). Background color is the same #D0E2B2 used by the
-// Conversation section's bottom area below the image, so the menu reads
-// as a seamless continuation of the section bg.
+// product pages too). Menu uses the lighter #E7F9C9 green as a distinct
+// card on top of the Conversation section's darker #D0E2B2 bottom bg.
 .scenes {
-    background-color: #D0E2B2 !important;
+    background-color: #E7F9C9 !important;
     // Universal vertical padding inside the green box (above + below the
     // menu). Desktop was 80/60 → spec is 60/60. Mobile padding-top is
     // overridden to 40 below.
