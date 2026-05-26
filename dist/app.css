@@ -934,12 +934,12 @@
     grid-template-rows: none !important;
   }
   #conversation .section-image {
-    bottom: auto !important;
-    top: 0 !important;
-    height: 491px !important;
     inset: auto !important;
+    top: 0 !important;
+    bottom: auto !important;
     left: 0 !important;
     right: 0 !important;
+    height: 491px !important;
   }
   .scenes .button.blocky {
     width: 180px !important;
@@ -964,6 +964,10 @@
     height: auto !important;
     min-height: 0 !important;
     max-height: none !important;
+  }
+  #conversation .media.padded.text-xl,
+  #conversation .media.padded.text-xl > * {
+    background-color: transparent !important;
   }
 }
 @media (max-width: 767px) {

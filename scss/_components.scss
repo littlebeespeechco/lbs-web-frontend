@@ -825,13 +825,17 @@
     // Anchor image to the TOP only and constrain its height so it occupies
     // only the upper portion of the section, leaving room below for the
     // menu's own bg to show.
+    //
+    // IMPORTANT: `inset: auto` must come BEFORE the longhands — it's a
+    // shorthand that resets top/right/bottom/left, so writing it after
+    // `top: 0` silently wipes out the anchor.
     #conversation .section-image {
-        bottom: auto !important;
-        top: 0 !important;
-        height: 491px !important;
         inset: auto !important;
+        top: 0 !important;
+        bottom: auto !important;
         left: 0 !important;
         right: 0 !important;
+        height: 491px !important;
     }
 
     // Buttons: 180×72, 18px corner radius (matching desktop), SF Pro Rounded
@@ -870,6 +874,15 @@
         height: auto !important;
         min-height: 0 !important;
         max-height: none !important;
+    }
+    // The .media.padded.text-xl heading block ("Conversation") sits between
+    // the section-image and .scenes menu. Diagnosed via elementFromPoint on
+    // 2026-05-26: it was rendering blue/gray, masking the green section bg
+    // in the gap between image and menu. Force it transparent so the
+    // section's green shows through continuously.
+    #conversation .media.padded.text-xl,
+    #conversation .media.padded.text-xl > * {
+        background-color: transparent !important;
     }
 }
 
