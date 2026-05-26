@@ -700,17 +700,45 @@
 // The `pv-l` class is unique to this block vs the icon-based step blocks.
 // Section pv and body text (22/31 Inter 500 #646464) are already correct from
 // the shared `.media.text-xl` rules above. Only the heading overrides differ:
-// spec is Inter 800 / 20px / 37px / #282828 (compact, not the step-block 42px).
-// 30px gap between heading and body comes from the shared .media-heading margin.
+// spec is Inter 800 / 30px / 37px / #282828.
+//
+// Spacing (mobile):
+//   60 (section pv-top) → icon → 30 (media-heading margin) → heading
+//   → 30px gap → body → 60 (section pv-bottom)
+//
+// The shared .media-content margin-bottom (40px, sized for the video-button
+// step blocks) and pv-l's own padding-bottom both overshoot here. Override:
+//   - .media padding-bottom → 60px exactly (beats pv-l's 80)
+//   - .media-content margin → 0 (no video button follows)
+//   - .media-slot → hidden (Watch button absent in this section's spec)
 @include breakpoint(small) {
     .media.padded.text-xl.pv-l .media-heading .heading,
     .media.padded.text-xl.pv-l .media-heading .heading-unit {
         font-family: "Inter", Arial, sans-serif !important;
         font-weight: 800 !important;
-        font-size: 20px !important;
+        font-size: 30px !important;
         line-height: 37px !important;
         color: #282828 !important;
         margin: 0 !important;
+    }
+    .media.padded.text-xl.pv-l {
+        padding-bottom: 60px !important;
+    }
+    .media.padded.text-xl.pv-l .media-content {
+        margin-bottom: 0 !important;
+    }
+    .media.padded.text-xl.pv-l .media-slot {
+        display: none !important;
+    }
+}
+
+// First dual-layout section following the "Choose from 3" intro: flip
+// content/media order on mobile so the image leads.
+// Scope: sibling combinator anchored to the .pv-l section so only this
+// immediate next dual-layout is affected, not site-wide .dual-layout.mb-l.
+@include breakpoint(small) {
+    section:has(.media.padded.text-xl.pv-l) + section .dual-layout.mb-l {
+        flex-direction: column-reverse !important;
     }
 }
 

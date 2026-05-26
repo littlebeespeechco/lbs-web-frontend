@@ -876,10 +876,24 @@
   .media.padded.text-xl.pv-l .media-heading .heading-unit {
     font-family: "Inter", Arial, sans-serif !important;
     font-weight: 800 !important;
-    font-size: 20px !important;
+    font-size: 30px !important;
     line-height: 37px !important;
     color: #282828 !important;
     margin: 0 !important;
+  }
+  .media.padded.text-xl.pv-l {
+    padding-bottom: 60px !important;
+  }
+  .media.padded.text-xl.pv-l .media-content {
+    margin-bottom: 0 !important;
+  }
+  .media.padded.text-xl.pv-l .media-slot {
+    display: none !important;
+  }
+}
+@media (max-width: 767px) {
+  section:has(.media.padded.text-xl.pv-l) + section .dual-layout.mb-l {
+    flex-direction: column-reverse !important;
   }
 }
 @media (max-width: 767px) {
