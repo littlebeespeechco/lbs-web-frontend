@@ -708,7 +708,8 @@
 //
 // The shared .media-content margin-bottom (40px, sized for the video-button
 // step blocks) and pv-l's own padding-bottom both overshoot here. Override:
-//   - .media padding-bottom → 60px exactly (beats pv-l's 80)
+//   - .media padding-bottom: user-spec 60px + 24px extra vertical → 44px
+//     (below body text, before section bottom; "20" was interim, now 44)
 //   - .media-content margin → 0 (no video button follows)
 //   - .media-slot → hidden (Watch button absent in this section's spec)
 @include breakpoint(small) {
@@ -722,54 +723,41 @@
         margin: 0 !important;
     }
     .media.padded.text-xl.pv-l {
-        padding-bottom: 20px !important;
+        padding-bottom: 44px !important;
     }
     .media.padded.text-xl.pv-l .media-content {
         margin-bottom: 0 !important;
-        // Body text needs horizontal padding so it doesn't run to the section edge.
-        padding-left: 24px !important;
-        padding-right: 24px !important;
     }
     .media.padded.text-xl.pv-l .media-slot {
         display: none !important;
     }
 }
 
-// First dual-layout section following the "Choose from 3" intro: flip
-// content/media order on mobile so the image leads.
-// The margin-bottom fix for "From summer sunshine" is handled separately below
-// via :has(+ .w-variant-d4856d6d...) since that dual-layout lives further down.
-@include breakpoint(small) {
-    section:has(.media.padded.text-xl.pv-l) + section .dual-layout.mb-l {
-        flex-direction: column-reverse !important;
-    }
-    // Slot of the section directly after "Choose from 3" also needs 24px
-    // horizontal padding so its content aligns with the body text above.
-    section:has(.media.padded.text-xl.pv-l) + section > .slot {
-        padding-left: 24px !important;
-        padding-right: 24px !important;
-    }
-}
-
 // "From summer sunshine…" heading: the dual-layout immediately before it
-// has mb-l = 100px. Reduce by 40px → 60px on mobile.
-// Scoped via :has(+ .w-variant-d4856d6d…) — the adjacent sibling variant
-// class is unique to that heading, so only this one dual-layout is affected.
+// has mb-l = 100px desktop (→ ~33px mobile collapse). Spec wants 60px on
+// mobile. Target only this dual-layout via :has(+ h2.w-variant-d4856d6d…)
+// — the heading variant is shared with one other h2 ("Each interactive
+// scene…") but that h2 has NO preceding dual-layout sibling, so the
+// selector only fires once.
 @include breakpoint(small) {
     .dual-layout.mb-l:has(+ .w-variant-d4856d6d-6a11-c79e-d12d-2cc8b14b8cd8) {
         margin-bottom: 60px !important;
     }
 }
 
-// Grid Themes section — .dual-layout-content.w-variant-beae8a74-d828-78d8-b579-113f73dfad37
-// Desktop: 3 across (6.17% column gap). Mobile: 2 across with 20px column
-// gap and 30px row gap. Each item gets calc(50% - 10px) width so two fit
-// per row with the 20px gap (10px per side).
+// Grid Themes section — 3 across desktop → 2 across mobile.
+// IMPORTANT: w-variant-beae8a74 is the GENERIC dual-layout-content variant
+// used by all 16 dual-layouts on this page — cannot use it alone to target
+// the grid. The grid items are uniquely w-variant-05ec27b3-de46-5eb4-52b6-0a759236e334.
+// Target the container via :has() for gap, items directly for width.
+// flex-direction/wrap explicit in case Webflow collapses to column on mobile.
 @include breakpoint(small) {
-    .dual-layout-content:where(.w-variant-beae8a74-d828-78d8-b579-113f73dfad37) {
+    .dual-layout-content:has(> .w-variant-05ec27b3-de46-5eb4-52b6-0a759236e334) {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
         gap: 30px 20px !important;
     }
-    .dual-layout-content:where(.w-variant-beae8a74-d828-78d8-b579-113f73dfad37) > .media {
+    .media.w-variant-05ec27b3-de46-5eb4-52b6-0a759236e334 {
         width: calc(50% - 10px) !important;
         flex-basis: calc(50% - 10px) !important;
         max-width: calc(50% - 10px) !important;
