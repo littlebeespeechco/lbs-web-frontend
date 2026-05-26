@@ -913,6 +913,8 @@
 }
 .scenes {
   background-color: #E7F9C9 !important;
+  padding-top: 60px !important;
+  padding-bottom: 60px !important;
 }
 
 @media (max-width: 767px) {
@@ -921,7 +923,10 @@
     flex-direction: column !important;
     align-items: center !important;
     gap: 40px !important;
-    padding: 60px 0 !important;
+    padding-top: 40px !important;
+    padding-bottom: 60px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     margin-top: 40px !important;
     margin-bottom: 60px !important;
     grid-template-columns: none !important;

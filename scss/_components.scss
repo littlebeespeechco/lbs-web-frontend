@@ -783,12 +783,18 @@
 // and sizing changes are mobile-only.
 .scenes {
     background-color: #E7F9C9 !important;
+    // Universal vertical padding inside the green box (above + below the
+    // menu). Desktop was 80/60 → spec is 60/60. Mobile padding-top is
+    // overridden to 40 below.
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
 }
 
 @include breakpoint(small) {
     // Scenes container on mobile:
-    //   - 60px top/bottom interior padding, 0 horizontal (section's mobile
-    //     24px padding-x handles the 24-from-edge inset)
+    //   - 40px top / 60px bottom interior padding
+    //   - 0 horizontal (section's mobile 24px padding-x handles the
+    //     24-from-edge inset)
     //   - flex column with gap: 40 between items (overrides the 2x2 grid)
     //   - 40px above (to the image), 60px below (to section bottom)
     .scenes {
@@ -796,7 +802,10 @@
         flex-direction: column !important;
         align-items: center !important;
         gap: 40px !important;
-        padding: 60px 0 !important;
+        padding-top: 40px !important;
+        padding-bottom: 60px !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
         margin-top: 40px !important;
         margin-bottom: 60px !important;
         grid-template-columns: none !important;
