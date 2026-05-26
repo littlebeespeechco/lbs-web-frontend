@@ -733,12 +733,15 @@
 }
 
 // First dual-layout section following the "Choose from 3" intro: flip
-// content/media order on mobile so the image leads.
+// content/media order on mobile so the image leads. Also reduce the
+// dual-layout's mb-l margin-bottom (100px desktop → 60px mobile) so the
+// "From summer sunshine…" heading that follows sits 40px closer.
 // Scope: sibling combinator anchored to the .pv-l section so only this
 // immediate next dual-layout is affected, not site-wide .dual-layout.mb-l.
 @include breakpoint(small) {
     section:has(.media.padded.text-xl.pv-l) + section .dual-layout.mb-l {
         flex-direction: column-reverse !important;
+        margin-bottom: 60px !important;
     }
 }
 

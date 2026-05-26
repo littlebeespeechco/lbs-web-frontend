@@ -894,6 +894,7 @@
 @media (max-width: 767px) {
   section:has(.media.padded.text-xl.pv-l) + section .dual-layout.mb-l {
     flex-direction: column-reverse !important;
+    margin-bottom: 60px !important;
   }
 }
 @media (max-width: 767px) {
