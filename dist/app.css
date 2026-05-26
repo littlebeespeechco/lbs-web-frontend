@@ -912,7 +912,7 @@
   }
 }
 .scenes {
-  background-color: #E7F9C9 !important;
+  background-color: #D0E2B2 !important;
   padding-top: 60px !important;
   padding-bottom: 60px !important;
 }
@@ -957,8 +957,8 @@
 }
 @media (max-width: 767px) {
   #conversation.section {
-    background: linear-gradient(to bottom, var(--_colors---background-2) 1016px, #E7F9C9 1016px) !important;
-    padding-top: 440px !important;
+    background: linear-gradient(to bottom, var(--_colors---background-2) 1016px, #D0E2B2 1016px) !important;
+    padding-top: 0 !important;
     padding-bottom: 0 !important;
     height: auto !important;
     min-height: 0 !important;
@@ -975,7 +975,7 @@
     background-color: transparent !important;
   }
   #conversation .media.padded.text-xl {
-    min-height: 576px !important;
+    min-height: 1016px !important;
   }
 }
 @media (max-width: 767px) {

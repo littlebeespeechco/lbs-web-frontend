@@ -778,11 +778,11 @@
 }
 
 // Scenes component (Conversation section on ASH — likely reused on other
-// product pages too). Background color change is universal (replaces the
-// dark olive ~rgb(104,117,55) with the light green spec #E7F9C9). Layout
-// and sizing changes are mobile-only.
+// product pages too). Background color is the same #D0E2B2 used by the
+// Conversation section's bottom area below the image, so the menu reads
+// as a seamless continuation of the section bg.
 .scenes {
-    background-color: #E7F9C9 !important;
+    background-color: #D0E2B2 !important;
     // Universal vertical padding inside the green box (above + below the
     // menu). Desktop was 80/60 → spec is 60/60. Mobile padding-top is
     // overridden to 40 below.
@@ -863,26 +863,28 @@
 }
 
 // Conversation section background (per design intent, 2026-05-26):
-//   - Blue (bg-2) from section top down to image bottom = 440 (top area)
-//     + 576 (image height) = 1016px. The image's alpha top blends into
-//     this blue cleanly.
-//   - Green (#E7F9C9) from y=1016 to bottom of section — the menu area.
+//   - bg-2 (gray) from section top down to image bottom = 440 (top area
+//     containing .media: icon + heading + body + Watch button) + 576
+//     (image height) = 1016px from section top.
+//   - #D0E2B2 (green) from y=1016 to bottom of section — the menu area.
 //
 // Implemented as a single linear-gradient with a hard color stop at 1016px
 // so the transition is exactly at the image's bottom edge.
 //
-// padding-top: 440 pushes .media (heading + body + Watch button) down to
-// align with the image's top edge. .media min-height: 576 makes the media
-// block fill the image's vertical area so .scenes naturally lands at
-// y=1016 — the gradient transition point.
+// .media min-height: 1016 makes the media block span the full top+image
+// region so .scenes (the menu) lands naturally at y=1016 where the
+// gradient turns green. Content (icon, heading, body, button) flows
+// top-aligned inside .media, occupying the upper 440 area; the lower 576
+// of .media is empty space that the image (absolute, top:440 height:576)
+// occupies visually.
 @include breakpoint(small) {
     #conversation.section {
         background: linear-gradient(
             to bottom,
             var(--_colors---background-2) 1016px,
-            #E7F9C9 1016px
+            #D0E2B2 1016px
         ) !important;
-        padding-top: 440px !important;
+        padding-top: 0 !important;
         padding-bottom: 0 !important;
         height: auto !important;
         min-height: 0 !important;
@@ -894,15 +896,16 @@
         min-height: 0 !important;
         max-height: none !important;
     }
-    // Media block fills the image's vertical area so .scenes lands at the
-    // image's bottom edge (= the bg gradient's blue→green transition).
-    // Transparent bg keeps the gradient visible through any negative space.
+    // Media block spans top area + image area (1016) so .scenes lands at the
+    // image's bottom edge (= the bg gradient's gray→green transition).
+    // Transparent bg keeps the gradient/image visible through any negative
+    // space inside .media.
     #conversation .media.padded.text-xl,
     #conversation .media.padded.text-xl > * {
         background-color: transparent !important;
     }
     #conversation .media.padded.text-xl {
-        min-height: 576px !important;
+        min-height: 1016px !important;
     }
 }
 
