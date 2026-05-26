@@ -862,10 +862,9 @@
         min-height: 0 !important;
         max-height: none !important;
         overflow: visible !important;
-        // Literal user request: 300px larger gap from image bottom to
-        // section bottom on mobile. Section default padding-bottom is ~60,
-        // so 360 = 60 + 300.
-        padding-bottom: 360px !important;
+        // padding-bottom 0 so the only space below the menu comes from
+        // .scenes' margin-bottom (60) — total ~60 below menu per spec.
+        padding-bottom: 0 !important;
     }
     #conversation.section > .slot {
         height: auto !important;
