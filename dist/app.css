@@ -906,6 +906,11 @@
     margin-bottom: 48px !important;
   }
 }
+@media (max-width: 767px) {
+  img[src*=ocean-scene-1]:not([src*=_mobile]) {
+    content: url("https://cdn.prod.website-files.com/68b756cba9c9d34da806e0a0/6a15dc470197ec8dadf20c72_ocean-scene-1_mobile%402x.png") !important;
+  }
+}
 .scenes {
   background-color: #E7F9C9 !important;
 }

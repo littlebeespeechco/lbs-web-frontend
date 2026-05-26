@@ -766,6 +766,17 @@
     }
 }
 
+// Asset swap: ocean-scene-1 → ocean-scene-1_mobile on mobile.
+// CSS `content: url()` on the img replaces the rendered image without
+// touching the Webflow asset binding. Scoped via attribute selector that
+// matches the desktop asset filename but NOT the _mobile variant (so we
+// don't accidentally swap the mobile asset on itself).
+@include breakpoint(small) {
+    img[src*="ocean-scene-1"]:not([src*="_mobile"]) {
+        content: url('https://cdn.prod.website-files.com/68b756cba9c9d34da806e0a0/6a15dc470197ec8dadf20c72_ocean-scene-1_mobile%402x.png') !important;
+    }
+}
+
 // Scenes component (Conversation section on ASH — likely reused on other
 // product pages too). Background color change is universal (replaces the
 // dark olive ~rgb(104,117,55) with the light green spec #E7F9C9). Layout
