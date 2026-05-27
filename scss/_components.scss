@@ -938,6 +938,8 @@ section:has(.testimonials) .testimonial img {
     section:has(.testimonials) {
         padding-left: 0 !important;
         padding-right: 0 !important;
+        // Kill the mb-l gap so FAQ (or whatever follows) butts up directly
+        margin-bottom: 0 !important;
     }
     section:has(.testimonials) > .slot {
         border-radius: 0 !important;
