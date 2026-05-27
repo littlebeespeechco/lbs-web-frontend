@@ -1080,6 +1080,34 @@ section:has(.testimonials) .testimonial img {
     }
 }
 
+// ASH bottom CTA card (dual-layout-content variant bbfd9098) — mobile treatment.
+// Desktop: left column with app icon (192px), heading, CTA button + social proof.
+// Mobile: wrap in a #FAFAFA card with 38px radius; shrink icon to 130×130 + center;
+// CTA button fixed at 272×56 (overrides full-w 100%).
+@include breakpoint(small) {
+    .dual-layout-content.w-variant-bbfd9098-d2e3-dd79-6591-2ca6950b1b97 {
+        background-color: #FAFAFA !important;
+        border-radius: 38px !important;
+        padding: 40px 28px !important;
+        align-items: center !important;
+    }
+    // App icon: shrink from 192px to 130px and center within the card
+    .dual-layout-content.w-variant-bbfd9098-d2e3-dd79-6591-2ca6950b1b97 .mw-12 {
+        width: 130px !important;
+        max-width: 130px !important;
+        margin: 0 auto !important;
+    }
+    .dual-layout-content.w-variant-bbfd9098-d2e3-dd79-6591-2ca6950b1b97 .mw-12 img {
+        width: 130px !important;
+        height: 130px !important;
+    }
+    // CTA button: fixed 272×56 (overrides full-w width: 100%)
+    .dual-layout-content.w-variant-bbfd9098-d2e3-dd79-6591-2ca6950b1b97 .w-variant-28adff52-0507-5341-e7e1-322eeff5d519 {
+        width: 272px !important;
+        height: 56px !important;
+    }
+}
+
 // Asset swap: ocean-scene-1 → ocean-scene-1_mobile on mobile.
 // CSS `content: url()` on the img replaces the rendered image without
 // touching the Webflow asset binding. Scoped via attribute selector that
