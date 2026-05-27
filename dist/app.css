@@ -952,6 +952,12 @@ section:has(.faded-end) > .slot {
     margin-bottom: 40px !important;
   }
 }
+.testimonials-controls-prev,
+.testimonials-controls-next {
+  background-image: url("https://cdn.prod.website-files.com/68b756cba9c9d34da806e0a0/6a172077fd6b6da72104ff35_icon-carrot-dark.svg") !important;
+  background-size: auto 14px !important;
+}
+
 @media (max-width: 767px) {
   section:has(.testimonials) {
     padding-left: 0 !important;
