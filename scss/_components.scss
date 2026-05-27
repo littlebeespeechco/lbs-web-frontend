@@ -871,14 +871,9 @@ section:has(.testimonials) .bg-wrapper {
 }
 section:has(.testimonials) > .slot {
     background-image: url("https://cdn.prod.website-files.com/68b756cba9c9d34da806e0a0/6a1758601fdaacf23f01c8ae_beehive_pattern.png") !important;
-    background-repeat: repeat !important;
-    background-size: 50% auto !important;
-    background-position: center top !important;
-}
-@include breakpoint(small) {
-    section:has(.testimonials) > .slot {
-        background-size: 33% auto !important;
-    }
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center center !important;
 }
 
 // Testimonials card — global changes (desktop + mobile).

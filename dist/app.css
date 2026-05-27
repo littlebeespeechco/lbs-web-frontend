@@ -972,16 +972,11 @@ section:has(.testimonials) .bg-wrapper {
 
 section:has(.testimonials) > .slot {
   background-image: url("https://cdn.prod.website-files.com/68b756cba9c9d34da806e0a0/6a1758601fdaacf23f01c8ae_beehive_pattern.png") !important;
-  background-repeat: repeat !important;
-  background-size: 50% auto !important;
-  background-position: center top !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center center !important;
 }
 
-@media (max-width: 767px) {
-  section:has(.testimonials) > .slot {
-    background-size: 33% auto !important;
-  }
-}
 section:has(.testimonials) .testimonial-rating {
   height: 20px !important;
   width: auto !important;
