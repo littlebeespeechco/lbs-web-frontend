@@ -1088,14 +1088,15 @@ section:has(.testimonials) .testimonial img {
     .dual-layout-content.w-variant-bbfd9098-d2e3-dd79-6591-2ca6950b1b97 {
         background-color: #FAFAFA !important;
         border-radius: 38px !important;
-        padding: 40px 28px !important;
+        padding: 40px 28px 22px !important;
         align-items: center !important;
     }
-    // App icon: shrink from 192px to 130px and center within the card
+    // App icon: shrink from 192px to 130px, center, and set 36px gap to button
+    // (mb-34 collapses to ~17px on mobile — override to 36px)
     .dual-layout-content.w-variant-bbfd9098-d2e3-dd79-6591-2ca6950b1b97 .mw-12 {
         width: 130px !important;
         max-width: 130px !important;
-        margin: 0 auto !important;
+        margin: 0 auto 36px !important;
     }
     .dual-layout-content.w-variant-bbfd9098-d2e3-dd79-6591-2ca6950b1b97 .mw-12 img {
         width: 130px !important;
