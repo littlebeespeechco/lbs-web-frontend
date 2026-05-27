@@ -967,9 +967,10 @@ section:has(.testimonials) .testimonial-text {
     // Target layout at 402px viewport:
     //   screen edge → 24px → card (324px) → 14px gap → ~40px peek
     //   card = 402 - 24 - 54 = 324px  |  peek = right_padding - gap = 54 - 14 = 40px
+    // peek = right_padding - gap = 34 - 14 = 20px
     section:has(.testimonials) .testimonials-wrapper {
         padding-left: 24px !important;
-        padding-right: 54px !important;
+        padding-right: 34px !important;
         gap: 14px !important;
     }
     section:has(.testimonials) .testimonials-wrapper .testimonial {
@@ -978,7 +979,7 @@ section:has(.testimonials) .testimonial-text {
     // Card internal spacing and typography
     section:has(.testimonials) .testimonial {
         padding-top: 30px !important;
-        padding-bottom: 40px !important;
+        padding-bottom: 30px !important;
     }
     // Stars → body gap: 16px on mobile (20px on desktop kept by global rule)
     section:has(.testimonials) .testimonial-rating {

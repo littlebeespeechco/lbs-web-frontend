@@ -1038,7 +1038,7 @@ section:has(.testimonials) .testimonial-text {
   }
   section:has(.testimonials) .testimonials-wrapper {
     padding-left: 24px !important;
-    padding-right: 54px !important;
+    padding-right: 34px !important;
     gap: 14px !important;
   }
   section:has(.testimonials) .testimonials-wrapper .testimonial {
@@ -1046,7 +1046,7 @@ section:has(.testimonials) .testimonial-text {
   }
   section:has(.testimonials) .testimonial {
     padding-top: 30px !important;
-    padding-bottom: 40px !important;
+    padding-bottom: 30px !important;
   }
   section:has(.testimonials) .testimonial-rating {
     margin-bottom: 16px !important;

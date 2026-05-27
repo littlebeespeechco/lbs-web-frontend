@@ -2565,12 +2565,10 @@
       window.addEventListener("touchmove", this.mousemoveEvents);
       window.addEventListener("touchend", this.mouseupEvents);
       this.ticker = () => {
-        this.pos.eased += (this.pos.stored + this.pos.delta - this.pos.eased) * 0.12;
-        gsap.to(this.wrapper, {
-          x: this.pos.eased,
-          duration: 0.1,
-          ease: "power2.out"
-        });
+        const target = this.pos.stored + this.pos.delta;
+        const factor = this.pos.dragging ? 1 : 0.12;
+        this.pos.eased += (target - this.pos.eased) * factor;
+        gsap.set(this.wrapper, { x: this.pos.eased });
       };
       window.addEventListener("resize", () => {
         this.sizing();

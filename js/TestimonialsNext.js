@@ -116,13 +116,12 @@ export class TestimonialsNext {
         window.addEventListener("touchend", this.mouseupEvents);
 
         this.ticker = () => {
-            // 0.12 gives fluid iOS-like tracking without the heavy lag of 0.05
-            this.pos.eased += (this.pos.stored + this.pos.delta - this.pos.eased) * 0.12;
-            gsap.to(this.wrapper, {
-                x: this.pos.eased,
-                duration: 0.1,
-                ease: "power2.out",
-            });
+            const target = this.pos.stored + this.pos.delta;
+            // During drag: factor 1.0 = immediate 1:1 finger tracking (no lag).
+            // On release: factor 0.12 = smooth ease to snap position (or next page).
+            const factor = this.pos.dragging ? 1.0 : 0.12;
+            this.pos.eased += (target - this.pos.eased) * factor;
+            gsap.set(this.wrapper, { x: this.pos.eased });
         }
 
         window.addEventListener("resize", () => {
