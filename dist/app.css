@@ -1013,8 +1013,8 @@ section:has(.testimonials) .testimonial-text {
     width: 100% !important;
   }
   section:has(.testimonials) .testimonial {
-    padding-top: 22px !important;
-    padding-bottom: 22px !important;
+    padding-top: 30px !important;
+    padding-bottom: 40px !important;
   }
   section:has(.testimonials) .testimonial-rating {
     margin-bottom: 16px !important;

@@ -2503,7 +2503,7 @@
       this.wrapperPadding = parseFloat(getComputedStyle(this.wrapper).paddingLeft) + parseFloat(getComputedStyle(this.wrapper).paddingRight);
       this.itemsGap = parseFloat(getComputedStyle(this.wrapper).columnGap);
       this.viewportWidth = this.element.offsetWidth - this.wrapperPadding;
-      this.itemsWidth = Math.ceil(this.viewPortBreakpoint === "mobile" ? this.viewportWidth * 0.8 : (this.viewportWidth - this.itemsGap * (this.itemsPerPage - 1)) / this.itemsPerPage);
+      this.itemsWidth = Math.ceil(this.viewPortBreakpoint === "mobile" ? this.viewportWidth : (this.viewportWidth - this.itemsGap * (this.itemsPerPage - 1)) / this.itemsPerPage);
       this.pos.stored = -this.currentPage * (this.itemsWidth + this.itemsGap) * this.itemsPerPage + (this.currentPage == this.totalPages - 1 ? (this.itemsPerPage - this.lastPageItemsQuantity) * (this.itemsWidth + this.itemsGap) : 0);
       gsap.set(this.items, {
         width: this.itemsWidth
@@ -2536,9 +2536,9 @@
       };
       this.mouseupEvents = () => {
         this.pos.dragging = false;
-        if (this.pos.delta < -200 && this.currentPage < this.totalPages - 1) {
+        if (this.pos.delta < -50 && this.currentPage < this.totalPages - 1) {
           this.changePage(this.currentPage + 1);
-        } else if (this.pos.delta > 200 && this.currentPage > 0) {
+        } else if (this.pos.delta > 50 && this.currentPage > 0) {
           this.changePage(this.currentPage - 1);
         } else {
           this.pos.stored = -this.currentPage * (this.itemsWidth + this.itemsGap) * this.itemsPerPage + (this.currentPage == this.totalPages - 1 ? (this.itemsPerPage - this.lastPageItemsQuantity) * (this.itemsWidth + this.itemsGap) : 0);
@@ -2564,10 +2564,10 @@
       window.addEventListener("touchmove", this.mousemoveEvents);
       window.addEventListener("touchend", this.mouseupEvents);
       this.ticker = () => {
-        this.pos.eased += (this.pos.stored + this.pos.delta - this.pos.eased) * 0.05;
+        this.pos.eased += (this.pos.stored + this.pos.delta - this.pos.eased) * 0.12;
         gsap.to(this.wrapper, {
           x: this.pos.eased,
-          duration: 0.5,
+          duration: 0.1,
           ease: "power2.out"
         });
       };
@@ -2585,7 +2585,7 @@
       this.pos.stored = -this.currentPage * (this.itemsWidth + this.itemsGap) * this.itemsPerPage + (this.currentPage == this.totalPages - 1 ? (this.itemsPerPage - this.lastPageItemsQuantity) * (this.itemsWidth + this.itemsGap) : 0);
       gsap.to(this.wrapper, {
         x: this.pos.stored,
-        duration: 1,
+        duration: 0.4,
         ease: "power2.out"
       });
       this.bullets.querySelectorAll(".testimonials-bullet").forEach((bullet, index) => {

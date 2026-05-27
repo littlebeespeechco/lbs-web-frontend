@@ -935,8 +935,8 @@ section:has(.testimonials) .testimonial-text {
     }
     // Card internal spacing and typography
     section:has(.testimonials) .testimonial {
-        padding-top: 22px !important;
-        padding-bottom: 22px !important;
+        padding-top: 30px !important;
+        padding-bottom: 40px !important;
     }
     // Stars → body gap: 16px on mobile (20px on desktop kept by global rule)
     section:has(.testimonials) .testimonial-rating {

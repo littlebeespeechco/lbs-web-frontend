@@ -41,7 +41,11 @@ export class TestimonialsNext {
         this.itemsGap = parseFloat(getComputedStyle(this.wrapper).columnGap);
         
         this.viewportWidth = this.element.offsetWidth - this.wrapperPadding;
-        this.itemsWidth = Math.ceil(this.viewPortBreakpoint === "mobile" ? this.viewportWidth * 0.8 : (this.viewportWidth - this.itemsGap * (this.itemsPerPage - 1)) / this.itemsPerPage);
+        // On mobile the peek is handled entirely by wrapper padding (left: 24px,
+        // right: 54px), so itemsWidth = the full content area (no 0.8 factor).
+        // Using 0.8 here caused itemsWidth to disagree with the CSS-rendered card
+        // width (width: 100%), making page positions settle at wrong offsets.
+        this.itemsWidth = Math.ceil(this.viewPortBreakpoint === "mobile" ? this.viewportWidth : (this.viewportWidth - this.itemsGap * (this.itemsPerPage - 1)) / this.itemsPerPage);
         this.pos.stored = -this.currentPage * (this.itemsWidth + this.itemsGap) * this.itemsPerPage + (this.currentPage == this.totalPages - 1 ? (this.itemsPerPage - this.lastPageItemsQuantity) * (this.itemsWidth + this.itemsGap) : 0);
         
         gsap.set(this.items, {
@@ -83,9 +87,9 @@ export class TestimonialsNext {
         this.mouseupEvents = () => {
             this.pos.dragging = false;
             
-            if (this.pos.delta < -200 && this.currentPage < this.totalPages - 1) {
+            if (this.pos.delta < -50 && this.currentPage < this.totalPages - 1) {
                 this.changePage(this.currentPage + 1);
-            } else if (this.pos.delta > 200 && this.currentPage > 0) {
+            } else if (this.pos.delta > 50 && this.currentPage > 0) {
                 this.changePage(this.currentPage - 1);
             } else {
                 this.pos.stored = -this.currentPage * (this.itemsWidth + this.itemsGap) * this.itemsPerPage + (this.currentPage == this.totalPages - 1 ? (this.itemsPerPage - this.lastPageItemsQuantity) * (this.itemsWidth + this.itemsGap) : 0);
@@ -111,10 +115,11 @@ export class TestimonialsNext {
         window.addEventListener("touchend", this.mouseupEvents);
 
         this.ticker = () => {
-            this.pos.eased += (this.pos.stored + this.pos.delta - this.pos.eased) * 0.05;
+            // 0.12 gives fluid iOS-like tracking without the heavy lag of 0.05
+            this.pos.eased += (this.pos.stored + this.pos.delta - this.pos.eased) * 0.12;
             gsap.to(this.wrapper, {
                 x: this.pos.eased,
-                duration: 0.5,
+                duration: 0.1,
                 ease: "power2.out",
             });
         }
@@ -135,7 +140,7 @@ export class TestimonialsNext {
         this.pos.stored = -this.currentPage * (this.itemsWidth + this.itemsGap) * this.itemsPerPage + (this.currentPage == this.totalPages - 1 ? (this.itemsPerPage - this.lastPageItemsQuantity) * (this.itemsWidth + this.itemsGap) : 0);
         gsap.to(this.wrapper, {
             x: this.pos.stored,
-            duration: 1,
+            duration: 0.4,
             ease: "power2.out",
         });
 
