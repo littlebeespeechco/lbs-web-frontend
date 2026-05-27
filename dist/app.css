@@ -977,6 +977,27 @@ section:has(.testimonials) > .slot {
   background-position: center center !important;
 }
 
+@media (max-width: 767px) {
+  section:has(.testimonials) > .slot {
+    background-image: none !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+  section:has(.testimonials) > .slot::before {
+    content: "";
+    position: absolute;
+    width: 120vh;
+    height: 120vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    background-image: url("https://cdn.prod.website-files.com/68b756cba9c9d34da806e0a0/6a1758601fdaacf23f01c8ae_beehive_pattern.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 0;
+  }
+}
 section:has(.testimonials) .testimonial-rating {
   height: 20px !important;
   width: auto !important;

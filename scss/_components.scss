@@ -869,11 +869,39 @@ section:has(.faded-end) > .slot {
 section:has(.testimonials) .bg-wrapper {
     display: none !important;
 }
+// Background image: desktop — standard cover fill (landscape image, landscape container)
 section:has(.testimonials) > .slot {
     background-image: url("https://cdn.prod.website-files.com/68b756cba9c9d34da806e0a0/6a1758601fdaacf23f01c8ae_beehive_pattern.png") !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
     background-position: center center !important;
+}
+// Background image: mobile portrait — rotate 90° via ::before pseudo-element
+// so the landscape image fills a portrait container correctly.
+// Geometry: pseudo-element pre-rotation uses width:120vh / height:120vw so
+// that after rotate(90deg) the visual dimensions (swapped) cover the slot.
+// overflow:hidden on the slot clips the oversized pseudo-element.
+@include breakpoint(small) {
+    section:has(.testimonials) > .slot {
+        background-image: none !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
+    section:has(.testimonials) > .slot::before {
+        content: '';
+        position: absolute;
+        width: 120vh;
+        height: 120vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(90deg);
+        background-image: url("https://cdn.prod.website-files.com/68b756cba9c9d34da806e0a0/6a1758601fdaacf23f01c8ae_beehive_pattern.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 0;
+    }
+    // .testimonials already has z-index:1 in Webflow CSS — keeps it above ::before
 }
 
 // Testimonials card — global changes (desktop + mobile).
