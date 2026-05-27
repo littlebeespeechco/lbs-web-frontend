@@ -908,6 +908,7 @@
   .slot-5 {
     grid-template-columns: repeat(2, 1fr) !important;
     grid-template-rows: none !important;
+    max-height: none !important;
     column-gap: 20px !important;
     row-gap: 30px !important;
   }

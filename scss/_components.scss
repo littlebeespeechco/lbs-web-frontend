@@ -777,6 +777,10 @@
         // we need 15 rows. Removing explicit rows lets all 15 auto-size from
         // content, so the grid (and faded-end) grow to natural height.
         grid-template-rows: none !important;
+        // Webflow Designer sets max-height: 150vh on this element at mobile
+        // breakpoint — that caps the grid to ~1 viewport height and hides
+        // the lower rows. Remove it so the grid expands to all 15 rows.
+        max-height: none !important;
         column-gap: 20px !important;
         row-gap: 30px !important;
     }
