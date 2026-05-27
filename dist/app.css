@@ -1350,13 +1350,13 @@ section:has(.testimonials) .testimonial img {
 
 .questions-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 124px);
   gap: 16px;
-  width: 100%;
 }
 .questions-grid img {
-  width: 100%;
-  height: auto;
+  width: 124px;
+  height: 84px;
+  object-fit: cover;
   border-radius: 12px;
   -webkit-user-drag: none;
   pointer-events: none;
@@ -1364,7 +1364,20 @@ section:has(.testimonials) .testimonial img {
 @media (max-width: 767px) {
   .questions-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 20px;
+  }
+  .questions-grid img {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-width: 767px) and (orientation: landscape) {
+  .questions-grid {
+    grid-template-columns: repeat(2, 166px);
+  }
+  .questions-grid img {
+    width: 166px;
+    height: 112px;
   }
 }
 

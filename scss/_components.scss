@@ -1491,20 +1491,36 @@ section:has(.testimonials) .testimonial img {
 // Conversation Questions — 4-image grid (desktop: 4-col, mobile: 2×2)
 .questions-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 124px);
     gap: 16px;
-    width: 100%;
 
     img {
-        width: 100%;
-        height: auto;
+        width: 124px;
+        height: 84px;
+        object-fit: cover;
         border-radius: 12px;
         -webkit-user-drag: none;
         pointer-events: none;
     }
 
+    // Mobile portrait: fluid 2-col, height follows aspect ratio
     @include breakpoint(small) {
         grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+        gap: 20px;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    // Mobile landscape (≤767px wide): fixed 166×112
+    @media (max-width: 767px) and (orientation: landscape) {
+        grid-template-columns: repeat(2, 166px);
+
+        img {
+            width: 166px;
+            height: 112px;
+        }
     }
 }
