@@ -966,6 +966,15 @@ section:has(.faded-end) > .slot {
   transform: none !important;
 }
 
+section:has(.testimonials) .testimonial-rating {
+  height: 20px !important;
+  width: auto !important;
+}
+
+section:has(.testimonials) .testimonial-text {
+  text-align: left !important;
+}
+
 @media (max-width: 767px) {
   section:has(.testimonials) {
     padding-left: 0 !important;
@@ -1002,6 +1011,21 @@ section:has(.faded-end) > .slot {
   }
   section:has(.testimonials) .testimonials-wrapper .testimonial {
     width: 100% !important;
+  }
+  section:has(.testimonials) .testimonial {
+    padding-top: 22px !important;
+    padding-bottom: 22px !important;
+  }
+  section:has(.testimonials) .testimonial-rating {
+    margin-bottom: 16px !important;
+  }
+  section:has(.testimonials) .testimonial-text {
+    font-size: 15px !important;
+    line-height: 22px !important;
+  }
+  section:has(.testimonials) .testimonial-name {
+    font-size: 16px !important;
+    line-height: 20px !important;
   }
 }
 @media (max-width: 767px) {

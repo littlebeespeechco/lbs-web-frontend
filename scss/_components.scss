@@ -862,6 +862,17 @@ section:has(.faded-end) > .slot {
     transform: none !important;
 }
 
+// Testimonials card — global changes (desktop + mobile).
+// Stars SVG (150×29 intrinsic): constrain to 20px tall, width: auto scales
+// proportionally (~103px wide). text-align: left on the body quote text.
+section:has(.testimonials) .testimonial-rating {
+    height: 20px !important;
+    width: auto !important;
+}
+section:has(.testimonials) .testimonial-text {
+    text-align: left !important;
+}
+
 // Testimonials section — mobile layout.
 //
 // Desktop structure: orange .slot.radius-l.bg-hex inset 45px each side,
@@ -921,6 +932,25 @@ section:has(.faded-end) > .slot {
     }
     section:has(.testimonials) .testimonials-wrapper .testimonial {
         width: 100% !important;
+    }
+    // Card internal spacing and typography
+    section:has(.testimonials) .testimonial {
+        padding-top: 22px !important;
+        padding-bottom: 22px !important;
+    }
+    // Stars → body gap: 16px on mobile (20px on desktop kept by global rule)
+    section:has(.testimonials) .testimonial-rating {
+        margin-bottom: 16px !important;
+    }
+    // Body text: Inter 500 / 15 / 22
+    section:has(.testimonials) .testimonial-text {
+        font-size: 15px !important;
+        line-height: 22px !important;
+    }
+    // Footer (name line): 16 / 20
+    section:has(.testimonials) .testimonial-name {
+        font-size: 16px !important;
+        line-height: 20px !important;
     }
 }
 
