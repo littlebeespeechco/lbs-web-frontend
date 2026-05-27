@@ -953,6 +953,15 @@ section:has(.faded-end) > .slot {
   }
 }
 @media (max-width: 767px) {
+  section:has(.testimonials) {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  section:has(.testimonials) > .slot {
+    border-radius: 0 !important;
+  }
+}
+@media (max-width: 767px) {
   .dual-layout-content .media:where(.w-variant-7e1dcf20-f4e0-d938-2cf6-99f2a459cbec) {
     text-align: left !important;
     align-items: flex-start !important;

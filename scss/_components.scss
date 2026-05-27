@@ -844,6 +844,22 @@ section:has(.faded-end) > .slot {
     }
 }
 
+// Testimonials section — mobile full-bleed treatment.
+// Desktop: orange .slot.radius-l.bg-hex is inset with section padding (45px
+// each side) and has border-radius: 40px for the rounded-corner container look.
+// Mobile: extend to screen edges with no rounding.
+//   section:has(.testimonials) — unique to this section on the page
+//   > .slot — the direct orange background container
+@include breakpoint(small) {
+    section:has(.testimonials) {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    section:has(.testimonials) > .slot {
+        border-radius: 0 !important;
+    }
+}
+
 // Dual-layout content media block — the .media element inside .dual-layout-content
 // with Webflow variant 7e1dcf20-f4e0-d938-2cf6-99f2a459cbec.
 // Used 32× on ASH (Hand Cues, Picture Cues, Letter Cues, Syllable Sliders,
