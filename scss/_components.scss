@@ -844,12 +844,20 @@ section:has(.faded-end) > .slot {
     }
 }
 
-// Testimonials section — mobile full-bleed treatment.
-// Desktop: orange .slot.radius-l.bg-hex is inset with section padding (45px
-// each side) and has border-radius: 40px for the rounded-corner container look.
-// Mobile: extend to screen edges with no rounding.
-//   section:has(.testimonials) — unique to this section on the page
-//   > .slot — the direct orange background container
+// Testimonials section — mobile layout.
+//
+// Desktop structure: orange .slot.radius-l.bg-hex inset 45px each side,
+// border-radius: 40px. Inside: .testimonials (CSS grid, 3 rows: title 42px /
+// slider 507.5px / bullets 10px, gap: 55px, padding: 80px 0 40px).
+// Controls (prev/next arrows) share grid row 2 with the overflow container.
+//
+// Mobile changes:
+//   Full-bleed: zero section h-padding + slot border-radius (previous commit)
+//   Title: SF Pro Rounded 800 / 26 / 42 — family & weight already set globally
+//   Spacing: 50px above title, 36px title→cards, 28px above+below bullets
+//   Grid gap → 0, driven by individual margins instead (gap is a single value
+//   for all rows so we can't vary row 1→2 vs row 2→3 independently)
+//   Bullets: 8×8px circles, 8px gap (down from 10×10 / 10px gap)
 @include breakpoint(small) {
     section:has(.testimonials) {
         padding-left: 0 !important;
@@ -857,6 +865,28 @@ section:has(.faded-end) > .slot {
     }
     section:has(.testimonials) > .slot {
         border-radius: 0 !important;
+    }
+    section:has(.testimonials) .testimonials {
+        padding-top: 50px !important;
+        // zero padding-bottom — spacing below bullets comes from their margin-bottom
+        padding-bottom: 0 !important;
+        gap: 0 !important;
+    }
+    section:has(.testimonials) .testimonials-title {
+        margin-bottom: 36px !important;
+    }
+    section:has(.testimonials) .testimonials-heading {
+        font-size: 26px !important;
+        line-height: 42px !important;
+    }
+    section:has(.testimonials) .testimonials-bullets {
+        gap: 8px !important;
+        margin-top: 28px !important;
+        margin-bottom: 28px !important;
+    }
+    section:has(.testimonials) .testimonials-bullet {
+        width: 8px !important;
+        height: 8px !important;
     }
 }
 

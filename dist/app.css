@@ -960,6 +960,27 @@ section:has(.faded-end) > .slot {
   section:has(.testimonials) > .slot {
     border-radius: 0 !important;
   }
+  section:has(.testimonials) .testimonials {
+    padding-top: 50px !important;
+    padding-bottom: 0 !important;
+    gap: 0 !important;
+  }
+  section:has(.testimonials) .testimonials-title {
+    margin-bottom: 36px !important;
+  }
+  section:has(.testimonials) .testimonials-heading {
+    font-size: 26px !important;
+    line-height: 42px !important;
+  }
+  section:has(.testimonials) .testimonials-bullets {
+    gap: 8px !important;
+    margin-top: 28px !important;
+    margin-bottom: 28px !important;
+  }
+  section:has(.testimonials) .testimonials-bullet {
+    width: 8px !important;
+    height: 8px !important;
+  }
 }
 @media (max-width: 767px) {
   .dual-layout-content .media:where(.w-variant-7e1dcf20-f4e0-d938-2cf6-99f2a459cbec) {
