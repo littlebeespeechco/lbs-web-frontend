@@ -958,6 +958,14 @@ section:has(.faded-end) > .slot {
   background-size: auto 14px !important;
 }
 
+.testimonials-controls-prev {
+  transform: rotate(180deg) !important;
+}
+
+.testimonials-controls-next {
+  transform: none !important;
+}
+
 @media (max-width: 767px) {
   section:has(.testimonials) {
     padding-left: 0 !important;

@@ -852,6 +852,15 @@ section:has(.faded-end) > .slot {
     background-image: url("https://cdn.prod.website-files.com/68b756cba9c9d34da806e0a0/6a172077fd6b6da72104ff35_icon-carrot-dark.svg") !important;
     background-size: auto 14px !important;
 }
+// Original Path 3.png pointed LEFT — Webflow's rotate(180deg) on .next was
+// designed for that. New SVG points RIGHT, so rotations need to be swapped:
+// prev gets 180deg (right → left), next gets 0deg (right stays right).
+.testimonials-controls-prev {
+    transform: rotate(180deg) !important;
+}
+.testimonials-controls-next {
+    transform: none !important;
+}
 
 // Testimonials section — mobile layout.
 //
