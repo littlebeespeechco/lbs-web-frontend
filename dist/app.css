@@ -1007,6 +1007,11 @@ section:has(.testimonials) .testimonial-text {
   text-align: left !important;
 }
 
+section:has(.testimonials) .testimonial img {
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
 @media (max-width: 767px) {
   section:has(.testimonials) {
     padding-left: 0 !important;

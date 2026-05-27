@@ -914,6 +914,11 @@ section:has(.testimonials) .testimonial-rating {
 section:has(.testimonials) .testimonial-text {
     text-align: left !important;
 }
+// Prevent native browser image-drag ghost when swiping over images inside cards
+section:has(.testimonials) .testimonial img {
+    -webkit-user-drag: none;
+    pointer-events: none;
+}
 
 // Testimonials section — mobile layout.
 //
