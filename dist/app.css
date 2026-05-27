@@ -995,6 +995,14 @@ section:has(.faded-end) > .slot {
     width: 8px !important;
     height: 8px !important;
   }
+  section:has(.testimonials) .testimonials-wrapper {
+    padding-left: 24px !important;
+    padding-right: 54px !important;
+    gap: 14px !important;
+  }
+  section:has(.testimonials) .testimonials-wrapper .testimonial {
+    width: 100% !important;
+  }
 }
 @media (max-width: 767px) {
   .dual-layout-content .media:where(.w-variant-7e1dcf20-f4e0-d938-2cf6-99f2a459cbec) {

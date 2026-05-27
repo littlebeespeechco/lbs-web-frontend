@@ -906,6 +906,22 @@ section:has(.faded-end) > .slot {
         width: 8px !important;
         height: 8px !important;
     }
+    // Slider card sizing. The slider JS injects style="width: Xpx" as an inline
+    // style on each .testimonial. CSS !important in a stylesheet beats a
+    // non-!important inline style, so width: 100% overrides JS and resolves to
+    // the wrapper's content box (total width - padding-left - padding-right).
+    //
+    // Target layout at 402px viewport:
+    //   screen edge → 24px → card (324px) → 14px gap → ~40px peek
+    //   card = 402 - 24 - 54 = 324px  |  peek = right_padding - gap = 54 - 14 = 40px
+    section:has(.testimonials) .testimonials-wrapper {
+        padding-left: 24px !important;
+        padding-right: 54px !important;
+        gap: 14px !important;
+    }
+    section:has(.testimonials) .testimonials-wrapper .testimonial {
+        width: 100% !important;
+    }
 }
 
 // Dual-layout content media block — the .media element inside .dual-layout-content
