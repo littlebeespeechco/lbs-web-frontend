@@ -901,6 +901,14 @@
     margin-top: 0 !important;
   }
 }
+section:has(.faded-end) {
+  padding-bottom: 0 !important;
+}
+
+section:has(.faded-end) > .slot {
+  padding-bottom: 0 !important;
+}
+
 @media (max-width: 767px) {
   .faded-end {
     height: auto !important;
@@ -921,8 +929,11 @@
   }
 }
 @media (max-width: 767px) {
+  section.mb-s:has(.faded-end) {
+    margin-bottom: 0 !important;
+  }
   section.mb-s:has(.faded-end) + section {
-    padding-top: 36px !important;
+    padding-top: 0 !important;
   }
   section.mb-s:has(.faded-end) + section .heading {
     font-family: ui-rounded, -apple-system, BlinkMacSystemFont, "SF Pro Rounded", sans-serif !important;

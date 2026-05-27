@@ -755,6 +755,17 @@
     }
 }
 
+// Grid Themes section — bottom internal gap fix (desktop + mobile).
+// Webflow adds padding-bottom to the section and its slot container that
+// creates 10-14px of dead space below the last row. The fade mask already
+// provides the visual breathing room so we zero it out globally.
+section:has(.faded-end) {
+    padding-bottom: 0 !important;
+}
+section:has(.faded-end) > .slot {
+    padding-bottom: 0 !important;
+}
+
 // Grid Themes section — 5 across desktop → 2 across mobile.
 // Container: div.slot-5 (unique class, CSS grid, 30 .caption children inside
 // .faded-end). Desktop: repeat(5, 206px) / 42px gap / 6 rows.
@@ -804,8 +815,16 @@
 //   body (rich-text-block): Inter 500 / 22 / 31 / #646464
 //   40px to the feature dual-layout below (rich-text margin-bottom)
 @include breakpoint(small) {
+    // Remove the 16px mb-s margin between grid section and next section —
+    // the fade effect provides the visual gap.
+    section.mb-s:has(.faded-end) {
+        margin-bottom: 0 !important;
+    }
+    // The 36px padding-top previously set here is no longer needed — the
+    // mask-image fade at the bottom of .faded-end creates the appearance of
+    // ~36px of white space, so zero padding achieves the target gap visually.
     section.mb-s:has(.faded-end) + section {
-        padding-top: 36px !important;
+        padding-top: 0 !important;
     }
     section.mb-s:has(.faded-end) + section .heading {
         font-family: ui-rounded, -apple-system, BlinkMacSystemFont, "SF Pro Rounded", sans-serif !important;
