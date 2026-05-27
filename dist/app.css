@@ -1046,7 +1046,7 @@ section:has(.testimonials) .testimonial-text {
   }
   section:has(.testimonials) .testimonial {
     padding-top: 30px !important;
-    padding-bottom: 30px !important;
+    padding-bottom: 20px !important;
   }
   section:has(.testimonials) .testimonial-rating {
     margin-bottom: 16px !important;
