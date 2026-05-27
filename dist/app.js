@@ -2536,9 +2536,10 @@
       };
       this.mouseupEvents = () => {
         this.pos.dragging = false;
-        if (this.pos.delta < -50 && this.currentPage < this.totalPages - 1) {
+        const dragThreshold = this.viewPortBreakpoint === "mobile" ? 50 : 200;
+        if (this.pos.delta < -dragThreshold && this.currentPage < this.totalPages - 1) {
           this.changePage(this.currentPage + 1);
-        } else if (this.pos.delta > 50 && this.currentPage > 0) {
+        } else if (this.pos.delta > dragThreshold && this.currentPage > 0) {
           this.changePage(this.currentPage - 1);
         } else {
           this.pos.stored = -this.currentPage * (this.itemsWidth + this.itemsGap) * this.itemsPerPage + (this.currentPage == this.totalPages - 1 ? (this.itemsPerPage - this.lastPageItemsQuantity) * (this.itemsWidth + this.itemsGap) : 0);
