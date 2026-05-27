@@ -1487,3 +1487,24 @@ section:has(.testimonials) .testimonial img {
 #mission {
     scroll-margin-top: 100px;
 }
+
+// Conversation Questions — 4-image grid (desktop: 4-col, mobile: 2×2)
+.questions-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    width: 100%;
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        -webkit-user-drag: none;
+        pointer-events: none;
+    }
+
+    @include breakpoint(small) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+}

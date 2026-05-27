@@ -1348,6 +1348,26 @@ section:has(.testimonials) .testimonial img {
   scroll-margin-top: 100px;
 }
 
+.questions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+.questions-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+@media (max-width: 767px) {
+  .questions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
 html {
   --fontSize: clamp(14px, calc(100vw / 1290 * 16), 16px);
 }
