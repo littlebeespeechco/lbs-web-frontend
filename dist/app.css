@@ -644,6 +644,9 @@
   .faq {
     padding-top: 3.125rem;
   }
+  .faq .media {
+    margin-bottom: 2.25rem !important;
+  }
   .faq-item {
     padding-top: 1.4375rem !important;
     padding-left: 2.25rem !important;
@@ -656,6 +659,8 @@
     margin-bottom: 3rem;
   }
   .faq-additional {
+    padding-top: 0.1875rem !important;
+    padding-bottom: 0.1875rem !important;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }

@@ -368,6 +368,10 @@
     .faq {
         padding-top: ptr(50);
     }
+    // Heading unit: mb-r collapses to 20px on mobile; bump up by 16px → 36px
+    .faq .media {
+        margin-bottom: ptr(36) !important;
+    }
 
     // Match desktop inner padding on each FAQ item so the collapsed height,
     // horizontal offsets, and +/- button position are identical on both
@@ -389,6 +393,8 @@
         margin-bottom: ptr(48);
     }
     .faq-additional {
+        padding-top: ptr(3) !important;
+        padding-bottom: ptr(3) !important;
         padding-left: ptr(24);
         padding-right: ptr(24);
     }
