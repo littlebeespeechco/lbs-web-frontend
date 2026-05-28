@@ -994,6 +994,10 @@ section:has(.testimonials) .testimonial img {
         padding-top: 30px !important;
         padding-bottom: 0px !important;
     }
+    // Cards with a photo need bottom breathing room; text-only cards stay at 0
+    section:has(.testimonials) .testimonial:has(img) {
+        padding-bottom: 20px !important;
+    }
     // Stars → body gap: 16px on mobile (20px on desktop kept by global rule)
     section:has(.testimonials) .testimonial-rating {
         margin-bottom: 16px !important;
