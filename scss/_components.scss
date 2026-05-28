@@ -1257,6 +1257,52 @@ section:has(.testimonials) .testimonial img {
     }
 }
 
+// ATCH Scenes section background (mobile — mirrors #conversation fix above):
+//   - Upper region: solid #F9F9F9 gray through y=1016 (440 content + 576 image)
+//   - Lower region: solid #7E8D47 olive green for the scenes menu area
+//
+// MBC config (text-42 mb-24 / text-xl) and Section variant are identical to
+// ASH #conversation, so the same 440/576/1016 px geometry applies here.
+@include breakpoint(small) {
+    #scenes.section {
+        background: linear-gradient(
+            to bottom,
+            #F9F9F9 1016px,
+            #7E8D47 1016px
+        ) !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        overflow: hidden !important;
+    }
+    #scenes.section > .slot {
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+    }
+    #scenes .media.padded.text-xl,
+    #scenes .media.padded.text-xl > * {
+        background-color: transparent !important;
+    }
+    #scenes .media.padded.text-xl {
+        min-height: 1016px !important;
+    }
+    #scenes .section-image {
+        inset: auto !important;
+        top: 440px !important;
+        left: 0 !important;
+        right: auto !important;
+        bottom: auto !important;
+        height: 576px !important;
+        width: auto !important;
+        max-width: none !important;
+        mask-image: none !important;
+        -webkit-mask-image: none !important;
+    }
+}
+
 // EXCEPTION (NOT part of the template):
 // Stories section on ASH needs an extra 60px at its top. Earlier rule
 // `section:has(.media.text-xl)` zeros section pv-l so the .media.text-xl
