@@ -2330,7 +2330,6 @@
     showTab(index) {
       const currentTab = this.tabs[index];
       const currentHeading = this.headings[index];
-      const left = index > this.currentTab ? true : false;
       const bgcolors = ["#FFDF10", "#72BEE0"];
       const textcolors = ["#404040", "#FFFFFF", "#A9A9A9"];
       const currentTabName = this.togglerLinks[index].textContent.toLowerCase();
@@ -2341,27 +2340,20 @@
         const previousHeading = this.headings[this.currentTab];
         gsap.to(previousHeading, {
           autoAlpha: 0,
-          duration: 0.5,
+          duration: 0.3,
           overwrite: true
         });
-        gsap.to(previousTab.items, {
+        gsap.to(previousTab, {
           autoAlpha: 0,
-          duration: 0.5,
-          ease: "power4.out",
-          xPercent: left ? 20 : -20,
-          stagger: left ? -0.05 : 0.05
+          duration: 0.3
         });
-        gsap.set(previousTab, {
-          autoAlpha: 0,
-          delay: 0.5
-        });
-        gsap.delayedCall(0.5, () => gsap.set(previousTab, { display: "none" }));
+        gsap.delayedCall(0.3, () => gsap.set(previousTab, { display: "none" }));
       }
       const tl = gsap.timeline();
       tl.to(currentHeading, {
         autoAlpha: 1,
-        duration: 0.5,
-        delay: 0.5,
+        duration: 0.3,
+        delay: 0.3,
         overwrite: true
       }, 0);
       tl.to(this.indicator, {
@@ -2388,21 +2380,12 @@
           ease: "power4.out"
         });
       });
+      gsap.set(currentTab.items, { clearProps: "all" });
       gsap.to(currentTab, {
         autoAlpha: 1,
-        duration: 0.5,
+        duration: 0.3,
+        delay: 0.3,
         ease: "power4.inOut"
-      });
-      gsap.fromTo(currentTab.items, {
-        autoAlpha: 0,
-        xPercent: left ? -20 : 20
-      }, {
-        autoAlpha: 1,
-        xPercent: 0,
-        duration: 0.5,
-        ease: "power4.out",
-        stagger: left ? -0.05 : 0.05,
-        delay: 0.25
       });
       this.currentTab = index;
     }
