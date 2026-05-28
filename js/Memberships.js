@@ -38,6 +38,8 @@ export class Memberships {
                 item.originalNumber = item.numeral.textContent;
             });
         });
+        // Collapse all tabs so inactive ones don't inflate the grid row height
+        gsap.set(this.tabs, { display: 'none' });
     }
 
     bind() {
@@ -61,6 +63,9 @@ export class Memberships {
         window.location.hash = currentTabName;
         
 
+        // Restore display so the tab participates in layout before animating in
+        gsap.set(currentTab, { clearProps: 'display' });
+
         if (this.currentTab !== null) {
             const previousTab = this.tabs[this.currentTab];
             const previousHeading = this.headings[this.currentTab];
@@ -78,12 +83,13 @@ export class Memberships {
             });
             gsap.set(previousTab, {
                 autoAlpha: 0,
-                duration: 0.5,
                 delay: 0.5
             });
+            // Collapse previous tab after it's hidden so it stops inflating the grid
+            gsap.delayedCall(0.5, () => gsap.set(previousTab, { display: 'none' }));
         }
 
-        
+
         const tl = gsap.timeline();
         tl.to(currentHeading, {
             autoAlpha: 1,

@@ -2317,6 +2317,7 @@
           item.originalNumber = item.numeral.textContent;
         });
       });
+      gsap.set(this.tabs, { display: "none" });
     }
     bind() {
       this.togglerLinks.forEach((item, index) => {
@@ -2334,6 +2335,7 @@
       const textcolors = ["#404040", "#FFFFFF", "#A9A9A9"];
       const currentTabName = this.togglerLinks[index].textContent.toLowerCase();
       window.location.hash = currentTabName;
+      gsap.set(currentTab, { clearProps: "display" });
       if (this.currentTab !== null) {
         const previousTab = this.tabs[this.currentTab];
         const previousHeading = this.headings[this.currentTab];
@@ -2351,9 +2353,9 @@
         });
         gsap.set(previousTab, {
           autoAlpha: 0,
-          duration: 0.5,
           delay: 0.5
         });
+        gsap.delayedCall(0.5, () => gsap.set(previousTab, { display: "none" }));
       }
       const tl = gsap.timeline();
       tl.to(currentHeading, {
