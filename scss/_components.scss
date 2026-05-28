@@ -1282,11 +1282,13 @@ section:has(.testimonials) .testimonial img {
         min-height: 0 !important;
         max-height: none !important;
     }
-    #scenes .media.padded.text-xl,
-    #scenes .media.padded.text-xl > * {
+    // Target the MBC (first child of the slot) by position, not class name,
+    // because the ATCH MBC may not have `text-xl` on its root element.
+    #scenes.section > .slot > :first-child,
+    #scenes.section > .slot > :first-child > * {
         background-color: transparent !important;
     }
-    #scenes .media.padded.text-xl {
+    #scenes.section > .slot > :first-child {
         min-height: 1016px !important;
     }
     #scenes .section-image {
