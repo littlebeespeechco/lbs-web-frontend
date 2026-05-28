@@ -811,20 +811,20 @@ section:has(.faded-end) > .slot {
 }
 
 // ATCH Themes grid — 4-col (desktop/iPad) → 2-col (mobile), faded-end decoration.
-// Mirrors the ASH slot-5 pattern. Class "slot-4" goes on the Grid component's
-// outer root div (via Class prop); the ACTUAL CSS grid lives one level deeper
-// in the "Slot 2" element (styleNames: ["Slot 2"] → CSS class "slot-2").
+// Mirrors the ASH slot-5 pattern. Class "slot-4" is set on the Grid component
+// instance via the Class prop; Webflow's Grid component renders the CSS grid
+// directly on that root div (not on an inner wrapper), so target .slot-4 directly.
 // grid-template-rows: none removes Webflow's explicit 4-row definition so cells
 // auto-size across the new 2-col layout.
 @include breakpoint(small) {
-    .slot-4 .slot-2 {
+    .slot-4 {
         grid-template-columns: repeat(2, 1fr) !important;
         grid-template-rows: none !important;
         max-height: none !important;
         column-gap: 20px !important;
         row-gap: 30px !important;
     }
-    .slot-4 .slot-2 .caption-text {
+    .slot-4 .caption-text {
         font-family: "Inter", Arial, sans-serif !important;
         font-weight: 500 !important;
         font-size: 11px !important;

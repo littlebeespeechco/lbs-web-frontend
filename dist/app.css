@@ -934,14 +934,14 @@ section:has(.faded-end) > .slot {
   }
 }
 @media (max-width: 767px) {
-  .slot-4 .slot-2 {
+  .slot-4 {
     grid-template-columns: repeat(2, 1fr) !important;
     grid-template-rows: none !important;
     max-height: none !important;
     column-gap: 20px !important;
     row-gap: 30px !important;
   }
-  .slot-4 .slot-2 .caption-text {
+  .slot-4 .caption-text {
     font-family: "Inter", Arial, sans-serif !important;
     font-weight: 500 !important;
     font-size: 11px !important;
