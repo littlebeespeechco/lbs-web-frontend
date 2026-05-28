@@ -1147,6 +1147,16 @@ section:has(.testimonials) .testimonial img {
     }
 }
 
+// Spanish page — skill-building section: force 24px horizontal padding on
+// mobile (the Webflow Section medium cascade should handle it, but something
+// is leaving it at ~52px; this pins it explicitly).
+@include breakpoint(small) {
+    section:has(.skill-building) {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+    }
+}
+
 // Scenes component (Conversation section on ASH — likely reused on other
 // product pages too). Menu uses the lighter #E7F9C9 green as a distinct
 // card on top of the Conversation section's darker #D0E2B2 bottom bg.

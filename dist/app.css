@@ -1151,6 +1151,12 @@ section:has(.testimonials) .testimonial img {
     content: url("https://cdn.prod.website-files.com/68b756cba9c9d34da806e0a0/6a15dc470197ec8dadf20c72_ocean-scene-1_mobile%402x.png") !important;
   }
 }
+@media (max-width: 767px) {
+  section:has(.skill-building) {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+}
 .scenes {
   background-color: #E7F9C9 !important;
   padding-top: 60px !important;
