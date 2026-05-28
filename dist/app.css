@@ -1365,6 +1365,7 @@ section:has(.testimonials) .testimonial img {
   .questions-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    margin-top: 3.125rem;
   }
   .questions-grid img {
     width: 100%;

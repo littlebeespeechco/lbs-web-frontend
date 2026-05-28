@@ -1507,6 +1507,7 @@ section:has(.testimonials) .testimonial img {
     @include breakpoint(small) {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
+        margin-top: ptr(50);
 
         img {
             width: 100%;
