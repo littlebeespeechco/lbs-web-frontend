@@ -119,6 +119,10 @@ body {
 
         > * {
             height: 100%;
+
+            @include breakpoint('medium') {
+                height: auto;
+            }
         }
     }
 }
