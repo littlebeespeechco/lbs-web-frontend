@@ -1150,6 +1150,7 @@ section:has(.testimonials) .testimonial img {
 // Scenes component (Conversation section on ASH — likely reused on other
 // product pages too). Menu uses the lighter #E7F9C9 green as a distinct
 // card on top of the Conversation section's darker #D0E2B2 bottom bg.
+// ATCH Speech Samples uses the darker #687537 olive instead.
 .scenes {
     background-color: #E7F9C9 !important;
     // Universal vertical padding inside the green box (above + below the
@@ -1157,6 +1158,10 @@ section:has(.testimonials) .testimonial img {
     // overridden to 40 below.
     padding-top: 60px !important;
     padding-bottom: 60px !important;
+}
+
+#scenes .scenes {
+    background-color: #687537 !important;
 }
 
 @include breakpoint(small) {

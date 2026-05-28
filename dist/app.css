@@ -1157,6 +1157,10 @@ section:has(.testimonials) .testimonial img {
   padding-bottom: 60px !important;
 }
 
+#scenes .scenes {
+  background-color: #687537 !important;
+}
+
 @media (max-width: 767px) {
   .scenes {
     display: flex !important;
