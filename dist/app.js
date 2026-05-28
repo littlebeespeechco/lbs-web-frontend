@@ -2300,7 +2300,7 @@
       window.addEventListener("hashchange", () => {
         const tabName = window.location.hash.substring(1);
         const index = this.togglerLinks.findIndex((link) => link.textContent.toLowerCase() === tabName);
-        if (index !== -1) {
+        if (index !== -1 && index !== this.currentTab) {
           this.showTab(index);
         }
       });

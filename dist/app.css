@@ -1837,6 +1837,11 @@ html:not(.wf-design-mode) .memberships-tab {
 html:not(.wf-design-mode) .memberships-tab > * {
   height: 100%;
 }
+@media (max-width: 991px) {
+  html:not(.wf-design-mode) .memberships-tab > * {
+    height: auto;
+  }
+}
 html:not(.wf-design-mode) [data-animation=diction] .anim-diction:not([class*=text-gradient]) {
   display: inline-block;
   background: none;
