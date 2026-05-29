@@ -1276,8 +1276,8 @@ section:has(.testimonials) .testimonial img {
   .slot:has(.dual-layout:where(.w-variant-c666a2c9-0628-1cb3-c820-0cd38210940c)) {
     padding-top: 40px !important;
     padding-bottom: 30px !important;
-    padding-left: 30px !important;
-    padding-right: 30px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
   .dual-layout:where(.w-variant-c666a2c9-0628-1cb3-c820-0cd38210940c) {
     padding: 0 !important;
@@ -1936,6 +1936,18 @@ html:not(.wf-design-mode) .testimonials-wrapper > * {
 }
 html:not(.wf-design-mode) .link.hover-orange:hover {
   color: var(--_colors---orange);
+}
+html:not(.wf-design-mode) .blog-item-heading {
+  font-family: "SF Pro Rounded", -apple-system, system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 46px;
+  color: #282828;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+html:not(.wf-design-mode) .blog-item a:hover .blog-item-heading {
+  color: #FF6200;
 }
 
 form:not(.search) label {
