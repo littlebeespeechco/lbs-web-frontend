@@ -184,6 +184,17 @@ body {
     color: var(--_colors---orange);
 }
 
+// Footer description — spec-lock font-size/line-height (Webflow mobile lh was ~34px)
+.footer-description {
+    font-size: 13px;
+    line-height: 22px;
+
+    @include breakpoint(small) {
+        font-size: 27px;
+        line-height: 36px;
+    }
+}
+
 // Rich text inline links — use light-orange (amber) not deep orange
 .w-richtext a {
     color: var(--_colors---light-orange);

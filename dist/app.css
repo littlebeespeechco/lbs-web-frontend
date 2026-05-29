@@ -1937,6 +1937,16 @@ html:not(.wf-design-mode) .testimonials-wrapper > * {
 html:not(.wf-design-mode) .link.hover-orange:hover {
   color: var(--_colors---orange);
 }
+html:not(.wf-design-mode) .footer-description {
+  font-size: 13px;
+  line-height: 22px;
+}
+@media (max-width: 767px) {
+  html:not(.wf-design-mode) .footer-description {
+    font-size: 27px;
+    line-height: 36px;
+  }
+}
 html:not(.wf-design-mode) .w-richtext a {
   color: var(--_colors---light-orange);
 }
