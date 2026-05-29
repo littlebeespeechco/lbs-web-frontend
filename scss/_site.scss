@@ -183,3 +183,18 @@ body {
 .link.hover-orange:hover {
     color: var(--_colors---orange);
 }
+
+// Blog listing page — post card heading
+.blog-item-heading {
+    font-family: "SF Pro Rounded", -apple-system, system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 46px;
+    color: #282828;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.blog-item a:hover .blog-item-heading {
+    color: #FF6200;
+}
