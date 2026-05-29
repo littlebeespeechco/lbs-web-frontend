@@ -184,6 +184,11 @@ body {
     color: var(--_colors---orange);
 }
 
+// Rich text inline links — use light-orange (amber) not deep orange
+.w-richtext a {
+    color: var(--_colors---light-orange);
+}
+
 // Blog post template — post title
 .single-post-heading {
     font-family: "SF Pro Rounded", -apple-system, system-ui, sans-serif;
