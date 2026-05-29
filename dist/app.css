@@ -1937,6 +1937,13 @@ html:not(.wf-design-mode) .testimonials-wrapper > * {
 html:not(.wf-design-mode) .link.hover-orange:hover {
   color: var(--_colors---orange);
 }
+html:not(.wf-design-mode) .single-post-heading {
+  font-family: "SF Pro Rounded", -apple-system, system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 46px;
+  color: #282828;
+}
 html:not(.wf-design-mode) .blog-item-heading {
   font-family: "SF Pro Rounded", -apple-system, system-ui, sans-serif;
   font-weight: 700;
