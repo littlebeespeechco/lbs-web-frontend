@@ -35,17 +35,19 @@ export class Stagger {
     }
 
     animate() {
+        const noMove = this.element.hasAttribute("data-stagger-no-move");
+
         // Animation logic here
         // Direct children always use normal animation
-        if (this.directChildren.length > 0) {            
+        if (this.directChildren.length > 0) {
             gsap.set(this.directChildren, {
                 opacity: 0,
-                y: "2rem",
+                ...(noMove ? {} : { y: "2rem" }),
             });
             gsap.utils.toArray(this.directChildren).forEach(child => {
                 gsap.to(child, {
                     opacity: 1,
-                    y: 0,
+                    ...(noMove ? {} : { y: 0 }),
                     duration: 2,
                     delay: 0.2,
                     ease: "elastic.out(1, 0.7)",
