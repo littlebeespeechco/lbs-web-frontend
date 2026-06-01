@@ -101,7 +101,11 @@
 }
 
 [data-wf--media-block--variant=list-item] p {
-  margin-bottom: 0;
+  font-size: 19px !important;
+  line-height: 39px !important;
+  font-weight: 600 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 @media (max-width: 767px) {
