@@ -331,8 +331,10 @@
 // ends with a line-height-padded <p>, contributing ~14px of empty line-box space
 // that adds to the visual gap, so subtract that from the row-gap value.
 .icons-layout-media {
-    grid-row-gap: ptr(41);
+    grid-column-gap: ptr(158); // 198px Webflow default − 40px
+    grid-row-gap: ptr(117);    // 57px Webflow default + 60px
     @include breakpoint(small) {
+        grid-column-gap: unset; // restore Webflow's mobile value
         grid-row-gap: ptr(36);
     }
 }
