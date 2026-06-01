@@ -2820,6 +2820,22 @@ body.menu-open .header {
 *.text-gradient-purple * {
   -webkit-text-fill-color: transparent;
 }
+*.text-gradient-violet-blue {
+  --color1: #8768D0;
+  --color2: #58C3F6;
+  background: linear-gradient(to right, #8768D0, #58C3F6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+}
+*.text-gradient-violet-blue * {
+  -webkit-text-fill-color: transparent;
+}
+*.text-gradient-violet-blue {
+  --color1: #8768D0;
+  --color2: #58C3F6;
+}
 *.text-gradient-yellow {
   --color1: #FF9D00;
   --color2: var(--_colors---yellow);

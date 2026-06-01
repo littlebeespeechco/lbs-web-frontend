@@ -37,6 +37,7 @@
         // it needs actual color values to interpolate the per-character colors.
         &-orange          { @include gradient-text($orange, #FFB700);      --color1: #ff6200; }
         &-purple          { @include gradient-text(#52A6E0, #F379E7); }
+        &-violet-blue     { @include gradient-text(#8768D0, #58C3F6);      --color1: #8768D0; --color2: #58C3F6; }
         &-yellow          { @include gradient-text(#FF9D00, $yellow);      --color2: #ffdf10; }
         &-purple-vertical { @include gradient-text(#B57DC1, #9A7DC1); }
         &-gray-vertical   { @include gradient-text($background-2, $background-1); }
