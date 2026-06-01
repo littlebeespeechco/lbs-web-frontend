@@ -175,14 +175,6 @@
   margin-left: 3rem;
 }
 
-.parallax {
-  height: 34vw !important;
-}
-
-.parallax-img {
-  height: 120% !important;
-}
-
 #scenes {
   --background: #F9F9F9;
   --end-color: #7E8D47;

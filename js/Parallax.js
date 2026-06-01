@@ -37,7 +37,9 @@ export class Parallax {
         } else {
             this.image = this.element.querySelector("img");
         }
-        this.direction = this.image.getAttribute("data-parallax-image") === "down" ? "up" : "up";        
+        this.direction = this.image.getAttribute("data-parallax-image") === "down" ? "up" : "up";
+        const header = document.querySelector(".w-nav, nav, header");
+        this.headerHeight = header ? header.offsetHeight : 86;
     }
 
     sizing() {
@@ -61,7 +63,7 @@ export class Parallax {
             scrollTrigger: {
                 trigger: this.wrapper,
                 start: "top bottom",
-                end: "bottom top",
+                end: `top ${this.headerHeight}px`,
                 scrub: true
             }
         });
