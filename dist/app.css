@@ -104,6 +104,10 @@
   margin-bottom: 0;
 }
 
+[data-wf-page="6966e3760285e4a7641eb0b0"] [data-wf--media-block--variant=list-item].full-w {
+  padding-top: 1px !important;
+  padding-bottom: 1px !important;
+}
 [data-wf-page="6966e3760285e4a7641eb0b0"] [data-wf--media-block--variant=list-item].full-w p {
   font-size: 19px !important;
   line-height: 39px !important;

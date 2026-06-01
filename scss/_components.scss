@@ -10,6 +10,8 @@
 // Spanish page only — sounds list items (full-w list-item blocks).
 // Scoped via data-wf-page to avoid touching ASH/ATCH/other pages.
 [data-wf-page="6966e3760285e4a7641eb0b0"] [data-wf--media-block--variant="list-item"].full-w {
+    padding-top: 1px !important;    // variant default is 4px; −6px total = 1px each side
+    padding-bottom: 1px !important;
     p {
         font-size: 19px !important;
         line-height: 39px !important;
