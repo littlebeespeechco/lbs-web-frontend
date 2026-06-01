@@ -149,8 +149,11 @@ export class Megamenu {
         this.element.addEventListener("mousemove", (e) => {
             if (!this.isShowing || this.currentTarget === null) return;
             const activeLink = this.menuLinks[this.currentTarget];
-            const rect = activeLink.getBoundingClientRect();
-            if (e.clientX < rect.left - 20) {
+            const linkRect = activeLink.getBoundingClientRect();
+            const menuRect = this.megamenu.getBoundingClientRect();
+            const overMegamenu = e.clientX >= menuRect.left && e.clientX <= menuRect.right
+                              && e.clientY >= menuRect.top  && e.clientY <= menuRect.bottom;
+            if (e.clientX < linkRect.left - 20 && !overMegamenu) {
                 this.isShowing = false;
                 this.showMegamenu(false);
                 activeLink.classList.remove("active");

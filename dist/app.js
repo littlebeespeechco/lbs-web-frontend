@@ -2049,8 +2049,10 @@
       this.element.addEventListener("mousemove", (e2) => {
         if (!this.isShowing || this.currentTarget === null) return;
         const activeLink = this.menuLinks[this.currentTarget];
-        const rect = activeLink.getBoundingClientRect();
-        if (e2.clientX < rect.left - 20) {
+        const linkRect = activeLink.getBoundingClientRect();
+        const menuRect = this.megamenu.getBoundingClientRect();
+        const overMegamenu = e2.clientX >= menuRect.left && e2.clientX <= menuRect.right && e2.clientY >= menuRect.top && e2.clientY <= menuRect.bottom;
+        if (e2.clientX < linkRect.left - 20 && !overMegamenu) {
           this.isShowing = false;
           this.showMegamenu(false);
           activeLink.classList.remove("active");
