@@ -616,13 +616,8 @@
   align-items: flex-start;
 }
 
-.icons-layout-media {
-  grid-column-gap: 9.875rem;
-  grid-row-gap: 7.3125rem;
-}
 @media (max-width: 767px) {
   .icons-layout-media {
-    grid-column-gap: unset;
     grid-row-gap: 2.25rem;
   }
 }
@@ -936,11 +931,6 @@ section:has(.faded-end) > .slot {
     color: #5d5d5d !important;
   }
 }
-.slot-4 {
-  column-gap: 24px !important;
-  row-gap: 54px !important;
-}
-
 @media (max-width: 767px) {
   .slot-4 {
     grid-template-columns: repeat(2, 1fr) !important;
