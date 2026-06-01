@@ -145,6 +145,17 @@ export class Megamenu {
         this.menu.addEventListener("mouseenter", (e) => {
             e.preventDefault();
         });
+
+        this.element.addEventListener("mousemove", (e) => {
+            if (!this.isShowing || this.currentTarget === null) return;
+            const activeLink = this.menuLinks[this.currentTarget];
+            const rect = activeLink.getBoundingClientRect();
+            if (e.clientX < rect.left - 20) {
+                this.isShowing = false;
+                this.showMegamenu(false);
+                activeLink.classList.remove("active");
+            }
+        });
     }
 
     observe() {

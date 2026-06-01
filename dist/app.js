@@ -2046,6 +2046,16 @@
       this.menu.addEventListener("mouseenter", (e2) => {
         e2.preventDefault();
       });
+      this.element.addEventListener("mousemove", (e2) => {
+        if (!this.isShowing || this.currentTarget === null) return;
+        const activeLink = this.menuLinks[this.currentTarget];
+        const rect = activeLink.getBoundingClientRect();
+        if (e2.clientX < rect.left - 20) {
+          this.isShowing = false;
+          this.showMegamenu(false);
+          activeLink.classList.remove("active");
+        }
+      });
     }
     observe() {
       const resizeObserver = new ResizeObserver(() => {
