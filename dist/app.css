@@ -2000,6 +2000,9 @@ form:not(.search) .w-input.code-input {
 form:not(.search) textarea.w-input {
   line-height: 1.35;
 }
+form:not(.search) .contact-message {
+  height: 11.875rem;
+}
 form:not(.search) .w-checkbox, form:not(.search) .w-radio {
   display: flex;
   align-items: flex-start;

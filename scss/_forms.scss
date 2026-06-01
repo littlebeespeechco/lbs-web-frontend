@@ -35,6 +35,10 @@ textarea.w-input {
     line-height: 1.35;
 }
 
+.contact-message {
+    height: ptr(190);
+}
+
 .w-checkbox, .w-radio {
     display: flex;
     align-items: flex-start;
