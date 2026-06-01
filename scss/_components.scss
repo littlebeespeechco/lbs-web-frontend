@@ -819,6 +819,11 @@ section:has(.faded-end) > .slot {
 // directly on that root div (not on an inner wrapper), so target .slot-4 directly.
 // grid-template-rows: none removes Webflow's explicit 4-row definition so cells
 // auto-size across the new 2-col layout.
+.slot-4 {
+    column-gap: 24px !important; // Webflow prop gives 2rem (32px); spec = 24px
+    row-gap: 54px !important;    // Webflow prop gives 4rem (64px); spec = 64−10 = 54px
+}
+
 @include breakpoint(small) {
     .slot-4 {
         grid-template-columns: repeat(2, 1fr) !important;
