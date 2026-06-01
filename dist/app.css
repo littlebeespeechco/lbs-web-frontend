@@ -24232,6 +24232,10 @@ body.menu-open .header {
   max-width: 6.9375rem;
 }
 
+.mw-400 {
+  max-width: 25rem;
+}
+
 .icon-84 {
   width: 5.25rem;
   max-width: 5.25rem;
