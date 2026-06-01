@@ -2003,6 +2003,9 @@ form:not(.search) textarea.w-input {
 form:not(.search) .contact-message {
   height: 11.875rem;
 }
+form:not(.search) .contact-submit {
+  border-radius: 999em;
+}
 form:not(.search) .w-checkbox, form:not(.search) .w-radio {
   display: flex;
   align-items: flex-start;
