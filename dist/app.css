@@ -2769,6 +2769,9 @@ body.menu-open .header {
 *.text-light-gray {
   color: #CED0D3;
 }
+*.text-mid-gray {
+  color: #AAAAAA;
+}
 *.text-dark-gray {
   color: #373737;
 }
