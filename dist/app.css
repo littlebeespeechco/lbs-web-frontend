@@ -628,6 +628,9 @@
   align-items: flex-start;
 }
 
+.icons-layout-media {
+  grid-row-gap: 5.4375rem;
+}
 @media (max-width: 767px) {
   .icons-layout-media {
     grid-row-gap: 2.25rem;
