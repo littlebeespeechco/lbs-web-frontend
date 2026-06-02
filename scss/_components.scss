@@ -354,6 +354,22 @@
     }
 }
 
+// Media Block "List Item - Top Align" variant (checkmark + text row).
+// Webflow sets align-items: flex-start and margin-top: .45rem on the icon.
+// Center everything and kill the <p> bottom-margin bleed that creates
+// the empty space below each list item.
+.media:where(.w-variant-3664c004-55a6-44ce-7cfa-9c2f9f09064a) {
+    align-items: center;
+
+    .media-text p {
+        margin-bottom: 0;
+    }
+}
+
+.media-img:where(.w-variant-3664c004-55a6-44ce-7cfa-9c2f9f09064a) {
+    margin-top: 0;
+}
+
 // "Speech therapy tools…" section — Webflow stacks .tools as a column at ≤991px
 // in DOM order (text, then image). On mobile (≤767px) show the image above the
 // text instead.
