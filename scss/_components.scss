@@ -360,6 +360,7 @@
 // the empty space below each list item.
 .media:where(.w-variant-3664c004-55a6-44ce-7cfa-9c2f9f09064a) {
     align-items: center;
+    margin-bottom: ptr(10);
 
     .media-text p {
         margin-bottom: 0;
