@@ -649,11 +649,6 @@
   margin-top: 0;
 }
 
-.media:where(.w-variant-05ec27b3-de46-5eb4-52b6-0a759236e334) {
-  padding-top: 0.125rem;
-  padding-bottom: 0.125rem;
-}
-
 @media (max-width: 767px) {
   .tools {
     flex-direction: column-reverse;
