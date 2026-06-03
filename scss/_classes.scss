@@ -441,6 +441,52 @@ section:has(.mobile-fullw) {
     }
 }
 
+// Honeycomb edge decoration. Add this class to any full-bleed section whose
+// inner content uses the 1290px .mw-page canvas. Draws two copies of the
+// honeycomb PNG: one on the left edge, one on the right mirrored horizontally. Each shows
+// 184px inside the 1290px boundary; the rest bleeds outward and is clipped here
+// by overflow:hidden (so no separate .no-overflow needed). The images sit behind
+// the section content (z-index:-1 pseudos under a z-index:0 stacking context).
+// Hidden on mobile. Anchor math: 1290/2 = 645 from section center; 645 - 184 =
+// 461. The min() clamps the 184px reveal to the content edge once the viewport
+// is narrower than 1290. Tune the top offset / size per section via #id::before.
+.honeycomb-edges {
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 96px;
+        width: 931px;   // @2x asset (1862×1136) at natural display size
+        height: 568px;
+        background-image: url("https://cdn.prod.website-files.com/68b756cba9c9d34da806e0a0/6a2061c7bfb40ec99c1c4864_honeycomb_pattern_gray%402x.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: -1;
+        pointer-events: none;
+    }
+    // Left copy: right edge sits 184px inside the left content boundary.
+    &::before {
+        right: min(calc(100% - 184px), calc(50% + 461px));
+    }
+    // Right copy: left edge sits 184px inside the right content boundary, mirrored horizontally.
+    &::after {
+        left: min(calc(100% - 184px), calc(50% + 461px));
+        transform: scaleX(-1);
+    }
+
+    // Hidden on mobile.
+    @include breakpoint(small) {
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+}
+
 .content-top {
     .dual-layout-content {
         align-self: flex-start;

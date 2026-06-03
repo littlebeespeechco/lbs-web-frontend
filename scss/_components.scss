@@ -219,51 +219,6 @@
     .hex {
         background-color: #363636;
     }
-
-    // Decorative honeycomb pattern (replaces the removed moving-hex animation).
-    // Two copies of the same PNG anchored to the 1290px .mw-page content canvas:
-    // each shows 184px inside the boundary, the rest bleeds outward and is clipped
-    // by .no-overflow (overflow:hidden) on the section. Left copy on the left edge;
-    // right copy rotated 180° on the right edge. Sits behind the text.
-    //
-    // Anchor math: 1290 / 2 = 645 from section center; 645 - 184 = 461. The min()
-    // clamps to the content edge once the viewport is narrower than 1290 so the
-    // 184px reveal holds at any width down to the mobile breakpoint (hidden below).
-    // z-index:0 here makes the section a stacking context so the z-index:-1 pseudos
-    // sit above the bg-dark-gray-3 background but below the slot content.
-    position: relative;
-    z-index: 0;
-
-    &::before,
-    &::after {
-        content: '';
-        position: absolute;
-        top: 96px;
-        width: 931px;   // @2x asset (1862×1136) at natural display size
-        height: 568px;
-        background-image: url("https://cdn.prod.website-files.com/68b756cba9c9d34da806e0a0/6a2061c7bfb40ec99c1c4864_honeycomb_pattern_gray%402x.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-        z-index: -1;
-        pointer-events: none;
-    }
-    // Left copy: right edge sits 184px inside the left content boundary.
-    &::before {
-        right: min(calc(100% - 184px), calc(50% + 461px));
-    }
-    // Right copy: left edge sits 184px inside the right content boundary, rotated 180°.
-    &::after {
-        left: min(calc(100% - 184px), calc(50% + 461px));
-        transform: rotate(180deg);
-    }
-
-    // Hidden on mobile.
-    @include breakpoint(small) {
-        &::before,
-        &::after {
-            display: none;
-        }
-    }
 }
 
 #two-apps {
