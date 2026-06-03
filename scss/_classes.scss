@@ -545,6 +545,7 @@ section:has(.mobile-fullw) {
 .mw-111 { max-width: ptr(111); }
 .mw-400 { max-width: ptr(400); width: auto; }
 .mw-491 { max-width: ptr(491); width: auto; }
+.mw-556 { max-width: ptr(556); width: auto; }
 
 // Icon size one-offs. Markup uses icon-NNN / icon-sm-NNN on the image wrapper
 // alongside an mw-N max-width cap, so each rule also bumps max-width to keep
