@@ -195,9 +195,27 @@ body {
     }
 }
 
-// Rich text inline links — use light-orange (amber) not deep orange
+// Default link color for content / rich-text links: pumpkin (#FF6F00) on white
+// backgrounds. Nav/header and footer chrome and .link CTAs are intentionally left
+// alone; link hover is unchanged (orange). On dark sections, links use honey (see
+// the .bg-dark-* override below).
 .w-richtext a {
-    color: var(--_colors---light-orange);
+    color: $pumpkin;
+}
+// Links on non-white (dark) backgrounds → honey (#FFB000). Higher specificity than
+// the default above, so it wins inside any dark section.
+.bg-dark-1 .w-richtext a,
+.bg-dark-2 .w-richtext a,
+.bg-dark-gray .w-richtext a,
+.bg-dark-gray-2 .w-richtext a,
+.bg-dark-gray-3 .w-richtext a {
+    color: #FFB000;
+}
+// One-off: the "Flesch-Kincaid scores" link (Little Stories Pro) stays neon-red
+// (#F63C4E). Targeted by href so it needs no per-element class; declared last and
+// more specific than the default/honey rules above, so it always wins.
+.w-richtext a[href*="readability_tests"] {
+    color: #F63C4E;
 }
 
 // Blog post template — post title

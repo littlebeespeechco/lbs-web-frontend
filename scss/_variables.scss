@@ -20,6 +20,11 @@ $teal: var(--_colors---teal);
 $violet: var(--_colors---violet);
 $baby-blue: var(--_colors---baby-blue);
 
+// Pumpkin — default link color on white backgrounds. Literal (not a Webflow
+// variable) so the live CSS is self-contained and doesn't depend on a Webflow
+// publish. Links on dark backgrounds use honey (#FFB000) instead.
+$pumpkin: #FF6F00;
+
 // Margin Variables
 $margin-l-100: var(--_sizes---margin-l-100);
 $margin-m-75: var(--_sizes---margin-m-75);

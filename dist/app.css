@@ -1978,7 +1978,17 @@ html:not(.wf-design-mode) .footer-description {
   }
 }
 html:not(.wf-design-mode) .w-richtext a {
-  color: var(--_colors---light-orange);
+  color: #FF6F00;
+}
+html:not(.wf-design-mode) .bg-dark-1 .w-richtext a,
+html:not(.wf-design-mode) .bg-dark-2 .w-richtext a,
+html:not(.wf-design-mode) .bg-dark-gray .w-richtext a,
+html:not(.wf-design-mode) .bg-dark-gray-2 .w-richtext a,
+html:not(.wf-design-mode) .bg-dark-gray-3 .w-richtext a {
+  color: #FFB000;
+}
+html:not(.wf-design-mode) .w-richtext a[href*=readability_tests] {
+  color: #F63C4E;
 }
 html:not(.wf-design-mode) .single-post-heading {
   font-family: "SF Pro Rounded", -apple-system, system-ui, sans-serif;
@@ -2797,6 +2807,9 @@ body.menu-open .header {
 }
 *.text-blood-orange {
   color: #C53000;
+}
+*.text-pumpkin {
+  color: #FF6F00;
 }
 *.text-light-gray {
   color: #CED0D3;
@@ -5784,10 +5797,10 @@ body.menu-open .header {
   background-color: #C53000;
 }
 .bg-pumpkin {
-  background-color: #FF7E00;
+  background-color: #FF6F00;
 }
 .bg-pumpkin:is(.button):before {
-  background-color: #FF7E00;
+  background-color: #FF6F00;
 }
 .bg-light-gray {
   background-color: #CED0D3;

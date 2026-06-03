@@ -21,6 +21,7 @@
     &-white { color: $background-1; }
     &-green { color: #93DA08; }
     &-blood-orange { color: #C53000; }
+    &-pumpkin { color: $pumpkin; }
     &-light-gray { color: #CED0D3; }
     &-mid-gray   { color: #AAAAAA; }
     &-dark-gray { color: #373737; }
@@ -119,7 +120,7 @@
     &-honey { background-color: #FFB000; &:is(.button):before { background-color: #FFB000; } }
     &-half-way-orange { background-color: $half-way-orange; &:is(.button):before { background-color: $half-way-orange; } }
     &-blood-orange { background-color: #C53000; &:is(.button):before { background-color: #C53000; } }
-    &-pumpkin { background-color: #FF7E00; &:is(.button):before { background-color: #FF7E00; } }
+    &-pumpkin { background-color: $pumpkin; &:is(.button):before { background-color: $pumpkin; } }
     &-light-gray { background-color: #CED0D3; &:is(.button):before { background-color: #CED0D3; } }
     &-gray { background-color: $gray; &:is(.button):before { background-color: $gray; } }
     &-graycta {
