@@ -460,7 +460,6 @@ section:has(.mobile-fullw) {
     &::after {
         content: '';
         position: absolute;
-        top: 96px;
         width: 931px;   // @2x asset (1862×1136) at natural display size
         height: 568px;
         background-image: url("https://cdn.prod.website-files.com/68b756cba9c9d34da806e0a0/6a2061c7bfb40ec99c1c4864_honeycomb_pattern_gray%402x.png");
@@ -469,13 +468,15 @@ section:has(.mobile-fullw) {
         z-index: -1;
         pointer-events: none;
     }
-    // Left copy: right edge sits 184px inside the left content boundary.
+    // Left copy: right edge sits 184px inside the left content boundary; 96px from top.
     &::before {
+        top: 96px;
         right: min(calc(100% - 184px), calc(50% + 461px));
     }
     // Right copy: left edge sits 184px inside the right content boundary, mirrored
-    // horizontally and flipped vertically.
+    // horizontally and flipped vertically; sits higher (20px from top) per design.
     &::after {
+        top: 20px;
         left: min(calc(100% - 184px), calc(50% + 461px));
         transform: scaleX(-1) scaleY(-1);
     }

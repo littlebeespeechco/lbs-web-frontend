@@ -6769,7 +6769,6 @@ body.menu-open .header {
 .honeycomb-edges::before, .honeycomb-edges::after {
   content: "";
   position: absolute;
-  top: 96px;
   width: 931px;
   height: 568px;
   background-image: url("https://cdn.prod.website-files.com/68b756cba9c9d34da806e0a0/6a2061c7bfb40ec99c1c4864_honeycomb_pattern_gray%402x.png");
@@ -6779,9 +6778,11 @@ body.menu-open .header {
   pointer-events: none;
 }
 .honeycomb-edges::before {
+  top: 96px;
   right: min(100% - 184px, 50% + 461px);
 }
 .honeycomb-edges::after {
+  top: 20px;
   left: min(100% - 184px, 50% + 461px);
   transform: scaleX(-1) scaleY(-1);
 }
