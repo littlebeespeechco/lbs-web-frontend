@@ -654,13 +654,6 @@
   margin-top: 0;
 }
 
-:is([data-wf-page="6960525285c460dd17c85690"],
-[data-wf-page="6966d5ead6c1ff2c79467017"],
-[data-wf-page="6965b30c9f819e6a026de52e"],
-[data-wf-page="6966e3760285e4a7641eb0b0"]) .testimonial-text {
-  font-size: 16px;
-}
-
 @media (max-width: 767px) {
   .tools {
     flex-direction: column-reverse;
