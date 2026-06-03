@@ -378,6 +378,17 @@
     margin-top: 0;
 }
 
+// Testimonials text size: 16px on product pages, 18px on home page.
+// Scoped to the 4 product pages via data-wf-page to leave the home Testimonials untouched.
+:is(
+    [data-wf-page="6960525285c460dd17c85690"],
+    [data-wf-page="6966d5ead6c1ff2c79467017"],
+    [data-wf-page="6965b30c9f819e6a026de52e"],
+    [data-wf-page="6966e3760285e4a7641eb0b0"]
+) .testimonial-text {
+    font-size: 16px;
+}
+
 // "Speech therapy tools…" section — Webflow stacks .tools as a column at ≤991px
 // in DOM order (text, then image). On mobile (≤767px) show the image above the
 // text instead.
