@@ -5783,6 +5783,12 @@ body.menu-open .header {
 .bg-blood-orange:is(.button):before {
   background-color: #C53000;
 }
+.bg-pumpkin {
+  background-color: #FF7E00;
+}
+.bg-pumpkin:is(.button):before {
+  background-color: #FF7E00;
+}
 .bg-light-gray {
   background-color: #CED0D3;
 }
@@ -6156,6 +6162,14 @@ body.menu-open .header {
     margin-top: 2.0625rem;
   }
 }
+.mt-xl {
+  margin-top: 6.875rem;
+}
+@media (max-width: 767px) {
+  .mt-xl {
+    margin-top: 2.1875rem;
+  }
+}
 @media (max-width: 767px) {
   .mt-sm-0 {
     margin-top: 0;
@@ -6194,6 +6208,11 @@ body.menu-open .header {
 @media (max-width: 767px) {
   .mt-sm-l {
     margin-top: var(--_sizes---margin-l-100);
+  }
+}
+@media (max-width: 767px) {
+  .mt-sm-xl {
+    margin-top: 6.875rem;
   }
 }
 

@@ -119,6 +119,7 @@
     &-honey { background-color: #FFB000; &:is(.button):before { background-color: #FFB000; } }
     &-half-way-orange { background-color: $half-way-orange; &:is(.button):before { background-color: $half-way-orange; } }
     &-blood-orange { background-color: #C53000; &:is(.button):before { background-color: #C53000; } }
+    &-pumpkin { background-color: #FF7E00; &:is(.button):before { background-color: #FF7E00; } }
     &-light-gray { background-color: #CED0D3; &:is(.button):before { background-color: #CED0D3; } }
     &-gray { background-color: $gray; &:is(.button):before { background-color: $gray; } }
     &-graycta {
@@ -224,6 +225,7 @@
     &-r   { margin-top: ptr(60);        @include breakpoint(small) { margin-top: ptr(20); } }
     &-m   { margin-top: $margin-m-75;   @include breakpoint(small) { margin-top: ptr(25); } }
     &-l   { margin-top: $margin-l-100;  @include breakpoint(small) { margin-top: ptr(33); } }
+    &-xl  { margin-top: ptr(110);       @include breakpoint(small) { margin-top: ptr(35); } }
 
     &-sm-0   { @include breakpoint(small) { margin-top: 0; } }
     &-sm-xxs { @include breakpoint(small) { margin-top: $margin-xxs-12; } }
@@ -233,6 +235,7 @@
     &-sm-r   { @include breakpoint(small) { margin-top: ptr(60); } }
     &-sm-m   { @include breakpoint(small) { margin-top: $margin-m-75; } }
     &-sm-l   { @include breakpoint(small) { margin-top: $margin-l-100; } }
+    &-sm-xl  { @include breakpoint(small) { margin-top: ptr(110); } }
 }
 
 .ml {
