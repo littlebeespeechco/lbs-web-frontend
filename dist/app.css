@@ -6783,7 +6783,7 @@ body.menu-open .header {
 }
 .honeycomb-edges::after {
   left: min(100% - 184px, 50% + 461px);
-  transform: scaleX(-1);
+  transform: scaleX(-1) scaleY(-1);
 }
 @media (max-width: 767px) {
   .honeycomb-edges::before, .honeycomb-edges::after {

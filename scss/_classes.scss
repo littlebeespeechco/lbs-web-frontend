@@ -443,7 +443,8 @@ section:has(.mobile-fullw) {
 
 // Honeycomb edge decoration. Add this class to any full-bleed section whose
 // inner content uses the 1290px .mw-page canvas. Draws two copies of the
-// honeycomb PNG: one on the left edge, one on the right mirrored horizontally. Each shows
+// honeycomb PNG: one on the left edge, one on the right mirrored horizontally and
+// flipped vertically. Each shows
 // 184px inside the 1290px boundary; the rest bleeds outward and is clipped here
 // by overflow:hidden (so no separate .no-overflow needed). The images sit behind
 // the section content (z-index:-1 pseudos under a z-index:0 stacking context).
@@ -472,10 +473,11 @@ section:has(.mobile-fullw) {
     &::before {
         right: min(calc(100% - 184px), calc(50% + 461px));
     }
-    // Right copy: left edge sits 184px inside the right content boundary, mirrored horizontally.
+    // Right copy: left edge sits 184px inside the right content boundary, mirrored
+    // horizontally and flipped vertically.
     &::after {
         left: min(calc(100% - 184px), calc(50% + 461px));
-        transform: scaleX(-1);
+        transform: scaleX(-1) scaleY(-1);
     }
 
     // Hidden on mobile.
