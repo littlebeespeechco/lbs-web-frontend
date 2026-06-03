@@ -24252,6 +24252,11 @@ body.menu-open .header {
   max-width: 6.9375rem;
 }
 
+.mw-300 {
+  max-width: 18.75rem;
+  width: auto;
+}
+
 .mw-400 {
   max-width: 25rem;
   width: auto;
