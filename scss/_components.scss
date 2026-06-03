@@ -371,6 +371,12 @@
     margin-top: 0;
 }
 
+// Media Block "List item" variant — reduce cell height by 4px (was 4px top + 4px bottom).
+.media:where(.w-variant-05ec27b3-de46-5eb4-52b6-0a759236e334) {
+    padding-top: ptr(2);
+    padding-bottom: ptr(2);
+}
+
 // "Speech therapy tools…" section — Webflow stacks .tools as a column at ≤991px
 // in DOM order (text, then image). On mobile (≤767px) show the image above the
 // text instead.
