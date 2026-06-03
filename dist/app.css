@@ -24248,6 +24248,11 @@ body.menu-open .header {
   }
 }
 
+.mw-26 {
+  max-width: 1.625rem;
+  width: auto;
+}
+
 .mw-111 {
   max-width: 6.9375rem;
 }
