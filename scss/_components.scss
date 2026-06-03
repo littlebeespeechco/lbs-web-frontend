@@ -354,6 +354,13 @@
     }
 }
 
+// Media Block "List item" variant — scoped compact override (4px less cell height).
+// Applied via Global Class prop on specific instances only.
+.media.li-compact {
+    padding-top: ptr(2);
+    padding-bottom: ptr(2);
+}
+
 // Media Block "List Item - Top Align" variant (checkmark + text row).
 // Webflow sets align-items: flex-start and margin-top: .45rem on the icon.
 // Center everything and kill the <p> bottom-margin bleed that creates
