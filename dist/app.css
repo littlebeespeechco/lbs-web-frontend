@@ -24389,12 +24389,12 @@ body.menu-open .header {
 }
 
 .fw-400 {
-  font-weight: 400;
+  font-weight: 375;
 }
 
 @media (max-width: 767px) {
   .fw-sm-400 {
-    font-weight: 400;
+    font-weight: 375;
   }
 }
 
