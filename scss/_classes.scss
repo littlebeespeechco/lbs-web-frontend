@@ -595,6 +595,7 @@ section:has(.mobile-fullw) {
     .height-sm-#{$i} { @include breakpoint(small) { height: ptr($i)!important; } }
 }
 
+.mw-20  { max-width: ptr(20);  width: auto; }
 .mw-26  { max-width: ptr(26);  width: auto; }
 .mw-111 { max-width: ptr(111); }
 .mw-300 { max-width: ptr(300); width: auto; }

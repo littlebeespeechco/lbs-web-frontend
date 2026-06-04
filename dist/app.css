@@ -24317,6 +24317,11 @@ body.menu-open .header {
   }
 }
 
+.mw-20 {
+  max-width: 1.25rem;
+  width: auto;
+}
+
 .mw-26 {
   max-width: 1.625rem;
   width: auto;
