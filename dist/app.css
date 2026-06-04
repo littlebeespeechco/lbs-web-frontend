@@ -1990,6 +1990,9 @@ html:not(.wf-design-mode) .bg-dark-gray-3 .w-richtext a {
 html:not(.wf-design-mode) .w-richtext a[href*=readability_tests] {
   color: #F63C4E;
 }
+html:not(.wf-design-mode) .w-richtext a[href*=group-order] {
+  color: #404040;
+}
 html:not(.wf-design-mode) .single-post-heading {
   font-family: "SF Pro Rounded", -apple-system, system-ui, sans-serif;
   font-weight: 700;
