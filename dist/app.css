@@ -24351,6 +24351,45 @@ body.menu-open .header {
   width: auto;
 }
 
+.iw-20 {
+  max-width: 1.25rem;
+  width: auto;
+}
+
+.iw-26 {
+  max-width: 1.625rem;
+  width: auto;
+}
+
+.iw-68 {
+  max-width: 4.25rem;
+  width: auto;
+}
+
+.iw-111 {
+  max-width: 6.9375rem;
+}
+
+.iw-300 {
+  max-width: 18.75rem;
+  width: auto;
+}
+
+.iw-400 {
+  max-width: 25rem;
+  width: auto;
+}
+
+.iw-491 {
+  max-width: 30.6875rem;
+  width: auto;
+}
+
+.iw-556 {
+  max-width: 34.75rem;
+  width: auto;
+}
+
 .icon-84 {
   width: 5.25rem;
   max-width: 5.25rem;

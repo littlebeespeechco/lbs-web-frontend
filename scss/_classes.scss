@@ -603,6 +603,21 @@ section:has(.mobile-fullw) {
 .mw-491 { max-width: ptr(491); width: auto; }
 .mw-556 { max-width: ptr(556); width: auto; }
 
+// iw-N (image width) — explicit PX max-width caps for images. These are the
+// disambiguated replacement for the px mw-N one-offs above: mw-N from the @for
+// loop means N *rem*, so reusing those names for px silently broke non-image
+// elements that expected rem (e.g. the membership card with mw-26). Repoint image
+// elements mw-N -> iw-N; the px mw-N one-offs above get removed once migration is
+// done, leaving mw-N purely rem.
+.iw-20  { max-width: ptr(20);  width: auto; }
+.iw-26  { max-width: ptr(26);  width: auto; }
+.iw-68  { max-width: ptr(68);  width: auto; }
+.iw-111 { max-width: ptr(111); }
+.iw-300 { max-width: ptr(300); width: auto; }
+.iw-400 { max-width: ptr(400); width: auto; }
+.iw-491 { max-width: ptr(491); width: auto; }
+.iw-556 { max-width: ptr(556); width: auto; }
+
 // Icon size one-offs. Markup uses icon-NNN / icon-sm-NNN on the image wrapper
 // alongside an mw-N max-width cap, so each rule also bumps max-width to keep
 // the cap from clipping the intended width.
