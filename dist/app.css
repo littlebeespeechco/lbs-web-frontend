@@ -1500,7 +1500,7 @@ html {
 }
 
 body {
-  font-weight: 375;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -24394,12 +24394,12 @@ body.menu-open .header {
 }
 
 .fw-400 {
-  font-weight: 375;
+  font-weight: 400;
 }
 
 @media (max-width: 767px) {
   .fw-sm-400 {
-    font-weight: 375;
+    font-weight: 400;
   }
 }
 

@@ -638,14 +638,7 @@ section:has(.mobile-fullw) {
     }
 }
 
-// fw-400 is intentionally 375, NOT a literal 400. Browser-375 (synthesized via the
-// Inter variable font) visually matches Figma's "400"; a literal 400 renders too
-// heavy. Kept named 400 to match the Figma spec — and it equals the global body
-// weight (app.scss). We never want a true 400.
-.fw-400 { font-weight: 375; }
-.fw-sm-400 { @include breakpoint(small) { font-weight: 375; } }
-
-$weights: 500, 600, 700, 800, 900;
+$weights: 400, 500, 600, 700, 800, 900;
 @each $weight in $weights {
     .fw-#{$weight} {
         font-weight: $weight;

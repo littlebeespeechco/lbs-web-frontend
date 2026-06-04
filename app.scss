@@ -28,10 +28,11 @@ html {
 }
 
 // Global body font rendering — applies in BOTH Designer and live page.
-// font-weight 375 needs Inter Variable Font to interpolate; otherwise rounds
-// to nearest static weight. font-smoothing matches Figma's grayscale rendering.
+// Weight 400 per designer — reverted from the synthesized 375 that had been used
+// to match Figma's lighter render; designer prefers the standard Inter 400.
+// font-smoothing matches Figma's grayscale rendering.
 body {
-    font-weight: 375;
+    font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
