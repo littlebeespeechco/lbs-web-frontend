@@ -2159,6 +2159,9 @@ form:not(.search) .w-button.blocky:before {
 form:not(.search) .contact-submit {
   border-radius: 999em;
 }
+form:not(.search) .w-embed:has(input[name=website_url]) {
+  position: absolute;
+}
 form:not(.search):has(#terms-checkbox input:not(:checked)) input[type=submit] {
   opacity: 0.5;
   pointer-events: none;

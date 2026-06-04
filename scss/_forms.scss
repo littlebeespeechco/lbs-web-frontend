@@ -172,3 +172,13 @@ textarea.w-input {
 .contact-submit {
     border-radius: 999em;
 }
+
+// Bot honeypot embeds are injected as the form's first child (an embed wrapping an
+// off-screen input + a hidden input). In flex/grid forms with a row gap, that
+// 0-height embed is still a flex item, so the gap adds phantom space above the
+// first visible field (~48px on the University form). Take the honeypot out of flow
+// so it stops being a flex item — kept rendered off-screen (not display:none) to
+// preserve the honeypot's effectiveness.
+.w-embed:has(input[name="website_url"]) {
+    position: absolute;
+}
