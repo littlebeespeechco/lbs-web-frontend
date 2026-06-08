@@ -6835,6 +6835,10 @@ body.menu-open .header {
   padding-top: 3.125rem;
 }
 
+.media-top .dual-layout-media {
+  align-self: flex-start;
+}
+
 /* Grid */
 [data-grid="0"] {
   display: flex;

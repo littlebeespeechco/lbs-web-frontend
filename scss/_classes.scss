@@ -501,6 +501,17 @@ section:has(.mobile-fullw) {
     }
 }
 
+// Counterpart to .content-top for the media side, and flush (no top padding).
+// The dual-layout flex container vertically centers its slots (align-items:
+// center), so a shorter media column gets centered against a taller content
+// column. This top-aligns the media slot instead. Add to the dual-layout root
+// via the "Dual Layout Class" prop.
+.media-top {
+    .dual-layout-media {
+        align-self: flex-start;
+    }
+}
+
 /* Grid */
 [data-grid="0"] {
     display: flex;
