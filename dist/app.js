@@ -2671,20 +2671,38 @@
           opacity: 0,
           ...noMove ? {} : { y: "2rem" }
         });
-        gsap.utils.toArray(this.directChildren).forEach((child) => {
-          gsap.to(child, {
+        const cs = getComputedStyle(this.element);
+        const isDeck = cs.columnCount !== "auto" || cs.display === "grid" || cs.display === "inline-grid" || cs.display.indexOf("flex") !== -1 && cs.flexWrap === "wrap";
+        if (isDeck) {
+          gsap.to(this.directChildren, {
             opacity: 1,
             ...noMove ? {} : { y: 0 },
             duration: 2,
             delay: 0.2,
             ease: "elastic.out(1, 0.7)",
+            stagger: { amount: 0.5 },
             scrollTrigger: {
-              trigger: child,
+              trigger: this.element,
               start: "top bottom",
               once: true
             }
           });
-        });
+        } else {
+          gsap.utils.toArray(this.directChildren).forEach((child) => {
+            gsap.to(child, {
+              opacity: 1,
+              ...noMove ? {} : { y: 0 },
+              duration: 2,
+              delay: 0.2,
+              ease: "elastic.out(1, 0.7)",
+              scrollTrigger: {
+                trigger: child,
+                start: "top bottom",
+                once: true
+              }
+            });
+          });
+        }
       }
       if (this.indirectChildren.length > 0) {
         gsap.set(this.indirectChildren, {
