@@ -6705,6 +6705,11 @@ body.menu-open .header {
 .shadow-top {
   box-shadow: -2.75rem -3.75rem 3.125rem -3.125rem rgba(0, 9, 0, 0.06), 2.75rem -3.75rem 3.125rem -3.125rem rgba(0, 9, 0, 0.06);
 }
+@media (max-width: 767px) {
+  .shadow-sm-top {
+    box-shadow: -2.75rem -3.75rem 3.125rem -3.125rem rgba(0, 9, 0, 0.06), 2.75rem -3.75rem 3.125rem -3.125rem rgba(0, 9, 0, 0.06);
+  }
+}
 
 .slot.center, .slot.right, .slot.left {
   justify-content: center;
