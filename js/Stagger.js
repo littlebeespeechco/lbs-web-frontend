@@ -57,6 +57,8 @@ export class Stagger {
                 cs.display === "inline-grid" ||
                 (cs.display.indexOf("flex") !== -1 && cs.flexWrap === "wrap");
 
+            console.log("[stagger]", this.element.className, "cols=" + cs.columnCount, "display=" + cs.display, "isDeck=" + isDeck, "n=" + this.directChildren.length);
+
             if (isDeck) {
                 gsap.to(this.directChildren, {
                     opacity: 1,

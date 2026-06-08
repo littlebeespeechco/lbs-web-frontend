@@ -2673,6 +2673,7 @@
         });
         const cs = getComputedStyle(this.element);
         const isDeck = cs.columnCount !== "auto" || cs.display === "grid" || cs.display === "inline-grid" || cs.display.indexOf("flex") !== -1 && cs.flexWrap === "wrap";
+        console.log("[stagger]", this.element.className, "cols=" + cs.columnCount, "display=" + cs.display, "isDeck=" + isDeck, "n=" + this.directChildren.length);
         if (isDeck) {
           gsap.to(this.directChildren, {
             opacity: 1,
@@ -6081,7 +6082,7 @@
   // js/modules.js
   if (typeof document !== "undefined") {
     document.addEventListener("DOMContentLoaded", () => {
-      console.log("v0.9");
+      console.log("v1.0-stagger");
       gsap.registerPlugin(ScrollTrigger2, SplitText2);
       const g3 = {};
       window.g = g3;
