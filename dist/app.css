@@ -6660,6 +6660,11 @@ body.menu-open .header {
 .radius-xl {
   border-radius: var(--_sizes---radius-xl-80);
 }
+@media (max-width: 767px) {
+  .radius-xl {
+    border-radius: var(--_sizes---radius-l-40);
+  }
+}
 .radius-l {
   border-radius: var(--_sizes---radius-l-40);
 }

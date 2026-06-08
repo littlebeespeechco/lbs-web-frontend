@@ -319,7 +319,11 @@
 }
 
 .radius {
-    &-xl { border-radius: $radius-xl-80; }
+    &-xl {
+        border-radius: $radius-xl-80;
+        // On mobile, collapse xl down to the l radius (opt back into full xl with radius-sm-xl)
+        @include breakpoint(small) { border-radius: $radius-l-40; }
+    }
     &-l { border-radius: $radius-l-40; }
     &-m { border-radius: $radius-m-18; }
     &-s { border-radius: $radius-s-10; }
