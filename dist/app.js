@@ -2681,7 +2681,7 @@
             scrollTrigger: {
               trigger: child,
               start: "top bottom",
-              toggleActions: "play none none reset"
+              once: true
             }
           });
         });
