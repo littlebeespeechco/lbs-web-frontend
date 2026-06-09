@@ -1668,3 +1668,23 @@ section:has(.testimonials) .testimonial img {
     object-fit: cover;
     object-position: 50% 0%;
 }
+
+.posts-search-post-title {
+    font-family: ui-rounded, -apple-system, BlinkMacSystemFont, "SF Pro Rounded", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 41px;
+    color: #282828;
+
+    &:hover {
+        color: $orange;
+    }
+}
+
+.posts-search-post-date {
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #8F8F8F;
+}
