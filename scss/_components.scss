@@ -1678,6 +1678,7 @@ section:has(.testimonials) .testimonial img {
 .posts-search-list a:visited,
 .posts-search-list a:focus,
 .posts-search-list a:active {
+    display: block;
     text-decoration: none;
     color: #282828;
 }
