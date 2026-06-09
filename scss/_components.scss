@@ -1669,17 +1669,20 @@ section:has(.testimonials) .testimonial img {
     object-position: 50% 0%;
 }
 
+.posts-search-post {
+    text-decoration: none;
+
+    &:hover .posts-search-post-title {
+        color: $orange;
+    }
+}
+
 .posts-search-post-title {
     font-family: ui-rounded, -apple-system, BlinkMacSystemFont, "SF Pro Rounded", sans-serif;
     font-weight: 600;
     font-size: 18px;
     line-height: 26px;
     color: #282828;
-    text-decoration: none;
-
-    &:hover {
-        color: $orange;
-    }
 }
 
 .posts-search-post-date {
@@ -1688,5 +1691,4 @@ section:has(.testimonials) .testimonial img {
     font-size: 14px;
     line-height: 17px;
     color: #8F8F8F;
-    text-decoration: none;
 }
