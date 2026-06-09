@@ -1671,16 +1671,20 @@ section:has(.testimonials) .testimonial img {
 
 // The search results link renders as a.w-inline-block (no posts-search-post
 // class in the live DOM), so target by container instead.
-.posts-search-list a {
+// Cover all pseudo-states explicitly — Safari paints a:hover underlines
+// through to children even when text-decoration:none is set on the <a>.
+.posts-search-list a,
+.posts-search-list a:hover,
+.posts-search-list a:visited,
+.posts-search-list a:focus,
+.posts-search-list a:active {
     text-decoration: none;
     color: #282828;
+}
 
-    &:hover {
-        text-decoration: none;
-
-        .posts-search-post-title {
-            color: $orange;
-        }
+.posts-search-list a:hover {
+    .posts-search-post-title {
+        color: $orange;
     }
 }
 
