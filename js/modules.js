@@ -24,7 +24,7 @@ import { SplitText } from "gsap/SplitText";
 
 if (typeof document !== "undefined") {
     document.addEventListener("DOMContentLoaded", () => {
-        console.log("v1.1");
+        console.log("v1.2");
         
         gsap.registerPlugin(ScrollTrigger, SplitText);
         const g = {}

@@ -2667,21 +2667,33 @@
     animate() {
       const noMove = this.element.hasAttribute("data-stagger-no-move");
       if (this.directChildren.length > 0) {
-        gsap.set(this.directChildren, {
-          opacity: 0,
-          ...noMove ? {} : { y: "2rem" }
-        });
         const cs = getComputedStyle(this.element);
-        const isDeck = cs.columnCount !== "auto" || cs.display === "grid" || cs.display === "inline-grid" || cs.display.indexOf("flex") !== -1 && cs.flexWrap === "wrap";
-        if (isDeck) {
-          gsap.set(this.directChildren, { willChange: "transform" });
+        const isMultiColumn = cs.columnCount !== "auto";
+        const isDeck = isMultiColumn || cs.display === "grid" || cs.display === "inline-grid" || cs.display.indexOf("flex") !== -1 && cs.flexWrap === "wrap";
+        if (isMultiColumn) {
+          gsap.set(this.element, { opacity: 0 });
+          gsap.to(this.element, {
+            opacity: 1,
+            duration: 1.2,
+            delay: 0.2,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: this.element,
+              start: "top bottom",
+              once: true
+            }
+          });
+        } else if (isDeck) {
+          gsap.set(this.directChildren, {
+            opacity: 0,
+            ...noMove ? {} : { y: "2rem" }
+          });
           gsap.to(this.directChildren, {
             opacity: 1,
             ...noMove ? {} : { y: 0 },
             duration: 2,
             delay: 0.2,
             ease: "elastic.out(1, 0.7)",
-            force3D: true,
             stagger: { amount: 0.5 },
             scrollTrigger: {
               trigger: this.element,
@@ -2690,6 +2702,10 @@
             }
           });
         } else {
+          gsap.set(this.directChildren, {
+            opacity: 0,
+            ...noMove ? {} : { y: "2rem" }
+          });
           gsap.utils.toArray(this.directChildren).forEach((child) => {
             gsap.to(child, {
               opacity: 1,
@@ -6083,7 +6099,7 @@
   // js/modules.js
   if (typeof document !== "undefined") {
     document.addEventListener("DOMContentLoaded", () => {
-      console.log("v1.1");
+      console.log("v1.2");
       gsap.registerPlugin(ScrollTrigger2, SplitText2);
       const g3 = {};
       window.g = g3;

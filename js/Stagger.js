@@ -40,37 +40,51 @@ export class Stagger {
         // Animation logic here
         // Direct children always use normal animation
         if (this.directChildren.length > 0) {
-            gsap.set(this.directChildren, {
-                opacity: 0,
-                ...(noMove ? {} : { y: "2rem" }),
-            });
-
+            const cs = getComputedStyle(this.element);
+            const isMultiColumn = cs.columnCount !== "auto";
             // "Deck" layouts (CSS multi-column / grid / wrapping flex) place children so
             // that DOM order != visual position, and the column/track break reflows as
             // fonts and images load. Per-child ScrollTriggers measured at DOMContentLoaded
             // mis-read the boundary child's position, so it reveals late and flickers.
-            // For decks, anchor one trigger to the stable container and stagger the children.
-            const cs = getComputedStyle(this.element);
             const isDeck =
-                cs.columnCount !== "auto" ||
+                isMultiColumn ||
                 cs.display === "grid" ||
                 cs.display === "inline-grid" ||
                 (cs.display.indexOf("flex") !== -1 && cs.flexWrap === "wrap");
 
-            if (isDeck) {
-                // force3D keeps each card on its own GPU layer through the reveal.
-                // Without it, Safari fails to repaint a child sitting at a CSS
-                // multi-column break (e.g. the top card of column 2 in .tips-slot)
-                // while the page is scrolling, leaving it blank for ~the tween
-                // duration even though its opacity is already animating.
-                gsap.set(this.directChildren, { willChange: "transform" });
+            if (isMultiColumn) {
+                // Safari leaves a child sitting at a CSS multi-column break (e.g. the
+                // top card of column 2 in .tips-slot) blank when it is individually
+                // transform/opacity-animated while the page is scrolling — for ~the
+                // tween duration, sometimes permanently. Don't animate the column
+                // children at all: fade the whole container as a single composited
+                // layer. The multi-column layout stays pixel-identical and no
+                // column-break child is ever composited on its own.
+                gsap.set(this.element, { opacity: 0 });
+                gsap.to(this.element, {
+                    opacity: 1,
+                    duration: 1.2,
+                    delay: 0.2,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: this.element,
+                        start: "top bottom",
+                        once: true
+                    }
+                });
+            } else if (isDeck) {
+                // grid / wrapping-flex decks: stable layout, animate children from a
+                // single container-anchored trigger with a stagger.
+                gsap.set(this.directChildren, {
+                    opacity: 0,
+                    ...(noMove ? {} : { y: "2rem" }),
+                });
                 gsap.to(this.directChildren, {
                     opacity: 1,
                     ...(noMove ? {} : { y: 0 }),
                     duration: 2,
                     delay: 0.2,
                     ease: "elastic.out(1, 0.7)",
-                    force3D: true,
                     stagger: { amount: 0.5 },
                     scrollTrigger: {
                         trigger: this.element,
@@ -79,6 +93,11 @@ export class Stagger {
                     }
                 });
             } else {
+                // plain vertical stack: each child reveals as it scrolls into view.
+                gsap.set(this.directChildren, {
+                    opacity: 0,
+                    ...(noMove ? {} : { y: "2rem" }),
+                });
                 gsap.utils.toArray(this.directChildren).forEach(child => {
                     gsap.to(child, {
                         opacity: 1,
