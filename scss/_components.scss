@@ -1675,6 +1675,7 @@ section:has(.testimonials) .testimonial img {
     font-size: 18px;
     line-height: 26px;
     color: #282828;
+    text-decoration: none;
 
     &:hover {
         color: $orange;
@@ -1687,4 +1688,5 @@ section:has(.testimonials) .testimonial img {
     font-size: 14px;
     line-height: 17px;
     color: #8F8F8F;
+    text-decoration: none;
 }
