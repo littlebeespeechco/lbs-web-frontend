@@ -1675,8 +1675,12 @@ section:has(.testimonials) .testimonial img {
     text-decoration: none;
     color: #282828;
 
-    &:hover .posts-search-post-title {
-        color: $orange;
+    &:hover {
+        text-decoration: none;
+
+        .posts-search-post-title {
+            color: $orange;
+        }
     }
 }
 
