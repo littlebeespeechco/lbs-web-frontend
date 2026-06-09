@@ -2673,14 +2673,15 @@
         });
         const cs = getComputedStyle(this.element);
         const isDeck = cs.columnCount !== "auto" || cs.display === "grid" || cs.display === "inline-grid" || cs.display.indexOf("flex") !== -1 && cs.flexWrap === "wrap";
-        console.log("[stagger]", this.element.className, "cols=" + cs.columnCount, "display=" + cs.display, "isDeck=" + isDeck, "n=" + this.directChildren.length);
         if (isDeck) {
+          gsap.set(this.directChildren, { willChange: "transform" });
           gsap.to(this.directChildren, {
             opacity: 1,
             ...noMove ? {} : { y: 0 },
             duration: 2,
             delay: 0.2,
             ease: "elastic.out(1, 0.7)",
+            force3D: true,
             stagger: { amount: 0.5 },
             scrollTrigger: {
               trigger: this.element,
@@ -6082,7 +6083,7 @@
   // js/modules.js
   if (typeof document !== "undefined") {
     document.addEventListener("DOMContentLoaded", () => {
-      console.log("v1.0-stagger");
+      console.log("v1.1");
       gsap.registerPlugin(ScrollTrigger2, SplitText2);
       const g3 = {};
       window.g = g3;

@@ -57,15 +57,20 @@ export class Stagger {
                 cs.display === "inline-grid" ||
                 (cs.display.indexOf("flex") !== -1 && cs.flexWrap === "wrap");
 
-            console.log("[stagger]", this.element.className, "cols=" + cs.columnCount, "display=" + cs.display, "isDeck=" + isDeck, "n=" + this.directChildren.length);
-
             if (isDeck) {
+                // force3D keeps each card on its own GPU layer through the reveal.
+                // Without it, Safari fails to repaint a child sitting at a CSS
+                // multi-column break (e.g. the top card of column 2 in .tips-slot)
+                // while the page is scrolling, leaving it blank for ~the tween
+                // duration even though its opacity is already animating.
+                gsap.set(this.directChildren, { willChange: "transform" });
                 gsap.to(this.directChildren, {
                     opacity: 1,
                     ...(noMove ? {} : { y: 0 }),
                     duration: 2,
                     delay: 0.2,
                     ease: "elastic.out(1, 0.7)",
+                    force3D: true,
                     stagger: { amount: 0.5 },
                     scrollTrigger: {
                         trigger: this.element,
