@@ -1476,6 +1476,21 @@ section:has(.testimonials) .testimonial img {
   }
 }
 
+.parents-hero-bg {
+  height: auto;
+  aspect-ratio: 1290/589;
+  max-height: 589px;
+  min-height: 364px;
+}
+
+.parents-hero-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0%;
+}
+
 html {
   --fontSize: clamp(14px, calc(100vw / 1290 * 16), 16px);
 }

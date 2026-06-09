@@ -1657,3 +1657,22 @@ section:has(.testimonials) .testimonial img {
         }
     }
 }
+
+// Parents Hero image: 1500×589 CSS pts (3000×1178 @2x)
+// Below 1290: proportional scale-down; floor at 364px (sides crop).
+// 1290→1500: height fixed at 589px, sides reveal as viewport widens.
+// >1500: object-fit cover zooms in.
+.parents-hero-bg {
+    height: auto;
+    aspect-ratio: 1290 / 589;
+    max-height: 589px;
+    min-height: 364px;
+}
+
+.parents-hero-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 0%;
+}
