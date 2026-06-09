@@ -1271,6 +1271,15 @@ section:has(.testimonials) .testimonial img {
     }
 }
 
+// Conversation section background — desktop: gradient fills top 800px only,
+// leaving anything below (e.g. the green .scenes area) transparent/unaffected.
+// Mobile overrides this entirely with its own multi-stop gradient below.
+#conversation.section {
+    background-image: linear-gradient(to bottom, #E1E5F8, #D7F7FC) !important;
+    background-size: 100% 800px !important;
+    background-repeat: no-repeat !important;
+}
+
 // Conversation section background (per design intent, 2026-05-26):
 //   - Upper region (y=0 to y=1016): linear gradient from #E1E5F8 (top,
 //     pale lavender) to #D7F7FC (at y=1016, pale cyan) — the image's
