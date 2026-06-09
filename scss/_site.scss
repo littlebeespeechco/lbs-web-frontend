@@ -219,7 +219,7 @@ body {
 }
 // One-off: the "Group pricing and orders" link on the Membership cards (→
 // /group-order) keeps its gray (#404040) instead of the pumpkin default.
-.w-richtext a[href*="group-order"] {
+.w-richtext:not(.faq-item-a) a[href*="group-order"] {
     color: #404040;
 }
 
