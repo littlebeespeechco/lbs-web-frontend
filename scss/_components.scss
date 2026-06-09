@@ -1669,8 +1669,15 @@ section:has(.testimonials) .testimonial img {
     object-position: 50% 0%;
 }
 
-.posts-search-post {
+// The search results link renders as a.w-inline-block (no posts-search-post
+// class in the live DOM), so target by container instead.
+.posts-search-list a {
     text-decoration: none;
+    color: #282828;
+
+    &:hover .posts-search-post-title {
+        color: $orange;
+    }
 }
 
 .posts-search-post-title {
@@ -1678,6 +1685,7 @@ section:has(.testimonials) .testimonial img {
     font-weight: 600;
     font-size: 18px;
     line-height: 26px;
+    color: #282828;
 }
 
 .posts-search-post-date {
