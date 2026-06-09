@@ -153,6 +153,7 @@
         &-purple { background: linear-gradient(to right, #52A6E0, #F379E7); &:is(.button):before { background: linear-gradient(to right, #52A6E0, #F379E7); } }
         &-purple-vertical { background: linear-gradient(to bottom, #B57DC1, #9A7DC1); &:is(.button):before { background: linear-gradient(to bottom, #B57DC1, #9A7DC1); } }
         &-gray-vertical { background: linear-gradient(to bottom, $background-2, $background-1); &:is(.button):before { background: linear-gradient(to bottom, $background-2, $background-1); } }
+        &-gray-top { background-image: linear-gradient(to bottom, $background-2, $background-1); background-size: 100% 574px; background-repeat: no-repeat; background-position: top; }
         &-spanish { background: linear-gradient(to bottom, #F92B2B, #FFB400); &:is(.button):before { background: linear-gradient(to right, #F92B2B, #FFB400); } }
     }
 

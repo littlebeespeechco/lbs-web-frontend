@@ -5953,6 +5953,12 @@ body.menu-open .header {
 .bg-gradient-gray-vertical:is(.button):before {
   background: linear-gradient(to bottom, var(--_colors---background-2), var(--_colors---background-1));
 }
+.bg-gradient-gray-top {
+  background-image: linear-gradient(to bottom, var(--_colors---background-2), var(--_colors---background-1));
+  background-size: 100% 574px;
+  background-repeat: no-repeat;
+  background-position: top;
+}
 .bg-gradient-spanish {
   background: linear-gradient(to bottom, #F92B2B, #FFB400);
 }
