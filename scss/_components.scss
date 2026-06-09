@@ -509,7 +509,7 @@
     margin-top: 30px !important;
 }
 
-// Step labels (1. Isolation, 2. Syllables…): SF Pro Rounded across breakpoints.
+// Step labels (Isolation, Syllables…): SF Pro Rounded across breakpoints.
 // Desktop weight 700 / 15px (Webflow already sets size+weight, only family changes here).
 // Mobile bumps to weight 800 / 18px below.
 .isolation-icon-text {
@@ -588,28 +588,11 @@
     }
 
     // Step label sizing on mobile (font-family inherited from base rule above).
-    // Hide the original text ("1. Isolation" etc.) and render the unprefixed
-    // label via ::before so desktop keeps the numbers and mobile drops them.
-    // (Editing the prop values would remove the numbers on both breakpoints.)
     .isolation-icon-text {
-        font-size: 0 !important;
-        line-height: 0 !important;
+        font-size: 18px !important;
+        font-weight: 800 !important;
+        line-height: normal !important;
     }
-    .isolation-icon-text::before {
-        font-family: ui-rounded, -apple-system, BlinkMacSystemFont, "SF Pro Rounded", sans-serif;
-        font-weight: 800;
-        font-size: 18px;
-        line-height: normal;
-        display: block;
-        text-align: center;
-    }
-    .isolation-icons > .isolation-icon:nth-child(1) .isolation-icon-text::before { content: 'Isolation'; }
-    .isolation-icons > .isolation-icon:nth-child(2) .isolation-icon-text::before { content: 'Syllables'; }
-    .isolation-icons > .isolation-icon:nth-child(3) .isolation-icon-text::before { content: 'Words'; }
-    .isolation-icons > .isolation-icon:nth-child(4) .isolation-icon-text::before { content: 'Phrases'; }
-    .isolation-icons > .isolation-icon:nth-child(5) .isolation-icon-text::before { content: 'Sentences'; }
-    .isolation-icons > .isolation-icon:nth-child(6) .isolation-icon-text::before { content: 'Stories'; }
-    .isolation-icons > .isolation-icon:nth-child(7) .isolation-icon-text::before { content: 'Conversation'; }
 
     // ── Disclaimer breakout: turn the white card into a pseudo-element on
     // .isolation.padded so the bg-white doesn't cover the disclaimer area.
