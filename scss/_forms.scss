@@ -34,8 +34,8 @@ label {
 textarea.w-input {
     line-height: 1.35;
     resize: vertical;       // only drag up/down, never left/right
-    min-height: ptr(64);
-    max-height: ptr(400);
+    min-height: ptr(64);    // note: .bigger-field overrides this to 150px !important
+    max-height: ptr(800);
 }
 
 .contact-message {
