@@ -2492,7 +2492,7 @@ body.menu-open .header {
 .two-apps:before {
   content: "";
   position: absolute;
-  height: 25.875rem;
+  height: 15rem;
   width: 100%;
   top: 0;
   left: 0;
