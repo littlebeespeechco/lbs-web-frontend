@@ -1992,6 +1992,7 @@ html:not(.wf-design-mode) .link.hover-orange:hover {
   color: var(--_colors---orange);
 }
 html:not(.wf-design-mode) .footer-description {
+  color: var(--_colors---text-7d7d7d);
   font-size: 13px;
   line-height: 22px;
 }
