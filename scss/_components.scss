@@ -1671,15 +1671,17 @@ section:has(.testimonials) .testimonial img {
 
 // The search results link renders as a.w-inline-block (no posts-search-post
 // class in the live DOM), so target by container instead.
-// Cover all pseudo-states explicitly — Safari paints a:hover underlines
-// through to children even when text-decoration:none is set on the <a>.
+// !important on text-decoration: Webflow ships a search-only rule
+// (~.search-result-items a:hover) that re-adds the underline on hover and
+// wins the cascade by specificity/source-order. The category page lacks
+// that ancestor so it stays clean; we force none here to match it.
 .posts-search-list a,
 .posts-search-list a:hover,
 .posts-search-list a:visited,
 .posts-search-list a:focus,
 .posts-search-list a:active {
     display: block;
-    text-decoration: none;
+    text-decoration: none !important;
     color: #282828;
 }
 
