@@ -387,6 +387,15 @@
     }
 }
 
+// Desktop only: nudge the (already right-bleeding, clipped) hardware image 74px
+// left to tighten the gap to the text. ≤991px the row stacks and the image goes
+// width:140% centered, so scope this to desktop to leave the stacked layout alone.
+@media (min-width: 992px) {
+    .tools-image {
+        transform: translateX(-74px);
+    }
+}
+
 // FAQ section — on mobile, drop the card chrome (rounded corners + section
 // horizontal inset) so the gray background extends edge-to-edge of the viewport.
 // Vertical padding on .faq stays so the content keeps its rhythm. Also zero the

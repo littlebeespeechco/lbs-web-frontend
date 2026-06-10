@@ -660,6 +660,11 @@
   }
 }
 
+@media (min-width: 992px) {
+  .tools-image {
+    transform: translateX(-74px);
+  }
+}
 @media (max-width: 767px) {
   section:has(.faq) {
     padding-left: 0;
