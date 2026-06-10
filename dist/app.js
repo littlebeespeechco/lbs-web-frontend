@@ -6099,7 +6099,7 @@
   // js/modules.js
   if (typeof document !== "undefined") {
     document.addEventListener("DOMContentLoaded", () => {
-      console.log("v1.2");
+      console.log("v2.2");
       gsap.registerPlugin(ScrollTrigger2, SplitText2);
       const g3 = {};
       window.g = g3;

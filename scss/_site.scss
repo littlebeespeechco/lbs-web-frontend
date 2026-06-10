@@ -195,6 +195,15 @@ body {
     }
 }
 
+// Research / standards disclosure dropdown (ATCH "See the research", Little Stories
+// Pro "View Targeted Common Core Standards"). Spec-lock the expanded content's
+// line-height to 26px — scoped to the dropdown list so the single-line toggle
+// button keeps its own line-height. Wins over Webflow's inherited value via the
+// html:not(.wf-design-mode) import wrapper.
+.research-toggle .dropdown-list {
+    line-height: 26px;
+}
+
 // Default link color for content / rich-text links: pumpkin (#FF6F00) on white
 // backgrounds. Nav/header and footer chrome and .link CTAs are intentionally left
 // alone; link hover is unchanged (orange). On dark sections, links use honey (see
