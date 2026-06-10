@@ -2793,6 +2793,12 @@ body.menu-open .header {
 *.text-dark-1 {
   color: var(--_colors---text-dark-1);
 }
+*.text-b7b7b7 {
+  color: var(--_colors---text-b7b7b7);
+}
+*.text-7d7d7d {
+  color: var(--_colors---text-7d7d7d);
+}
 *.text-dark-2 {
   color: var(--_colors---background-dark-2);
 }
