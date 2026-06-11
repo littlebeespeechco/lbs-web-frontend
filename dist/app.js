@@ -2620,19 +2620,28 @@
     toggle(item) {
       const answer = item.querySelector(".faq-item-a");
       if (!item.open) {
-        gsap.to(answer, {
-          height: "auto",
-          duration: 0.5,
-          ease: "circ.out"
-        });
         item.classList.add("active");
+        const padBottom = parseFloat(getComputedStyle(answer).paddingBottom) || 0;
+        gsap.fromTo(
+          answer,
+          { height: 0, paddingBottom: 0 },
+          {
+            height: "auto",
+            paddingBottom: padBottom,
+            duration: 0.5,
+            ease: "power2.out",
+            overwrite: "auto"
+          }
+        );
       } else {
+        item.classList.remove("active");
         gsap.to(answer, {
           height: 0,
-          duration: 0.5,
-          ease: "circ.out"
+          paddingBottom: 0,
+          duration: 0.4,
+          ease: "power2.in",
+          overwrite: "auto"
         });
-        item.classList.remove("active");
       }
       item.open = !item.open;
     }

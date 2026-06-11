@@ -27,19 +27,34 @@ export class FaqElements {
         const answer = item.querySelector(".faq-item-a");
 
         if (!item.open) {
-            gsap.to(answer, {
-                height: "auto",
-                duration: 0.5,
-                ease: "circ.out",
-            })
+            // Open: add .active first, read the expanded bottom padding it
+            // applies, then animate height AND padding together from zero.
+            // (Previously .active set the padding instantly while only height
+            // tweened, so the padding appeared in one frame — the "jump".)
             item.classList.add("active");
+            const padBottom = parseFloat(getComputedStyle(answer).paddingBottom) || 0;
+            gsap.fromTo(answer,
+                { height: 0, paddingBottom: 0 },
+                {
+                    height: "auto",
+                    paddingBottom: padBottom,
+                    duration: 0.5,
+                    ease: "power2.out",
+                    overwrite: "auto",
+                }
+            );
         } else {
+            // Close: accelerate to a snappy finish (power2.in) instead of
+            // circ.out, which decelerated and dragged the tail. Padding
+            // collapses alongside the height so it never jumps at the end.
+            item.classList.remove("active");
             gsap.to(answer, {
                 height: 0,
-                duration: 0.5,
-                ease: "circ.out",
-            })
-            item.classList.remove("active");
+                paddingBottom: 0,
+                duration: 0.4,
+                ease: "power2.in",
+                overwrite: "auto",
+            });
         }
         item.open = !item.open;
     }
