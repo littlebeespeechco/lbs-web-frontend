@@ -2621,6 +2621,7 @@
       const answer = item.querySelector(".faq-item-a");
       if (!item.open) {
         item.classList.add("active");
+        answer.style.paddingBottom = "";
         const padBottom = parseFloat(getComputedStyle(answer).paddingBottom) || 0;
         const target = answer.scrollHeight;
         gsap.fromTo(
@@ -2645,7 +2646,10 @@
           paddingBottom: 0,
           duration: 0.4,
           ease: "power2.out",
-          overwrite: "auto"
+          overwrite: "auto",
+          onComplete: () => {
+            gsap.set(answer, { clearProps: "height,paddingBottom" });
+          }
         });
       }
       item.open = !item.open;

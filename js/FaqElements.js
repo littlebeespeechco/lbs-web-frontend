@@ -34,6 +34,10 @@ export class FaqElements {
             // Padding animates from 0 alongside height so nothing jumps at
             // frame 0. ease-out only (fast start, decelerate).
             item.classList.add("active");
+            // Drop any inline padding left by a previous close — otherwise the
+            // stale inline padding-bottom:0 overrides the .active CSS and we'd
+            // read 0, animating re-opened cells to no bottom padding.
+            answer.style.paddingBottom = "";
             const padBottom = parseFloat(getComputedStyle(answer).paddingBottom) || 0;
             const target = answer.scrollHeight; // full content + padding, even while collapsed
             gsap.fromTo(answer,
@@ -50,7 +54,8 @@ export class FaqElements {
             );
         } else {
             // Close: ease-out only (fast start, decelerate) — no slow ease-in
-            // lead. Height + padding collapse together to 0.
+            // lead. Height + padding collapse together to 0, then clear the
+            // inline values so the next open reads the CSS target cleanly.
             item.classList.remove("active");
             gsap.to(answer, {
                 height: 0,
@@ -58,6 +63,7 @@ export class FaqElements {
                 duration: 0.4,
                 ease: "power2.out",
                 overwrite: "auto",
+                onComplete: () => { gsap.set(answer, { clearProps: "height,paddingBottom" }); },
             });
         }
         item.open = !item.open;
