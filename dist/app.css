@@ -1894,7 +1894,7 @@ html:not(.wf-design-mode) .faq-item-a a {
   color: #FF6F00;
 }
 html:not(.wf-design-mode) .faq-item.active .faq-item-a {
-  padding-bottom: 1.5rem;
+  padding-bottom: 17px;
 }
 html:not(.wf-design-mode) .custom-styles {
   display: none !important;
