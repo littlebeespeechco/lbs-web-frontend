@@ -243,9 +243,10 @@ body.menu-open {
         padding-bottom: 1rem !important;
     }
 
-    // Bump the always-on .header background from Webflow's 90% white
-    // up to 95% to match the .menu-open-top-bar opacity and reduce content
-    // bleed-through at the top of the page on mobile.
+    // Webflow's .header base is 95% white site-wide. This keeps the mobile
+    // value explicitly pinned at 95% (matching the .menu-open-top-bar opacity)
+    // so a future desktop-base change can't reintroduce content bleed-through
+    // at the top of the page on mobile.
     .header {
         background-color: rgba(255, 255, 255, 0.95) !important;
     }
