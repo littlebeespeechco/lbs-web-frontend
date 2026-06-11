@@ -707,6 +707,7 @@
 .faq-item-q {
   margin-top: -1px;
   margin-bottom: 22px;
+  transform: none;
 }
 
 .faq-item-a > p:not(:first-child):last-child:has(a) {

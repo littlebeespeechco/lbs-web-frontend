@@ -465,6 +465,11 @@
 .faq-item-q {
     margin-top: -1px;
     margin-bottom: 22px;
+    // Kill a stray translateY(-5px) left on the Webflow class (from an earlier
+    // MCP probe). Removing it in the Designer didn't survive publish, so we
+    // override here where SCSS reliably wins. Without this the title sits ~5px
+    // high; with margins above the true layout is a clean 22/22 in the 71px cell.
+    transform: none;
 }
 
 // Widen the gap above a trailing link paragraph in answers (10 → 17, +7px).
