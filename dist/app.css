@@ -701,6 +701,7 @@
   }
 }
 .faq-item-q {
+  margin-top: -5px;
   margin-bottom: 1rem;
 }
 @media (max-width: 767px) {
