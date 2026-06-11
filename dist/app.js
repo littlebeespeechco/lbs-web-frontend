@@ -2622,15 +2622,20 @@
       if (!item.open) {
         item.classList.add("active");
         const padBottom = parseFloat(getComputedStyle(answer).paddingBottom) || 0;
+        const target = answer.scrollHeight;
         gsap.fromTo(
           answer,
           { height: 0, paddingBottom: 0 },
           {
-            height: "auto",
+            height: target,
             paddingBottom: padBottom,
             duration: 0.5,
             ease: "power2.out",
-            overwrite: "auto"
+            overwrite: "auto",
+            // settle to auto so later reflow (resize, font swap) stays correct
+            onComplete: () => {
+              answer.style.height = "auto";
+            }
           }
         );
       } else {
@@ -2639,7 +2644,7 @@
           height: 0,
           paddingBottom: 0,
           duration: 0.4,
-          ease: "power2.in",
+          ease: "power2.out",
           overwrite: "auto"
         });
       }

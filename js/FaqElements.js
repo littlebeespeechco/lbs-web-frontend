@@ -27,32 +27,36 @@ export class FaqElements {
         const answer = item.querySelector(".faq-item-a");
 
         if (!item.open) {
-            // Open: add .active first, read the expanded bottom padding it
-            // applies, then animate height AND padding together from zero.
-            // (Previously .active set the padding instantly while only height
-            // tweened, so the padding appeared in one frame — the "jump".)
+            // Open: apply .active, then measure the FULL target height
+            // (content + padding) up front and animate to that exact pixel
+            // value. Animating to height:"auto" mis-measured while padding was
+            // mid-tween, so it opened ~17px short and popped on complete.
+            // Padding animates from 0 alongside height so nothing jumps at
+            // frame 0. ease-out only (fast start, decelerate).
             item.classList.add("active");
             const padBottom = parseFloat(getComputedStyle(answer).paddingBottom) || 0;
+            const target = answer.scrollHeight; // full content + padding, even while collapsed
             gsap.fromTo(answer,
                 { height: 0, paddingBottom: 0 },
                 {
-                    height: "auto",
+                    height: target,
                     paddingBottom: padBottom,
                     duration: 0.5,
                     ease: "power2.out",
                     overwrite: "auto",
+                    // settle to auto so later reflow (resize, font swap) stays correct
+                    onComplete: () => { answer.style.height = "auto"; },
                 }
             );
         } else {
-            // Close: accelerate to a snappy finish (power2.in) instead of
-            // circ.out, which decelerated and dragged the tail. Padding
-            // collapses alongside the height so it never jumps at the end.
+            // Close: ease-out only (fast start, decelerate) — no slow ease-in
+            // lead. Height + padding collapse together to 0.
             item.classList.remove("active");
             gsap.to(answer, {
                 height: 0,
                 paddingBottom: 0,
                 duration: 0.4,
-                ease: "power2.in",
+                ease: "power2.out",
                 overwrite: "auto",
             });
         }
