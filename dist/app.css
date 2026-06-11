@@ -705,12 +705,12 @@
 }
 
 .faq-item-q {
-  margin-bottom: 1rem;
+  margin-top: -1px;
+  margin-bottom: 22px;
 }
-@media (max-width: 767px) {
-  .faq-item-q {
-    margin-bottom: 1.3125rem;
-  }
+
+.faq-item-a > p:not(:first-child):last-child:has(a) {
+  margin-top: 17px;
 }
 
 .free .heading {

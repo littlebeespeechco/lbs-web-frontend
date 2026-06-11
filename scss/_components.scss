@@ -458,12 +458,21 @@
     min-height: 70px;
 }
 
-// Question → answer gap inside each FAQ item. 16d/21m (Webflow base is 19).
+// Vertically center the question in the ~70px collapsed cell. The item keeps
+// its 23px top padding (the +/- toggle anchors to it), so we balance with the
+// question's own margins: ~22px above (23 − 1) and 22px below. The bottom
+// margin doubles as the question→answer gap when the item is expanded.
 .faq-item-q {
-    margin-bottom: ptr(16);
-    @include breakpoint(small) {
-        margin-bottom: ptr(21);
-    }
+    margin-top: -1px;
+    margin-bottom: 22px;
+}
+
+// Widen the gap above a trailing link paragraph in answers (10 → 17, +7px).
+// Targets only the last-child link <p> that has a paragraph before it, so
+// single-paragraph link answers are left alone. The margin-top collapses with
+// the preceding paragraph's 10px bottom margin, resolving to 17px.
+.faq-item-a > p:not(:first-child):last-child:has(a) {
+    margin-top: 17px;
 }
 
 // Free Trial CTA — three-span "color in the middle" heading. The middle span
