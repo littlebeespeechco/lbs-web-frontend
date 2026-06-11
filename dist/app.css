@@ -700,8 +700,11 @@
     padding-right: 1.5rem;
   }
 }
+.faq-item {
+  min-height: 70px;
+}
+
 .faq-item-q {
-  margin-top: -5px;
   margin-bottom: 1rem;
 }
 @media (max-width: 767px) {

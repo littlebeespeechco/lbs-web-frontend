@@ -451,12 +451,15 @@
     }
 }
 
+// Collapsed FAQ item: enforce a 70px minimum clickable height. The question
+// content alone renders ~62px live, so min-height pads the collapsed cell to
+// spec; the answer row expands past it when open. Literal px to spec-lock.
+.faq-item {
+    min-height: 70px;
+}
+
 // Question → answer gap inside each FAQ item. 16d/21m (Webflow base is 19).
-// margin-top nudges the question up 5px. Literal px to spec-lock (the Webflow
-// MCP clamps negative margins to 0, and the Designer canvas won't reflow the
-// fixed 48px grid row — so this lives here, not on the Webflow class).
 .faq-item-q {
-    margin-top: -5px;
     margin-bottom: ptr(16);
     @include breakpoint(small) {
         margin-bottom: ptr(21);
