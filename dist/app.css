@@ -2130,7 +2130,7 @@ form:not(.search) .w-select {
   background-color: #f9f9f9;
   font-size: 1rem;
   padding: 0.625rem 0.625rem;
-  line-height: 1;
+  line-height: 1.4;
   height: auto;
   min-height: 2.875rem;
   color: var(--_colors---text-2);

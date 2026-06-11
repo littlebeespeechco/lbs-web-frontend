@@ -92,7 +92,10 @@ textarea.w-input {
     background-color: #f9f9f9;
     font-size: ptr(16);
     padding: ptr(10) ptr(10);
-    line-height: 1;
+    // line-height:1 makes the line box exactly the font-size, so a native
+    // <select> shears the descenders (g, y, p, q, j) off its selected value.
+    // 1.4 gives the glyphs room; min-height:46 still governs the box height.
+    line-height: 1.4;
     height: auto;
     min-height: ptr(46);
     color: $text-2;
